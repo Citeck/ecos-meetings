@@ -128,21 +128,28 @@
               {
                 "name": "childQuestions",
                 "formatter": "",
-                "setAttributesManually": false
+                "setAttributesManually": true,
+                "title": "Вопросы",
+                "type": "assoc",
+                "multiple": false
               },
               {
                 "name": "plannedParticipants",
                 "formatter": "",
-                "setAttributesManually": false
+                "setAttributesManually": true,
+                "title": "Участники",
+                "type": "assoc",
+                "multiple": false
               }
             ],
             "record": null,
             "attribute": null
           }
         },
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"integrations/rs-meet-agenda-source@\",\r\n   \"typeRef\": \"emodel/type@meet-agenda\",\r\n   \"formRef\": \"uiserv/form@meet_agenda\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
         "refreshOn": [],
         "optionalWhenDisabled": false,
-        "customConditional": "var isDraftStatus = false;\r\nif (data.caseStatus) {\r\n  isDraftStatus = data.caseStatus.status === \"draft\";\r\n}\r\nvar isCreateMode = instance.options.formMode === 'CREATE';\r\nshow = !isDraftStatus && !isCreateMode;",
+        "customConditional": "const formMode = _.get(instance, 'options.formMode', '');\n\nshow = formMode != 'CREATE';",
         "type": "tableForm",
         "input": true
       },
@@ -151,8 +158,6 @@
           "ru": "childProtocol"
         },
         "key": "childProtocol",
-        "multiple": true,
-        "reorder": false,
         "clearOnHide": false,
         "source": {
           "type": "custom",
@@ -161,26 +166,36 @@
               {
                 "name": "participants",
                 "formatter": "",
-                "setAttributesManually": false
+                "setAttributesManually": true,
+                "title": "Присутствовали",
+                "type": "assoc",
+                "multiple": false
               },
               {
                 "name": "absent",
                 "formatter": "",
-                "setAttributesManually": false
+                "setAttributesManually": true,
+                "title": "Отсутствовали",
+                "type": "assoc",
+                "multiple": false
               },
               {
                 "name": "answeredQuestions",
                 "formatter": "",
-                "setAttributesManually": false
+                "setAttributesManually": true,
+                "title": "Решения",
+                "type": "assoc",
+                "multiple": false
               }
             ],
             "record": null,
             "attribute": null
           }
         },
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"integrations/rs-meet-protocol-source@\",\r\n   \"typeRef\": \"emodel/type@meet-protocol\",\r\n   \"formRef\": \"uiserv/form@meet_protocol\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
         "refreshOn": [],
         "optionalWhenDisabled": false,
-        "customConditional": "var isDraftStatus = false;\r\nif (data.caseStatus) {\r\n  isDraftStatus = data.caseStatus.status === \"draft\";\r\n}\r\nvar isCreateMode = instance.options.formMode === 'CREATE';\r\nshow = !isDraftStatus && !isCreateMode;",
+        "customConditional": "const formMode = _.get(instance, 'options.formMode', '');\n\nshow = formMode != 'CREATE';",
         "type": "tableForm",
         "input": true
       },
@@ -299,14 +314,15 @@
         "source": {
           "type": "custom",
           "custom": {
-            "syncData": "value = recordId",
-            "asyncData": "function getCaseStatus(recordId, attemptsNumber, period = 2000) {\r\n    return new Promise(function(resolve, reject) {\r\n        (function attempt(attemptsLeft) {\r\n        \twindow.Citeck.Records.get(data).load('icase:caseStatusAssoc.cm:name', true).then(status => {\r\n        \t\tif (status !== null) {\r\n        \t\t\treturn resolve(status);\r\n        \t\t}\r\n        \t\tif (attemptsLeft < 1) {\r\n        \t\t\treturn resolve(null);\r\n        \t\t}\r\n        \t\t\r\n        \t\tsetTimeout(attempt.bind(null, attemptsLeft - 1), period);\r\n        \t}).catch(reject);\r\n        })(attemptsNumber);\r\n    });\r\n}\r\n\r\nconst isViewMode = instance.options.readOnly && instance.options.viewAsHtml;\r\nconst formMode = instance.options.formMode;\r\n\r\nif (!isViewMode && formMode === 'EDIT') {\r\n  value = getCaseStatus(data, 10); \r\n} else {\r\n  value = 'status is null';\r\n}"
+            "syncData": "value = recordId.replace(/-alias-\\d+/, \"\");",
+            "asyncData": "value = Citeck.Records.get(data).load('_status?str');"
           },
           "forceLoad": false
         },
         "update": {
           "type": "any-change"
         },
+        "executionCondition": "const formMode = _.get(instance, 'options.formMode', '');\n\nvalue = formMode == 'EDIT';",
         "key": "caseStatus",
         "type": "asyncData",
         "input": true,
