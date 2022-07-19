@@ -1,7 +1,7 @@
 ---
 id: meetings-cat-doctype
 name:
-  ru: Совещание_update_test_123
+  ru: Совещание
   en: Meeting
 sourceId: integrations/rs-meetings-source
 parentRef: emodel/type@case
