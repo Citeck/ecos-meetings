@@ -3,7 +3,7 @@ id: meet-agenda
 name:
   ru: Повестка
   en: Agenda
-sourceId: integrations/rs-meet-agenda-source
+sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
 formRef: uiserv/form@meet_agenda
 defaultCreateVariant: true

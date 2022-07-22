@@ -3,7 +3,7 @@ id: meet-answeredQuestion
 name:
   ru: Решения
   en: Answered questions
-sourceId: integrations/rs-meet-answered-question-source
+sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
 formRef: uiserv/form@meet_answeredQuestion
 inheritActions: false

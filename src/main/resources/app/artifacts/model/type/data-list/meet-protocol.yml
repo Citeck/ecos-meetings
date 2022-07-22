@@ -3,7 +3,7 @@ id: meet-protocol
 name:
   ru: Протокол встречи
   en: Meet protocol
-sourceId: integrations/rs-meet-protocol-source
+sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
 formRef: uiserv/form@meet_protocol
 inheritActions: false

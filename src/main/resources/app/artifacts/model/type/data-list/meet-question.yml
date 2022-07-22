@@ -3,7 +3,7 @@ id: meet-question
 name:
   ru: Вопрос встречи
   en: Meet question
-sourceId: integrations/rs-meet-question-source
+sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
 formRef: uiserv/form@meet_question
 inheritActions: false

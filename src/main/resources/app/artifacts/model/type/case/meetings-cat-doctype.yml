@@ -3,7 +3,7 @@ id: meetings-cat-doctype
 name:
   ru: Совещание
   en: Meeting
-sourceId: integrations/rs-meetings-source
+sourceType: ECOS_MODEL
 parentRef: emodel/type@case
 formRef: uiserv/form@meetings_meeting
 journalRef: uiserv/journal@meetings
@@ -14,18 +14,22 @@ actions:
   - uiserv/action@meet-familiarization-distr
   - uiserv/action@meet-confirmation-send
   - uiserv/action@meet-perform-send
+  - uiserv/action@meet-recipient-set
 defaultCreateVariant: true
 model:
   roles:
     - id: initiator
       name:
         ru: Инициатор
+        en: Initiator
       attributes:
         - initiator
-      computed:
-        type: ATTRIBUTE
-        config:
-          attribute: initiator
+    - id: agendaRecipients
+      name:
+        ru: Получатели
+        en: Recipients
+      attributes:
+        - agendaRecipients
   statuses:
     - id: new
       name:
@@ -132,4 +136,10 @@ model:
       type: ASSOC
       config:
         typeRef: emodel/type@person
+      multiple: true
+    - id: agendaRecipients
+      name:
+        ru: Получатели
+        en: Recipients
+      type: PERSON
       multiple: true
