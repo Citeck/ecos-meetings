@@ -30,6 +30,12 @@ model:
         en: Recipients
       attributes:
         - agendaRecipients
+    - id: protocolConfirmers
+      name:
+        ru: Согласующие
+        en: Confirmers
+      attributes:
+        - protocolConfirmers
   statuses:
     - id: new
       name:
@@ -93,7 +99,7 @@ model:
       name:
         ru: Организатор встречи
         en: Initiator
-      type: ASSOC
+      type: PERSON
       config:
         typeRef: emodel/type@person
     - id: childAnsweredQuestions
@@ -141,5 +147,11 @@ model:
       name:
         ru: Получатели
         en: Recipients
+      type: PERSON
+      multiple: true
+    - id: protocolConfirmers
+      name:
+        ru: Согласующие
+        en: Confirmers
       type: PERSON
       multiple: true

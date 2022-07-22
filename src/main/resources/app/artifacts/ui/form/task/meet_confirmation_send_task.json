@@ -2,7 +2,7 @@
   "id" : "meet_confirmation_send_task",
   "formKey" : "",
   "title" : {
-    "en" : "Meeting Familiarization Distribution Task"
+    "en" : "Meeting Confirmation Send Task"
   },
   "description" : { },
   "customModule" : null,
@@ -26,7 +26,7 @@
         "ru" : "Сообщение",
         "en" : "Message"
       },
-      "key" : "message",
+      "key" : "confirmation_message",
       "defaultValue" : "",
       "refreshOn" : [ ],
       "optionalWhenDisabled" : false,
@@ -43,7 +43,10 @@
             "ru" : "Срок",
             "en" : "Term"
           },
-          "key" : "term",
+          "key" : "confirmation_term",
+          "validate" : {
+            "required" : true
+          },
           "format" : "dd.MM.yyyy",
           "datePicker" : {
             "minDate" : "",
@@ -74,7 +77,7 @@
             "ru" : "Приоритет",
             "en" : "Priority"
           },
-          "key" : "priority",
+          "key" : "confirmation_priority",
           "dataSrc" : "values",
           "data" : {
             "values" : [ {
@@ -99,21 +102,94 @@
       "input" : false
     }, {
       "label" : {
-        "ru" : "Получатели",
-        "en" : "Receivers"
+        "ru" : "Columns"
       },
-      "key" : "receivers",
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "selectOrgstruct",
-      "input" : true,
-      "defaultValue" : ""
+      "key" : "columns3",
+      "columns" : [ {
+        "components" : [ {
+          "label" : {
+            "ru" : "1-й этап согласования",
+            "en" : "1st confirming step"
+          },
+          "key" : "first",
+          "validate" : {
+            "required" : true
+          },
+          "refreshOn" : [ ],
+          "optionalWhenDisabled" : false,
+          "type" : "selectOrgstruct",
+          "input" : true,
+          "addAnother" : "ecos.forms.btn.add-another",
+          "defaultValue" : ""
+        } ],
+        "type" : "column",
+        "input" : false,
+        "key" : "column",
+        "index" : 0
+      }, {
+        "index" : 1,
+        "type" : "column",
+        "input" : false,
+        "key" : "column",
+        "components" : [ {
+          "label" : {
+            "ru" : "2-й этап согласования",
+            "en" : "2nd confirming step"
+          },
+          "key" : "second",
+          "refreshOn" : [ ],
+          "optionalWhenDisabled" : false,
+          "customConditional" : "const first = _.get(data, 'first', '');\n\nshow = first !== '';",
+          "type" : "selectOrgstruct",
+          "input" : true,
+          "addAnother" : "ecos.forms.btn.add-another"
+        } ]
+      } ],
+      "oneColumnInViewMode" : false,
+      "type" : "columns",
+      "input" : false,
+      "addAnother" : "ecos.forms.btn.add-another"
+    }, {
+      "label" : {
+        "ru" : "Columns"
+      },
+      "key" : "columns4",
+      "columns" : [ {
+        "components" : [ {
+          "label" : {
+            "ru" : "3-й этап согласования",
+            "en" : "3d confirming step"
+          },
+          "key" : "third",
+          "defaultValue" : "",
+          "refreshOn" : [ ],
+          "optionalWhenDisabled" : false,
+          "customConditional" : "const second = _.get(data, 'second', '');\n\nshow = second !== '';",
+          "type" : "selectOrgstruct",
+          "input" : true,
+          "addAnother" : "ecos.forms.btn.add-another"
+        } ],
+        "type" : "column",
+        "input" : false,
+        "key" : "column",
+        "index" : 0
+      }, {
+        "index" : 1,
+        "type" : "column",
+        "input" : false,
+        "key" : "column",
+        "components" : [ ]
+      } ],
+      "oneColumnInViewMode" : false,
+      "type" : "columns",
+      "input" : false,
+      "addAnother" : "ecos.forms.btn.add-another"
     }, {
       "label" : {
         "ru" : "Отправить уведомление по электронной почте",
         "en" : "Send email notification"
       },
-      "key" : "email",
+      "key" : "confirmation_email",
       "refreshOn" : [ ],
       "optionalWhenDisabled" : false,
       "type" : "checkbox",
@@ -123,7 +199,7 @@
         "en" : "Start confirmation",
         "ru" : "Начать согласование"
       },
-      "key" : "submit",
+      "key" : "outcome_start_confirming",
       "state" : "",
       "theme" : "primary",
       "disableOnInvalid" : true,
@@ -131,6 +207,18 @@
       "optionalWhenDisabled" : false,
       "type" : "button",
       "input" : true
+    }, {
+      "label" : {
+        "ru" : "Согласующие",
+        "en" : "Confirmers"
+      },
+      "key" : "_ECM_protocolConfirmers",
+      "refreshOn" : [ "first", "second", "third" ],
+      "calculateValue" : "const first = _.get(data, 'first', '');\nconst second = _.get(data, 'second', '');\nconst third = _.get(data, 'third', '');\n\nvalue = [first, second, third].filter(el => el !== '');",
+      "optionalWhenDisabled" : false,
+      "type" : "hidden",
+      "input" : true,
+      "addAnother" : "ecos.forms.btn.add-another"
     } ]
   },
   "attributes" : { }

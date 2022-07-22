@@ -8,9 +8,148 @@
   "customModule" : null,
   "typeRef" : "",
   "width" : "lg",
-  "i18n" : { },
+  "i18n" : {
+    "ru" : {
+      "participants" : "Присутствовали",
+      "absent" : "Отсутствовали",
+      "answeredQuestions" : "Решения"
+    },
+    "en" : {
+      "participants" : "Participants",
+      "absent" : "Absent",
+      "answeredQuestions" : "Answers"
+    }
+  },
   "definition" : {
     "components" : [ {
+      "label" : {
+        "ru" : "Сообщение отправителя",
+        "en" : "Sender message"
+      },
+      "key" : "confirmation_message",
+      "disabled" : true,
+      "defaultValue" : "",
+      "refreshOn" : [ ],
+      "optionalWhenDisabled" : false,
+      "type" : "textarea",
+      "input" : true,
+      "addAnother" : "ecos.forms.btn.add-another"
+    }, {
+      "label" : {
+        "ru" : "Columns"
+      },
+      "key" : "columns3",
+      "columns" : [ {
+        "components" : [ {
+          "label" : {
+            "ru" : "Отправитель",
+            "en" : "Sender"
+          },
+          "key" : "_ECM_initiator",
+          "disabled" : true,
+          "refreshOn" : [ ],
+          "optionalWhenDisabled" : false,
+          "type" : "selectOrgstruct",
+          "input" : true,
+          "addAnother" : "ecos.forms.btn.add-another",
+          "defaultValue" : ""
+        } ],
+        "type" : "column",
+        "input" : false,
+        "key" : "column",
+        "index" : 0
+      }, {
+        "index" : 1,
+        "type" : "column",
+        "input" : false,
+        "key" : "column",
+        "components" : [ {
+          "label" : {
+            "ru" : "Срок",
+            "en" : "Term"
+          },
+          "key" : "confirmation_term",
+          "disabled" : true,
+          "allowInput" : false,
+          "format" : "dd.MM.yyyy",
+          "datePicker" : {
+            "minDate" : "",
+            "maxDate" : ""
+          },
+          "enableTime" : false,
+          "timePicker" : {
+            "showMeridian" : false
+          },
+          "defaultValue" : "",
+          "refreshOn" : [ ],
+          "optionalWhenDisabled" : false,
+          "type" : "datetime",
+          "input" : true,
+          "suffix" : true,
+          "addAnother" : "ecos.forms.btn.add-another"
+        } ]
+      } ],
+      "oneColumnInViewMode" : false,
+      "type" : "columns",
+      "input" : false,
+      "addAnother" : "ecos.forms.btn.add-another"
+    }, {
+      "label" : {
+        "ru" : "Протокол совещания",
+        "en" : "Meeting protocol"
+      },
+      "key" : "_ECM_childProtocol",
+      "source" : {
+        "type" : "custom",
+        "custom" : {
+          "columns" : [ {
+            "name" : "participants",
+            "formatter" : "",
+            "setAttributesManually" : true,
+            "title" : "participants",
+            "type" : "assoc",
+            "multiple" : false
+          }, {
+            "name" : "absent",
+            "formatter" : "",
+            "setAttributesManually" : true,
+            "title" : "absent",
+            "type" : "assoc",
+            "multiple" : false
+          }, {
+            "name" : "answeredQuestions",
+            "formatter" : "",
+            "setAttributesManually" : true,
+            "title" : "answeredQuestions",
+            "type" : "assoc",
+            "multiple" : false
+          } ],
+          "record" : null,
+          "attribute" : null
+        }
+      },
+      "refreshOn" : [ ],
+      "customDefaultValue" : "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-ahwe77pg@\",\r\n   \"typeRef\": \"emodel/type@meet-protocol\",\r\n   \"formRef\": \"uiserv/form@meet_protocol\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+      "optionalWhenDisabled" : false,
+      "type" : "tableForm",
+      "input" : true,
+      "addAnother" : "ecos.forms.btn.add-another"
+    }, {
+      "label" : {
+        "ru" : "Комментарий"
+      },
+      "key" : "confrmation_comment",
+      "validate" : {
+        "required" : true
+      },
+      "defaultValue" : "",
+      "refreshOn" : [ ],
+      "customDefaultValue" : "value = \"\";",
+      "optionalWhenDisabled" : false,
+      "type" : "textarea",
+      "input" : true,
+      "addAnother" : "ecos.forms.btn.add-another"
+    }, {
       "label" : {
         "ru" : "Columns"
       },
@@ -22,13 +161,14 @@
             "en" : "Protocol confirmed"
           },
           "key" : "outcome_confirmed",
-          "state" : "",
+          "action" : "saveState",
           "theme" : "primary",
           "block" : true,
           "refreshOn" : [ ],
           "optionalWhenDisabled" : false,
           "type" : "button",
-          "input" : true
+          "input" : true,
+          "showValidations" : false
         } ],
         "md" : 3,
         "type" : "column",
@@ -68,20 +208,7 @@
         "input" : false,
         "key" : "column",
         "index" : 3,
-        "components" : [ {
-          "label" : {
-            "ru" : "Время согласования вышло",
-            "en" : "Timer expired"
-          },
-          "key" : "outcome_confirm_timer_expired",
-          "state" : "",
-          "theme" : "primary",
-          "block" : true,
-          "refreshOn" : [ ],
-          "optionalWhenDisabled" : false,
-          "type" : "button",
-          "input" : true
-        } ]
+        "components" : [ ]
       } ],
       "oneColumnInViewMode" : false,
       "type" : "columns",
