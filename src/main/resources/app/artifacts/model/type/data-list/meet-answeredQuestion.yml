@@ -1,12 +1,14 @@
 ---
-id: meet-answeredQuestion
+id: meet-answered-question
 name:
-  ru: Решения
-  en: Answered questions
+  ru: Решениe
+  en: Answered question
 sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
-formRef: uiserv/form@meet_answeredQuestion
+formRef: uiserv/form@meet_answered_question
 inheritActions: false
+dispNameTemplate:
+  ru: '${answer}'
 defaultCreateVariant: true
 model:
   attributes:

@@ -32,5 +32,5 @@ model:
         en: Answers
       type: ASSOC
       config:
-        typeRef: emodel/type@meet-answeredQuestion
+        typeRef: emodel/type@meet-answered-question
       multiple: true

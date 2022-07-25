@@ -109,7 +109,7 @@ model:
       type: ASSOC
       config:
         child: true
-        typeRef: emodel/type@meet-answeredQuestion
+        typeRef: emodel/type@meet-answered-question
       multiple: true
     - id: childAgenda
       name:

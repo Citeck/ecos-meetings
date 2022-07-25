@@ -1,155 +1,171 @@
 {
-  "id" : "meet_familiarized_task",
-  "formKey" : "",
-  "title" : {
-    "en" : "Meeting Familiarized Task"
+  "id": "meet_familiarized_task",
+  "formKey": "",
+  "title": {
+    "en": "Meeting Familiarized Task"
   },
-  "description" : { },
-  "customModule" : null,
-  "typeRef" : "",
-  "width" : "lg",
-  "i18n" : {
-    "ru" : {
-      "questions" : "Вопросы",
-      "participants" : "Участники"
+  "description": {},
+  "customModule": null,
+  "typeRef": "",
+  "width": "lg",
+  "i18n": {
+    "ru": {
+      "questions": "Вопросы",
+      "participants": "Участники"
     },
-    "en" : {
-      "questions" : "Questions",
-      "participants" : "Planned Participants"
+    "en": {
+      "questions": "Questions",
+      "participants": "Planned Participants"
     }
   },
-  "definition" : {
-    "components" : [ {
-      "label" : {
-        "ru" : "Сообщение отправителя",
-        "en" : "Sender message"
+  "definition": {
+    "components": [
+      {
+        "label": {
+          "ru": "Сообщение отправителя",
+          "en": "Sender message"
+        },
+        "key": "familiarization_message",
+        "disabled": true,
+        "defaultValue": "",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "textarea",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       },
-      "key" : "familiarization_message",
-      "disabled" : true,
-      "defaultValue" : "",
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "textarea",
-      "input" : true,
-      "addAnother" : "ecos.forms.btn.add-another"
-    }, {
-      "label" : {
-        "ru" : "Columns"
-      },
-      "key" : "columns2",
-      "columns" : [ {
-        "components" : [ {
-          "label" : {
-            "ru" : "Отправитель",
-            "en" : "Sender"
+      {
+        "label": {
+          "ru": "Columns"
+        },
+        "key": "columns2",
+        "columns": [
+          {
+            "components": [
+              {
+                "label": {
+                  "ru": "Отправитель",
+                  "en": "Sender"
+                },
+                "key": "_ECM_initiator",
+                "disabled": true,
+                "defaultValue": "",
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "selectOrgstruct",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ],
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
           },
-          "key" : "_ECM_initiator",
-          "disabled" : true,
-          "defaultValue" : "",
-          "refreshOn" : [ ],
-          "optionalWhenDisabled" : false,
-          "type" : "selectOrgstruct",
-          "input" : true,
-          "addAnother" : "ecos.forms.btn.add-another"
-        } ],
-        "type" : "column",
-        "input" : false,
-        "key" : "column",
-        "index" : 0
-      }, {
-        "index" : 1,
-        "type" : "column",
-        "input" : false,
-        "key" : "column",
-        "components" : [ {
-          "label" : {
-            "ru" : "Срок",
-            "en" : "Term"
-          },
-          "key" : "familiarization_term",
-          "disabled" : true,
-          "allowInput" : false,
-          "format" : "dd.MM.yyyy",
-          "datePicker" : {
-            "minDate" : "",
-            "maxDate" : ""
-          },
-          "enableTime" : false,
-          "timePicker" : {
-            "showMeridian" : false
-          },
-          "defaultValue" : "",
-          "refreshOn" : [ ],
-          "optionalWhenDisabled" : false,
-          "type" : "datetime",
-          "input" : true,
-          "suffix" : true,
-          "addAnother" : "ecos.forms.btn.add-another"
-        } ]
-      } ],
-      "oneColumnInViewMode" : false,
-      "type" : "columns",
-      "input" : false,
-      "addAnother" : "ecos.forms.btn.add-another"
-    }, {
-      "label" : {
-        "ru" : "Повестка совещания",
-        "en" : "Meeting agenda"
+          {
+            "index": 1,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "components": [
+              {
+                "label": {
+                  "ru": "Срок",
+                  "en": "Term"
+                },
+                "key": "familiarization_term",
+                "disabled": true,
+                "allowInput": false,
+                "format": "dd.MM.yyyy",
+                "datePicker": {
+                  "minDate": "",
+                  "maxDate": ""
+                },
+                "enableTime": false,
+                "timePicker": {
+                  "showMeridian": false
+                },
+                "defaultValue": "",
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "datetime",
+                "input": true,
+                "suffix": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
       },
-      "key" : "_ECM_childAgenda",
-      "source" : {
-        "type" : "custom",
-        "custom" : {
-          "columns" : [ {
-            "name" : "childQuestions",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "questions",
-            "type" : "assoc",
-            "multiple" : false
-          }, {
-            "name" : "plannedParticipants",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "participants",
-            "type" : "assoc",
-            "multiple" : false
-          } ],
-          "record" : null,
-          "attribute" : null
-        }
+      {
+        "label": {
+          "ru": "Повестка совещания",
+          "en": "Meeting agenda"
+        },
+        "key": "_ECM_childAgenda",
+        "source": {
+          "type": "custom",
+          "custom": {
+            "columns": [
+              {
+                "name": "childQuestions",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "questions",
+                "type": "assoc",
+                "multiple": false
+              },
+              {
+                "name": "plannedParticipants",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "participants",
+                "type": "assoc",
+                "multiple": false
+              }
+            ],
+            "record": null,
+            "attribute": null
+          }
+        },
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "displayElementsJS": "value = {view: true, edit: false, delete: false, clone: false, preview: false};",
+        "type": "tableForm",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       },
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "displayElementsJS" : "value = {view: true, edit: false, delete: false, clone: false, preview: false};",
-      "type" : "tableForm",
-      "input" : true,
-      "addAnother" : "ecos.forms.btn.add-another"
-    }, {
-      "label" : {
-        "ru" : "Комментарий",
-        "en" : "comment"
+      {
+        "label": {
+          "ru": "Комментарий",
+          "en": "comment"
+        },
+        "key": "recipientComment",
+        "defaultValue": "",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "textarea",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       },
-      "key" : "recipientComment",
-      "defaultValue" : "",
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "textarea",
-      "input" : true,
-      "addAnother" : "ecos.forms.btn.add-another"
-    }, {
-      "label" : {
-        "ru" : "Ознакомлен",
-        "en" : "Familiarized"
-      },
-      "key" : "outcome_familiarized",
-      "state" : "",
-      "theme" : "primary",
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "button",
-      "input" : true
-    } ]
+      {
+        "label": {
+          "ru": "Ознакомлен",
+          "en": "Familiarized"
+        },
+        "key": "outcome_familiarized",
+        "state": "",
+        "theme": "primary",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "button",
+        "input": true
+      }
+    ]
   },
-  "attributes" : { }
+  "attributes": {}
 }

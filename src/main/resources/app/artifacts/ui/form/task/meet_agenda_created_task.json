@@ -1,75 +1,81 @@
 {
-  "id" : "meet_agenda_created_task",
-  "formKey" : "",
-  "title" : {
-    "en" : "Meeting Agenda Created Task"
+  "id": "meet_agenda_created_task",
+  "formKey": "",
+  "title": {
+    "en": "Meeting Agenda Created Task"
   },
-  "description" : { },
-  "customModule" : null,
-  "typeRef" : "",
-  "width" : "lg",
-  "i18n" : {
-    "ru" : {
-      "questions" : "Вопросы",
-      "participants" : "Участники"
+  "description": {},
+  "customModule": null,
+  "typeRef": "",
+  "width": "lg",
+  "i18n": {
+    "ru": {
+      "questions": "Вопросы",
+      "participants": "Участники"
     },
-    "en" : {
-      "questions" : "Questions",
-      "participants" : "Planned Participants"
+    "en": {
+      "questions": "Questions",
+      "participants": "Planned Participants"
     }
   },
-  "definition" : {
-    "components" : [ {
-      "label" : {
-        "ru" : "Повестка совещания",
-        "en" : "Meeting agenda"
+  "definition": {
+    "components": [
+      {
+        "label": {
+          "ru": "Повестка совещания",
+          "en": "Meeting agenda"
+        },
+        "key": "_ECM_childAgenda",
+        "validate": {
+          "required": true
+        },
+        "source": {
+          "type": "custom",
+          "custom": {
+            "columns": [
+              {
+                "name": "childQuestions",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "questions",
+                "type": "assoc",
+                "multiple": false
+              },
+              {
+                "name": "plannedParticipants",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "participants",
+                "type": "assoc",
+                "multiple": false
+              }
+            ],
+            "record": null,
+            "attribute": null
+          }
+        },
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-agkulh64@\",\r\n   \"typeRef\": \"emodel/type@meet-agenda\",\r\n   \"formRef\": \"uiserv/form@meet_agenda\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "tableForm",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       },
-      "key" : "_ECM_childAgenda",
-      "validate" : {
-        "required" : true
-      },
-      "source" : {
-        "type" : "custom",
-        "custom" : {
-          "columns" : [ {
-            "name" : "childQuestions",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "questions",
-            "type" : "assoc",
-            "multiple" : false
-          }, {
-            "name" : "plannedParticipants",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "participants",
-            "type" : "assoc",
-            "multiple" : false
-          } ],
-          "record" : null,
-          "attribute" : null
-        }
-      },
-      "customCreateVariantsJs" : "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-agkulh64@\",\r\n   \"typeRef\": \"emodel/type@meet-agenda\",\r\n   \"formRef\": \"uiserv/form@meet_agenda\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "tableForm",
-      "input" : true,
-      "addAnother" : "ecos.forms.btn.add-another"
-    }, {
-      "label" : {
-        "ru" : "Повестка создана",
-        "en" : "Agenda created"
-      },
-      "key" : "outcome_agenda_created",
-      "state" : "",
-      "theme" : "primary",
-      "disableOnInvalid" : true,
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "button",
-      "input" : true
-    } ]
+      {
+        "label": {
+          "ru": "Повестка создана",
+          "en": "Agenda created"
+        },
+        "key": "outcome_agenda_created",
+        "state": "",
+        "theme": "primary",
+        "disableOnInvalid": true,
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "button",
+        "input": true
+      }
+    ]
   },
-  "attributes" : { }
+  "attributes": {}
 }

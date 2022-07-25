@@ -1,45 +1,61 @@
 {
-  "id": "meet_question",
+  "id": "meet_answered_question",
   "formKey": "",
   "title": {
-    "en": "meeting's question"
+    "en": "meet Answered Question"
   },
   "description": {},
   "customModule": null,
   "typeRef": "",
   "width": "lg",
-  "i18n": {},
+  "i18n": {
+    "ru": {
+      "question": "Вопрос"
+    },
+    "en": {
+      "question": "Question"
+    }
+  },
   "definition": {
     "components": [
       {
         "label": {
-          "ru": "question"
+          "ru": "askedQuestion"
         },
-        "key": "question",
-        "validate": {
-          "required": true
+        "key": "askedQuestion",
+        "source": {
+          "type": "custom",
+          "custom": {
+            "columns": [
+              {
+                "name": "question",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "question",
+                "type": "assoc",
+                "multiple": false
+              }
+            ],
+            "record": null,
+            "attribute": null
+          }
         },
-        "clearOnHide": false,
-        "defaultValue": "",
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-aeicaf7c@\",\r\n   \"typeRef\": \"emodel/type@meet-question\",\r\n   \"formRef\": \"uiserv/form@meet_question\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
         "refreshOn": [],
         "optionalWhenDisabled": false,
-        "type": "textfield",
+        "type": "tableForm",
         "input": true
       },
       {
         "label": {
-          "ru": "plannedReporters"
+          "ru": "answer"
         },
-        "key": "plannedReporters",
-        "multiple": true,
-        "reorder": false,
-        "clearOnHide": false,
-        "allowedAuthorityType": "USER",
-        "isIncludedAdminGroup": true,
-        "defaultValue": [],
+        "key": "answer",
+        "defaultValue": "",
         "refreshOn": [],
         "optionalWhenDisabled": false,
-        "type": "selectOrgstruct",
+        "rows": 2,
+        "type": "textarea",
         "input": true
       },
       {
@@ -113,15 +129,14 @@
             "components": [
               {
                 "label": {
-                  "ru": "Принять",
-                  "en": "Submit"
+                  "en": "Save",
+                  "ru": "Сохранить"
                 },
-                "key": "submit",
-                "state": "draft",
+                "key": "save",
+                "state": "",
                 "theme": "primary",
                 "block": true,
                 "disableOnInvalid": true,
-                "clearOnHide": false,
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
                 "type": "button",

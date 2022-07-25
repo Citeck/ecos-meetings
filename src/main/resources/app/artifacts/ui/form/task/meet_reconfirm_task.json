@@ -1,29 +1,120 @@
 {
-  "id" : "meet_reconfirm_task",
-  "formKey" : "",
-  "title" : {
-    "en" : "Meeting Reconfirm Task"
+  "id": "meet_reconfirm_task",
+  "formKey": "",
+  "title": {
+    "en": "Meeting Reconfirm Task"
   },
-  "description" : { },
-  "customModule" : null,
-  "typeRef" : "",
-  "width" : "lg",
-  "i18n" : { },
-  "definition" : {
-    "components" : [ {
-      "label" : {
-        "ru" : "Отправить на согласование",
-        "en" : "Reconfirm"
+  "description": {},
+  "customModule": null,
+  "typeRef": "",
+  "width": "lg",
+  "i18n": {
+    "ru": {
+      "participants": "Присутствовали",
+      "absent": "Отсутствовали",
+      "answeredQuestions": "Решения"
+    },
+    "en": {
+      "participants": "Participants",
+      "absent": "Absent",
+      "answeredQuestions": "Answers"
+    }
+  },
+  "definition": {
+    "components": [
+      {
+        "label": {
+          "ru": "Сообщение согласующего",
+          "en": "Confirmer message"
+        },
+        "key": "confrmation_comment",
+        "disabled": true,
+        "defaultValue": "",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "textarea",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       },
-      "key" : "outcome_reconfirm",
-      "state" : "",
-      "theme" : "primary",
-      "disableOnInvalid" : true,
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "button",
-      "input" : true
-    } ]
+      {
+        "label": {
+          "ru": "Повестка совещания",
+          "en": "Meeting agenda"
+        },
+        "key": "_ECM_childAgenda",
+        "validate": {
+          "required": true
+        },
+        "source": {
+          "type": "custom",
+          "custom": {
+            "columns": [
+              {
+                "name": "participants",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "participants",
+                "type": "assoc",
+                "multiple": false
+              },
+              {
+                "name": "absent",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "absent",
+                "type": "assoc",
+                "multiple": false
+              },
+              {
+                "name": "answeredQuestions",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "answeredQuestions",
+                "type": "assoc",
+                "multiple": false
+              }
+            ],
+            "record": null,
+            "attribute": null
+          }
+        },
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-ahwe77pg@\",\r\n   \"typeRef\": \"emodel/type@meet-protocol\",\r\n   \"formRef\": \"uiserv/form@meet_protocol\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "tableForm",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "Комментарий",
+          "en": "Comment"
+        },
+        "key": "confirmation_message",
+        "clearOnHide": false,
+        "defaultValue": "",
+        "refreshOn": [],
+        "customDefaultValue": "value = \"\";",
+        "optionalWhenDisabled": false,
+        "type": "textarea",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "Отправить на согласование",
+          "en": "Reconfirm"
+        },
+        "key": "outcome_reconfirm",
+        "state": "",
+        "theme": "primary",
+        "disableOnInvalid": true,
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "button",
+        "input": true
+      }
+    ]
   },
-  "attributes" : { }
+  "attributes": {}
 }

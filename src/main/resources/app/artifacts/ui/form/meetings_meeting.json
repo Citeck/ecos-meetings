@@ -1,304 +1,335 @@
 {
-  "id" : "meetings_meeting",
-  "formKey" : "",
-  "title" : {
-    "en" : "Meeting form"
+  "id": "meetings_meeting",
+  "formKey": "",
+  "title": {
+    "en": "Meeting form"
   },
-  "description" : { },
-  "customModule" : null,
-  "typeRef" : "",
-  "width" : "lg",
-  "i18n" : { },
-  "definition" : {
-    "components" : [ {
-      "columns" : [ {
-        "components" : [ {
-          "label" : {
-            "ru" : "initiator"
+  "description": {},
+  "customModule": null,
+  "typeRef": "",
+  "width": "lg",
+  "i18n": {},
+  "definition": {
+    "components": [
+      {
+        "columns": [
+          {
+            "components": [
+              {
+                "label": {
+                  "ru": "initiator"
+                },
+                "key": "initiator",
+                "validate": {
+                  "required": true
+                },
+                "allowedAuthorityType": "USER",
+                "currentUserByDefault": true,
+                "defaultValue": "",
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "selectOrgstruct",
+                "input": true
+              }
+            ],
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "label": "Column",
+            "index": 0,
+            "clearOnHide": true,
+            "conditional": {
+              "show": null,
+              "when": null
+            }
           },
-          "key" : "initiator",
-          "validate" : {
-            "required" : true
-          },
-          "allowedAuthorityType" : "USER",
-          "currentUserByDefault" : true,
-          "defaultValue" : "",
-          "refreshOn" : [ ],
-          "optionalWhenDisabled" : false,
-          "type" : "selectOrgstruct",
-          "input" : true
-        } ],
-        "type" : "column",
-        "input" : false,
-        "key" : "column",
-        "label" : "Column",
-        "index" : 0,
-        "clearOnHide" : true,
-        "conditional" : {
-          "show" : null,
-          "when" : null
-        }
-      }, {
-        "index" : 1,
-        "type" : "column",
-        "input" : false,
-        "key" : "column",
-        "label" : "Column",
-        "components" : [ {
-          "label" : {
-            "ru" : "when"
-          },
-          "key" : "when",
-          "validate" : {
-            "required" : true
-          },
-          "format" : "dd-MM-yyyy HH:mm",
-          "datePicker" : {
-            "minDate" : "",
-            "maxDate" : ""
-          },
-          "timePicker" : {
-            "showMeridian" : false
-          },
-          "defaultValue" : "",
-          "refreshOn" : [ ],
-          "optionalWhenDisabled" : false,
-          "type" : "datetime",
-          "input" : true,
-          "suffix" : true
-        } ],
-        "clearOnHide" : true,
-        "conditional" : {
-          "show" : null,
-          "when" : null
-        }
-      } ],
-      "key" : "columns2",
-      "type" : "columns",
-      "input" : false
-    }, {
-      "label" : {
-        "ru" : "where"
+          {
+            "index": 1,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "label": "Column",
+            "components": [
+              {
+                "label": {
+                  "ru": "when"
+                },
+                "key": "when",
+                "validate": {
+                  "required": true
+                },
+                "format": "dd-MM-yyyy HH:mm",
+                "datePicker": {
+                  "minDate": "",
+                  "maxDate": ""
+                },
+                "timePicker": {
+                  "showMeridian": false
+                },
+                "defaultValue": "",
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "datetime",
+                "input": true,
+                "suffix": true
+              }
+            ],
+            "clearOnHide": true,
+            "conditional": {
+              "show": null,
+              "when": null
+            }
+          }
+        ],
+        "key": "columns2",
+        "type": "columns",
+        "input": false
       },
-      "key" : "where",
-      "validate" : {
-        "required" : true
-      },
-      "defaultValue" : "",
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "textfield",
-      "input" : true
-    }, {
-      "label" : {
-        "ru" : "subject"
-      },
-      "key" : "subject",
-      "defaultValue" : "",
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "textfield",
-      "input" : true
-    }, {
-      "label" : {
-        "ru" : "childAgenda"
-      },
-      "key" : "childAgenda",
-      "multiple" : true,
-      "conditional" : {
-        "show" : "true"
-      },
-      "reorder" : false,
-      "clearOnHide" : false,
-      "source" : {
-        "type" : "custom",
-        "custom" : {
-          "columns" : [ {
-            "name" : "childQuestions",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "Вопросы",
-            "type" : "assoc",
-            "multiple" : false
-          }, {
-            "name" : "plannedParticipants",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "Участники",
-            "type" : "assoc",
-            "multiple" : false
-          } ],
-          "record" : null,
-          "attribute" : null
-        }
-      },
-      "customCreateVariantsJs" : "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-agkulh64@\",\r\n   \"typeRef\": \"emodel/type@meet-agenda\",\r\n   \"formRef\": \"uiserv/form@meet_agenda\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "customConditional" : "const formMode = _.get(instance, 'options.formMode', '');\n\nshow = formMode != 'CREATE';",
-      "type" : "tableForm",
-      "input" : true
-    }, {
-      "label" : {
-        "ru" : "childProtocol"
-      },
-      "key" : "childProtocol",
-      "clearOnHide" : false,
-      "source" : {
-        "type" : "custom",
-        "custom" : {
-          "columns" : [ {
-            "name" : "participants",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "Присутствовали",
-            "type" : "assoc",
-            "multiple" : false
-          }, {
-            "name" : "absent",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "Отсутствовали",
-            "type" : "assoc",
-            "multiple" : false
-          }, {
-            "name" : "answeredQuestions",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "Решения",
-            "type" : "assoc",
-            "multiple" : false
-          } ],
-          "record" : null,
-          "attribute" : null
-        }
-      },
-      "customCreateVariantsJs" : "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-ahwe77pg@\",\r\n   \"typeRef\": \"emodel/type@meet-protocol\",\r\n   \"formRef\": \"uiserv/form@meet_protocol\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "customConditional" : "const formMode = _.get(instance, 'options.formMode', '');\n\nshow = formMode != 'CREATE';",
-      "type" : "tableForm",
-      "input" : true
-    }, {
-      "columns" : [ {
-        "components" : [ {
-          "label" : {
-            "en" : "Cancel",
-            "ru" : "Отмена"
-          },
-          "key" : "cancel",
-          "action" : "event",
-          "state" : "",
-          "showValidations" : false,
-          "event" : "cancel",
-          "block" : true,
-          "refreshOn" : [ ],
-          "optionalWhenDisabled" : false,
-          "type" : "button",
-          "input" : true
-        } ],
-        "md" : 3,
-        "type" : "column",
-        "input" : false,
-        "key" : "column",
-        "label" : "Column",
-        "index" : 0,
-        "clearOnHide" : true,
-        "conditional" : {
-          "show" : null,
-          "when" : null
-        }
-      }, {
-        "md" : 3,
-        "type" : "column",
-        "input" : false,
-        "key" : "column",
-        "label" : "Column",
-        "index" : 1,
-        "components" : [ ],
-        "clearOnHide" : true,
-        "conditional" : {
-          "show" : null,
-          "when" : null
-        }
-      }, {
-        "md" : 3,
-        "type" : "column",
-        "input" : false,
-        "key" : "column",
-        "label" : "Column",
-        "index" : 2,
-        "components" : [ {
-          "label" : {
-            "en" : "Save",
-            "ru" : "Сохранить"
-          },
-          "key" : "save",
-          "state" : "draft",
-          "block" : true,
-          "refreshOn" : [ ],
-          "optionalWhenDisabled" : false,
-          "type" : "button",
-          "input" : true
-        } ],
-        "clearOnHide" : true,
-        "conditional" : {
-          "show" : null,
-          "when" : null
-        }
-      }, {
-        "md" : 3,
-        "type" : "column",
-        "input" : false,
-        "key" : "column",
-        "label" : "Column",
-        "index" : 3,
-        "components" : [ {
-          "label" : {
-            "ru" : "Принять",
-            "en" : "Submit"
-          },
-          "key" : "submit",
-          "state" : "",
-          "theme" : "primary",
-          "block" : true,
-          "disableOnInvalid" : true,
-          "refreshOn" : [ ],
-          "optionalWhenDisabled" : false,
-          "type" : "button",
-          "input" : true
-        } ],
-        "clearOnHide" : true,
-        "conditional" : {
-          "show" : null,
-          "when" : null
-        }
-      } ],
-      "key" : "columns3",
-      "type" : "columns",
-      "input" : false
-    }, {
-      "label" : "caseStatus",
-      "source" : {
-        "type" : "custom",
-        "custom" : {
-          "syncData" : "value = recordId.replace(/-alias-\\d+/, \"\");",
-          "asyncData" : "value = Citeck.Records.get(data).load('_status?str');"
+      {
+        "label": {
+          "ru": "where"
         },
-        "forceLoad" : false
+        "key": "where",
+        "validate": {
+          "required": true
+        },
+        "defaultValue": "",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "textfield",
+        "input": true
       },
-      "update" : {
-        "type" : "any-change"
+      {
+        "label": {
+          "ru": "subject"
+        },
+        "key": "subject",
+        "defaultValue": "",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "textfield",
+        "input": true
       },
-      "executionCondition" : "const formMode = _.get(instance, 'options.formMode', '');\n\nvalue = formMode == 'EDIT';",
-      "key" : "caseStatus",
-      "type" : "asyncData",
-      "input" : true,
-      "conditional" : {
-        "show" : null,
-        "when" : null
+      {
+        "label": {
+          "ru": "childAgenda"
+        },
+        "key": "childAgenda",
+        "conditional": {
+          "show": "true"
+        },
+        "clearOnHide": false,
+        "source": {
+          "type": "custom",
+          "custom": {
+            "columns": [
+              {
+                "name": "childQuestions",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "Вопросы",
+                "type": "assoc",
+                "multiple": false
+              },
+              {
+                "name": "plannedParticipants",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "Участники",
+                "type": "assoc",
+                "multiple": false
+              }
+            ],
+            "record": null,
+            "attribute": null
+          }
+        },
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-agkulh64@\",\r\n   \"typeRef\": \"emodel/type@meet-agenda\",\r\n   \"formRef\": \"uiserv/form@meet_agenda\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "customConditional": "const formMode = _.get(instance, 'options.formMode', '');\n\nshow = formMode != 'CREATE';",
+        "type": "tableForm",
+        "input": true
+      },
+      {
+        "label": {
+          "ru": "childProtocol"
+        },
+        "key": "childProtocol",
+        "clearOnHide": false,
+        "source": {
+          "type": "custom",
+          "custom": {
+            "columns": [
+              {
+                "name": "participants",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "Присутствовали",
+                "type": "assoc",
+                "multiple": false
+              },
+              {
+                "name": "absent",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "Отсутствовали",
+                "type": "assoc",
+                "multiple": false
+              },
+              {
+                "name": "answeredQuestions",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "Решения",
+                "type": "assoc",
+                "multiple": false
+              }
+            ],
+            "record": null,
+            "attribute": null
+          }
+        },
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-ahwe77pg@\",\r\n   \"typeRef\": \"emodel/type@meet-protocol\",\r\n   \"formRef\": \"uiserv/form@meet_protocol\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "customConditional": "const formMode = _.get(instance, 'options.formMode', '');\n\nshow = formMode != 'CREATE';",
+        "type": "tableForm",
+        "input": true
+      },
+      {
+        "columns": [
+          {
+            "components": [
+              {
+                "label": {
+                  "en": "Cancel",
+                  "ru": "Отмена"
+                },
+                "key": "cancel",
+                "action": "event",
+                "state": "",
+                "showValidations": false,
+                "event": "cancel",
+                "block": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true
+              }
+            ],
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "label": "Column",
+            "index": 0,
+            "clearOnHide": true,
+            "conditional": {
+              "show": null,
+              "when": null
+            }
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "label": "Column",
+            "index": 1,
+            "components": [],
+            "clearOnHide": true,
+            "conditional": {
+              "show": null,
+              "when": null
+            }
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "label": "Column",
+            "index": 2,
+            "components": [
+              {
+                "label": {
+                  "en": "Save",
+                  "ru": "Сохранить"
+                },
+                "key": "save",
+                "state": "draft",
+                "block": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true
+              }
+            ],
+            "clearOnHide": true,
+            "conditional": {
+              "show": null,
+              "when": null
+            }
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "label": "Column",
+            "index": 3,
+            "components": [
+              {
+                "label": {
+                  "ru": "Принять",
+                  "en": "Submit"
+                },
+                "key": "submit",
+                "state": "",
+                "theme": "primary",
+                "block": true,
+                "disableOnInvalid": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true
+              }
+            ],
+            "clearOnHide": true,
+            "conditional": {
+              "show": null,
+              "when": null
+            }
+          }
+        ],
+        "key": "columns3",
+        "type": "columns",
+        "input": false
+      },
+      {
+        "label": "caseStatus",
+        "source": {
+          "type": "custom",
+          "custom": {
+            "syncData": "value = recordId.replace(/-alias-\\d+/, \"\");",
+            "asyncData": "value = Citeck.Records.get(data).load('_status?str');"
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "any-change"
+        },
+        "executionCondition": "const formMode = _.get(instance, 'options.formMode', '');\n\nvalue = formMode == 'EDIT';",
+        "key": "caseStatus",
+        "type": "asyncData",
+        "input": true,
+        "conditional": {
+          "show": null,
+          "when": null
+        }
       }
-    } ]
+    ]
   },
-  "attributes" : { }
+  "attributes": {}
 }

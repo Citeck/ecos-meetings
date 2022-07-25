@@ -1,83 +1,91 @@
 {
-  "id" : "meet_protocol_created_task",
-  "formKey" : "",
-  "title" : {
-    "en" : "Meeting Protocol Created Task"
+  "id": "meet_protocol_created_task",
+  "formKey": "",
+  "title": {
+    "en": "Meeting Protocol Created Task"
   },
-  "description" : { },
-  "customModule" : null,
-  "typeRef" : "",
-  "width" : "lg",
-  "i18n" : {
-    "ru" : {
-      "participants" : "Присутствовали",
-      "absent" : "Отсутствовали",
-      "answeredQuestions" : "Решения"
+  "description": {},
+  "customModule": null,
+  "typeRef": "",
+  "width": "lg",
+  "i18n": {
+    "ru": {
+      "participants": "Присутствовали",
+      "absent": "Отсутствовали",
+      "answeredQuestions": "Решения"
     },
-    "en" : {
-      "participants" : "Participants",
-      "absent" : "Absent",
-      "answeredQuestions" : "Answers"
+    "en": {
+      "participants": "Participants",
+      "absent": "Absent",
+      "answeredQuestions": "Answers"
     }
   },
-  "definition" : {
-    "components" : [ {
-      "label" : {
-        "ru" : "Протокол совещания",
-        "en" : "Meeting protocol"
+  "definition": {
+    "components": [
+      {
+        "label": {
+          "ru": "Протокол совещания",
+          "en": "Meeting protocol"
+        },
+        "key": "_ECM_childProtocol",
+        "validate": {
+          "required": true
+        },
+        "source": {
+          "type": "custom",
+          "custom": {
+            "columns": [
+              {
+                "name": "participants",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "participants",
+                "type": "assoc",
+                "multiple": false
+              },
+              {
+                "name": "absent",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "absent",
+                "type": "assoc",
+                "multiple": false
+              },
+              {
+                "name": "answeredQuestions",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "answeredQuestions",
+                "type": "assoc",
+                "multiple": false
+              }
+            ],
+            "record": null,
+            "attribute": null
+          }
+        },
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-ahwe77pg@\",\r\n   \"typeRef\": \"emodel/type@meet-protocol\",\r\n   \"formRef\": \"uiserv/form@meet_protocol\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "tableForm",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       },
-      "key" : "_ECM_childProtocol",
-      "validate" : {
-        "required" : true
-      },
-      "source" : {
-        "type" : "custom",
-        "custom" : {
-          "columns" : [ {
-            "name" : "participants",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "participants",
-            "type" : "assoc",
-            "multiple" : false
-          }, {
-            "name" : "absent",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "absent",
-            "type" : "assoc",
-            "multiple" : false
-          }, {
-            "name" : "answeredQuestions",
-            "formatter" : "",
-            "setAttributesManually" : true,
-            "title" : "answeredQuestions",
-            "type" : "assoc",
-            "multiple" : false
-          } ],
-          "record" : null,
-          "attribute" : null
-        }
-      },
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "tableForm",
-      "input" : true,
-      "addAnother" : "ecos.forms.btn.add-another"
-    }, {
-      "label" : {
-        "en" : "Protocol created",
-        "ru" : "Протокол создан"
-      },
-      "key" : "outcome_protocol_created",
-      "state" : "",
-      "theme" : "primary",
-      "disableOnInvalid" : true,
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "button",
-      "input" : true
-    } ]
+      {
+        "label": {
+          "en": "Protocol created",
+          "ru": "Протокол создан"
+        },
+        "key": "outcome_protocol_created",
+        "state": "",
+        "theme": "primary",
+        "disableOnInvalid": true,
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "button",
+        "input": true
+      }
+    ]
   },
-  "attributes" : { }
+  "attributes": {}
 }
