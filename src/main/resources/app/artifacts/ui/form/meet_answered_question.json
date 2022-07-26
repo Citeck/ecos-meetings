@@ -23,34 +23,27 @@
           "ru": "askedQuestion"
         },
         "key": "askedQuestion",
-        "source": {
-          "type": "custom",
-          "custom": {
-            "columns": [
-              {
-                "name": "question",
-                "formatter": "",
-                "setAttributesManually": true,
-                "title": "question",
-                "type": "assoc",
-                "multiple": false
-              }
-            ],
-            "record": null,
-            "attribute": null
-          }
+        "validate": {
+          "required": true
         },
-        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-aeicaf7c@\",\r\n   \"typeRef\": \"emodel/type@meet-question\",\r\n   \"formRef\": \"uiserv/form@meet_question\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
-        "refreshOn": [],
+        "dataSrc": "custom",
+        "data": {
+          "custom": "const questions = _.get(data, 'questions', '');\nvalues = _.isArray(questions) && questions.length === 0 ? null : questions;"
+        },
+        "defaultValue": "",
         "optionalWhenDisabled": false,
-        "type": "tableForm",
-        "input": true
+        "type": "ecosSelect",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       },
       {
         "label": {
           "ru": "answer"
         },
         "key": "answer",
+        "validate": {
+          "required": true
+        },
         "defaultValue": "",
         "refreshOn": [],
         "optionalWhenDisabled": false,
@@ -153,6 +146,45 @@
         "key": "columns2",
         "type": "columns",
         "input": false
+      },
+      {
+        "label": "questionRefs",
+        "source": {
+          "type": "custom",
+          "custom": {
+            "syncData": "const childAgenda = _.get(instance, \n'options.parentForm.options.parentForm.data.childAgenda', []);\n\nvalue = _.isArray(childAgenda) ? childAgenda[0] : childAgenda;",
+            "asyncData": "value = Citeck.Records.get(data).load('childQuestions[]?assoc');"
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "once"
+        },
+        "key": "questionRefs",
+        "type": "asyncData",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": "qustions",
+        "source": {
+          "type": "recordsScript",
+          "recordsScript": {
+            "script": "value = _.get(data, 'questionRefs', []);",
+            "attributes": {
+              "label": "question",
+              "value": "?id"
+            }
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "once"
+        },
+        "key": "questions",
+        "type": "asyncData",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       }
     ]
   },

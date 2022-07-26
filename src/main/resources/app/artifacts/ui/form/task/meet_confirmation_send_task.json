@@ -44,43 +44,6 @@
             "components": [
               {
                 "label": {
-                  "ru": "Срок",
-                  "en": "Term"
-                },
-                "key": "confirmation_term",
-                "validate": {
-                  "required": true
-                },
-                "format": "dd.MM.yyyy",
-                "datePicker": {
-                  "minDate": "",
-                  "maxDate": ""
-                },
-                "enableTime": false,
-                "timePicker": {
-                  "showMeridian": false
-                },
-                "defaultValue": "",
-                "refreshOn": [],
-                "optionalWhenDisabled": false,
-                "type": "datetime",
-                "input": true,
-                "suffix": true
-              }
-            ],
-            "type": "column",
-            "input": false,
-            "key": "column",
-            "index": 0
-          },
-          {
-            "index": 1,
-            "type": "column",
-            "input": false,
-            "key": "column",
-            "components": [
-              {
-                "label": {
                   "ru": "Приоритет",
                   "en": "Priority"
                 },
@@ -107,7 +70,18 @@
                 "type": "ecosSelect",
                 "input": true
               }
-            ]
+            ],
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "index": 1,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "components": []
           }
         ],
         "oneColumnInViewMode": false,

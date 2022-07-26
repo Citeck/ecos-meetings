@@ -69,33 +69,7 @@
             "type": "column",
             "input": false,
             "key": "column",
-            "components": [
-              {
-                "label": {
-                  "ru": "Срок",
-                  "en": "Term"
-                },
-                "key": "confirmation_term",
-                "disabled": true,
-                "allowInput": false,
-                "format": "dd.MM.yyyy",
-                "datePicker": {
-                  "minDate": "",
-                  "maxDate": ""
-                },
-                "enableTime": false,
-                "timePicker": {
-                  "showMeridian": false
-                },
-                "defaultValue": "",
-                "refreshOn": [],
-                "optionalWhenDisabled": false,
-                "type": "datetime",
-                "input": true,
-                "suffix": true,
-                "addAnother": "ecos.forms.btn.add-another"
-              }
-            ]
+            "components": []
           }
         ],
         "oneColumnInViewMode": false,

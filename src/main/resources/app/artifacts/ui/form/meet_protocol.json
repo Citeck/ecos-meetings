@@ -120,7 +120,7 @@
             "attribute": null
           }
         },
-        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-acgdfynm@\",\r\n   \"typeRef\": \"emodel/type@meet-answered-question\",\r\n   \"formRef\": \"uiserv/form@meet_answered-question\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-ab2w6ijc@\",\r\n   \"typeRef\": \"emodel/type@meet-answered-question\",\r\n   \"formRef\": \"uiserv/form@meet_answered_question\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
         "refreshOn": [],
         "optionalWhenDisabled": false,
         "type": "tableForm",
