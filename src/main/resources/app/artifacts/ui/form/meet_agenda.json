@@ -132,21 +132,7 @@
             "key": "column",
             "label": "Column",
             "index": 2,
-            "components": [
-              {
-                "label": {
-                  "en": "Save",
-                  "ru": "Сохранить"
-                },
-                "key": "save",
-                "state": "draft",
-                "block": true,
-                "refreshOn": [],
-                "optionalWhenDisabled": false,
-                "type": "button",
-                "input": true
-              }
-            ],
+            "components": [],
             "clearOnHide": true,
             "conditional": {
               "show": null,

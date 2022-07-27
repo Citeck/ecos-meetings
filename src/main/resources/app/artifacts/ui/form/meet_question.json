@@ -2,7 +2,7 @@
   "id": "meet_question",
   "formKey": "",
   "title": {
-    "en": "meeting's question"
+    "en": "Meeting question"
   },
   "description": {},
   "customModule": null,
@@ -117,7 +117,7 @@
                   "en": "Submit"
                 },
                 "key": "submit",
-                "state": "draft",
+                "state": "",
                 "theme": "primary",
                 "block": true,
                 "disableOnInvalid": true,

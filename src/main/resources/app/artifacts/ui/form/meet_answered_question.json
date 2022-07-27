@@ -2,7 +2,7 @@
   "id": "meet_answered_question",
   "formKey": "",
   "title": {
-    "en": "meet Answered Question"
+    "en": "Meeting Answered Question"
   },
   "description": {},
   "customModule": null,
@@ -122,10 +122,10 @@
             "components": [
               {
                 "label": {
-                  "en": "Save",
-                  "ru": "Сохранить"
+                  "en": "Submit",
+                  "ru": "Принять"
                 },
-                "key": "save",
+                "key": "submit",
                 "state": "",
                 "theme": "primary",
                 "block": true,
