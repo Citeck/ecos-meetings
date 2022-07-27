@@ -36,6 +36,24 @@ model:
         en: Confirmers
       attributes:
         - protocolConfirmers
+    - id: firstExecutor
+      name:
+        ru: Первый Исполнитель
+        en: First Executor
+      attributes:
+        - firstExecutor
+    - id: secondExecutor
+      name:
+        ru: Второй Исполнитель
+        en: Second Executor
+      attributes:
+        - secondExecutor
+    - id: inspector
+      name:
+        ru: Проверяющий
+        en: Inspector
+      attributes:
+        - inspector
   statuses:
     - id: new
       name:
@@ -155,3 +173,18 @@ model:
         en: Confirmers
       type: PERSON
       multiple: true
+    - id: firstExecutor
+      name:
+        ru: Первый Исполнитель
+        en: First Executor
+      type: PERSON
+    - id: secondExecutor
+      name:
+        ru: Второй Исполнитель
+        en: Second Executor
+      type: PERSON
+    - id: inspector
+      name:
+        ru: Проверяющий
+        en: Inspector
+      type: PERSON

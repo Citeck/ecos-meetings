@@ -47,7 +47,7 @@
                   "ru": "Срок",
                   "en": "Term"
                 },
-                "key": "meetTime",
+                "key": "meet_time",
                 "disabled": true,
                 "format": "dd.MM.yyyy hh:mm",
                 "datePicker": {

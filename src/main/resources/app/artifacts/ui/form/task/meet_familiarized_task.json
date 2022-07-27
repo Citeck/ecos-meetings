@@ -73,7 +73,7 @@
                   "ru": "Срок",
                   "en": "Term"
                 },
-                "key": "familiarization_term",
+                "key": "meet_time",
                 "disabled": true,
                 "allowInput": false,
                 "format": "dd.MM.yyyy",

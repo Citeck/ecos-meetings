@@ -181,6 +181,12 @@
         "update": {
           "type": "once"
         },
+        "refreshOn": [
+          {
+            "label": "questionRefs",
+            "value": "questionRefs"
+          }
+        ],
         "key": "questions",
         "type": "asyncData",
         "input": true,
