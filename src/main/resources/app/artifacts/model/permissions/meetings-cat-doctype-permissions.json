@@ -1,0 +1,75 @@
+{
+  "id": "be435f90-6db3-4dcf-bced-9a9537697261",
+  "typeRef": "emodel/type@meetings-cat-doctype",
+  "permissions": {
+    "matrix": {
+      "initiator": {
+        "new": "WRITE",
+        "onFamiliarization": "WRITE",
+        "familiarized": "WRITE",
+        "conducted": "WRITE",
+        "onConfirm": "WRITE",
+        "confirmed": "WRITE",
+        "onPerformance": "WRITE",
+        "performed": "WRITE",
+        "closed": "WRITE"
+      },
+      "agendaRecipients": {
+        "new": "READ",
+        "onFamiliarization": "READ",
+        "familiarized": "READ",
+        "conducted": "READ",
+        "onConfirm": "READ",
+        "confirmed": "READ",
+        "onPerformance": "READ",
+        "performed": "READ",
+        "closed": "READ"
+      },
+      "protocolConfirmers": {
+        "new": "READ",
+        "onFamiliarization": "READ",
+        "familiarized": "READ",
+        "conducted": "READ",
+        "onConfirm": "READ",
+        "confirmed": "READ",
+        "onPerformance": "READ",
+        "performed": "READ",
+        "closed": "READ"
+      },
+      "firstExecutor": {
+        "new": "READ",
+        "onFamiliarization": "READ",
+        "familiarized": "READ",
+        "conducted": "READ",
+        "onConfirm": "READ",
+        "confirmed": "READ",
+        "onPerformance": "READ",
+        "performed": "READ",
+        "closed": "READ"
+      },
+      "secondExecutor": {
+        "new": "READ",
+        "onFamiliarization": "READ",
+        "familiarized": "READ",
+        "conducted": "READ",
+        "onConfirm": "READ",
+        "confirmed": "READ",
+        "onPerformance": "READ",
+        "performed": "READ",
+        "closed": "READ"
+      },
+      "inspector": {
+        "new": "READ",
+        "onFamiliarization": "READ",
+        "familiarized": "READ",
+        "conducted": "READ",
+        "onConfirm": "READ",
+        "confirmed": "READ",
+        "onPerformance": "READ",
+        "performed": "READ",
+        "closed": "READ"
+      }
+    }
+  },
+  "attributes": {}
+}

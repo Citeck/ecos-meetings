@@ -10,11 +10,11 @@
   "width": "lg",
   "i18n": {
     "ru": {
-      "question": "Вопрос",
+      "askedQuestion": "Вопрос",
       "answer": "Решение"
     },
     "en": {
-      "question": "Question",
+      "askedQuestion": "Question",
       "answer": "Answer"
     }
   },
@@ -106,14 +106,20 @@
           "custom": {
             "columns": [
               {
-                "name": "question",
+                "name": "askedQuestion",
                 "formatter": "",
-                "setAttributesManually": false
+                "setAttributesManually": true,
+                "title": "askedQuestion",
+                "type": "assoc",
+                "multiple": false
               },
               {
                 "name": "answer",
                 "formatter": "",
-                "setAttributesManually": false
+                "setAttributesManually": true,
+                "title": "answer",
+                "type": "text",
+                "multiple": false
               }
             ],
             "record": null,

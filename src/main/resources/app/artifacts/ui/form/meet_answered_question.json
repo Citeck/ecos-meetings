@@ -26,11 +26,16 @@
         "validate": {
           "required": true
         },
+        "clearOnHide": false,
         "dataSrc": "custom",
         "data": {
-          "custom": "const questions = _.get(data, 'questions', '');\nvalues = _.isArray(questions) && questions.length === 0 ? null : questions;"
+          "custom": "const questions = _.get(data, 'questions');\r\n\r\nif (_.isArray(questions)  && questions.length) {\r\n    values = questions;\r\n}\r\n"
         },
         "defaultValue": "",
+        "refreshOn": [
+          "questionRefs",
+          "questions"
+        ],
         "optionalWhenDisabled": false,
         "type": "ecosSelect",
         "input": true,
@@ -166,7 +171,7 @@
         "addAnother": "ecos.forms.btn.add-another"
       },
       {
-        "label": "qustions",
+        "label": "questions",
         "source": {
           "type": "recordsScript",
           "recordsScript": {
