@@ -76,7 +76,7 @@
                 "key": "meet_time",
                 "disabled": true,
                 "allowInput": false,
-                "format": "dd.MM.yyyy hh:mm",
+                "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {
                   "minDate": "",
                   "maxDate": ""
