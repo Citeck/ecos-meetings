@@ -5,7 +5,7 @@ name:
   en: Meeting
 sourceType: ECOS_MODEL
 parentRef: emodel/type@case
-formRef: uiserv/form@meetings_meeting
+formRef: uiserv/form@meet_meeting
 journalRef: uiserv/journal@meetings
 inheritActions: false
 actions:

@@ -7,7 +7,7 @@
   "description": {},
   "customModule": null,
   "typeRef": "",
-  "width": "lg",
+  "width": "full",
   "i18n": {
     "ru": {
       "askedQuestion": "Вопрос",
@@ -107,7 +107,7 @@
             "columns": [
               {
                 "name": "askedQuestion",
-                "formatter": "",
+                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.question;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
                 "setAttributesManually": true,
                 "title": "askedQuestion",
                 "type": "assoc",
