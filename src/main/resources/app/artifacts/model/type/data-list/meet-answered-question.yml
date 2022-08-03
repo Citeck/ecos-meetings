@@ -8,9 +8,47 @@ parentRef: emodel/type@data-list
 formRef: uiserv/form@meet_answered_question
 inheritActions: false
 dispNameTemplate:
-  ru: '${answer}'
+  ru: 'Решение: ${answer}'
+  en: 'Answer: ${answer}'
 defaultCreateVariant: true
 model:
+  roles:
+    - id: initiator
+      name:
+        ru: Инициатор
+        en: Initiator
+      computed:
+        type: ATTRIBUTE
+        config:
+          attribute: _creator
+    - id: executor
+      name:
+        ru: Исполнитель
+      attributes:
+        - executor
+    - id: inspector
+      name:
+        en: Inspector
+        ru: Проверяющий
+      attributes:
+        - inspector
+  statuses:
+    - id: performPreparing
+      name:
+        ru: Подготовка к исполнению
+        en: Perform preparing
+    - id: onPerform
+      name:
+        ru: На исполнении
+        en: On perform
+    - id: performedToCheck
+      name:
+        ru: Исполнено. На проверке
+        en: Performed. On check
+    - id: checked
+      name:
+        ru: Решение проверено
+        en: Perform checked
   attributes:
     - id: answer
       name:
@@ -24,3 +62,12 @@ model:
       config:
         typeRef: emodel/type@meet-question
       multiple: true
+    - id: executor
+      name:
+        ru: Исполнитель
+      type: PERSON
+    - id: inspector
+      name:
+        ru: Проверяющий
+        en: Inspector
+      type: PERSON

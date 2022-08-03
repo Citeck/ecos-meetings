@@ -1,29 +1,134 @@
 {
-  "id" : "meet_start_performing_task",
-  "formKey" : "",
-  "title" : {
-    "en" : "Meeting Start Performing Task"
+  "id": "meet_start_performing_task",
+  "formKey": "",
+  "title": {
+    "en": "Meeting Start Performing Task"
   },
-  "description" : { },
-  "customModule" : null,
-  "typeRef" : "",
-  "width" : "lg",
-  "i18n" : { },
-  "definition" : {
-    "components" : [ {
-      "label" : {
-        "ru" : "Начать исполнение",
-        "en" : "Start performing"
+  "description": {},
+  "customModule": null,
+  "typeRef": "",
+  "width": "lg",
+  "i18n": {
+    "ru": {
+      "answer": "Решение",
+      "status": "Статус"
+    },
+    "en": {
+      "answer": "Answer",
+      "status": "Status"
+    }
+  },
+  "definition": {
+    "components": [
+      {
+        "label": {
+          "ru": "Решения",
+          "en": "Answered questions"
+        },
+        "key": "answers",
+        "source": {
+          "type": "custom",
+          "custom": {
+            "columns": [
+              {
+                "name": "answer",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "answer",
+                "type": "text",
+                "multiple": false
+              },
+              {
+                "name": "_status",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "status",
+                "type": "text",
+                "multiple": false
+              }
+            ],
+            "record": null,
+            "attribute": null
+          }
+        },
+        "isSelectableRows": true,
+        "refreshOn": [
+          "answeredQuestionRefs"
+        ],
+        "calculateValue": "var answeredQuestionRefs = _.get(data, 'answeredQuestionRefs', []);\n\nif(_.isArray(answeredQuestionRefs)) {\n  value = answeredQuestionRefs.map(el => el.id);\n}\n",
+        "optionalWhenDisabled": false,
+        "type": "tableForm",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       },
-      "key" : "outcome_start_performing",
-      "state" : "",
-      "theme" : "primary",
-      "disableOnInvalid" : true,
-      "refreshOn" : [ ],
-      "optionalWhenDisabled" : false,
-      "type" : "button",
-      "input" : true
-    } ]
+      {
+        "label": {
+          "ru": "Submit"
+        },
+        "key": "submit2",
+        "action": "custom",
+        "state": "",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "button",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another",
+        "showValidations": false,
+        "custom": "const tableFormComponent = utils.getComponent(form.components, 'tableFormComponentKey');\r\nif (!tableFormComponent) {\r\n    return;\r\n}\r\n\r\nconst selectedRows = tableFormComponent.getSelectedRows();\r\n\r\n// some actions with selectedRows"
+      },
+      {
+        "label": {
+          "ru": "Начать исполнение",
+          "en": "Start performing"
+        },
+        "key": "outcome_start_performing",
+        "state": "",
+        "theme": "primary",
+        "disableOnInvalid": true,
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "button",
+        "input": true
+      },
+      {
+        "label": {
+          "ru": "Протокол",
+          "en": "Protocol"
+        },
+        "key": "_ECM_childProtocol",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": "answeredQuestionRefs",
+        "source": {
+          "type": "recordsArray",
+          "recordsArray": {
+            "id": "{{data._ECM_childProtocol}}",
+            "attributes": {
+              "id": "answeredQuestions?assoc"
+            }
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "once"
+        },
+        "refreshOn": [
+          {
+            "label": "_ECM_childProtocol",
+            "value": "_ECM_childProtocol"
+          }
+        ],
+        "key": "answeredQuestionRefs",
+        "type": "asyncData",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      }
+    ]
   },
-  "attributes" : { }
+  "attributes": {}
 }

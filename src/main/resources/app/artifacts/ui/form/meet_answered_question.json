@@ -175,7 +175,7 @@
         "source": {
           "type": "recordsScript",
           "recordsScript": {
-            "script": "value = _.get(data, 'questionRefs', []);",
+            "script": "var questionRefs = _.get(data, 'questionRefs', []);\nconst selectedRef = _.get(data, 'askedQuestion', '');\n\nquestionRefs = _.isArray(questionRefs) ? questionRefs : [];\n\nif (!!selectedRef && !questionRefs.includes(selectedRef)) {\n  questionRefs.push(selectedRef);\n}\nvalue = questionRefs;\n",
             "attributes": {
               "label": "question",
               "value": "?id"
