@@ -1,0 +1,30 @@
+id: meetings-add-menu-sections
+
+target: ui/menu$default-menu-v1
+
+type: json
+order: -10000
+config:
+  operations:
+    - op: add
+      path: '$.subMenu.left.items[?(@.id == sections)].items'
+      value:
+        id: meetings-section
+        label:
+          ru: Совещания
+        icon: ui/icon@i-leftmenu-meetings
+        type: SECTION
+        items:
+          - id: bd6c8ee5-4518-4805-9fbf-0ee71382aa1f
+            label:
+              en: Совещания
+            icon:
+            hidden: false
+            type: JOURNAL
+            config:
+              recordRef: uiserv/journal@meetings
+            action:
+              type:
+              config:
+            items: [ ]
+            allowedFor: [ ]
