@@ -1,8 +1,8 @@
 {
-  "id": "meet-perform-preparing-task",
+  "id": "meet-perform-check-task",
   "formKey": "",
   "title": {
-    "en": "Meeting Perform Preparing Task"
+    "en": "Meeting Perform Checking Task"
   },
   "description": {},
   "customModule": null,
@@ -13,10 +13,11 @@
     "components": [
       {
         "label": {
-          "ru": "Поручение",
-          "en": "Assignment"
+          "ru": "Сообщение",
+          "en": "Message"
         },
         "key": "perform_message",
+        "disabled": true,
         "defaultValue": "",
         "refreshOn": [],
         "optionalWhenDisabled": false,
@@ -34,13 +35,11 @@
             "components": [
               {
                 "label": {
-                  "ru": "Срок исполнения",
-                  "en": "Perform term"
+                  "ru": "Срок",
+                  "en": "term"
                 },
-                "key": "perform_term",
-                "validate": {
-                  "required": true
-                },
+                "key": "check_term",
+                "disabled": true,
                 "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {
                   "minDate": "",
@@ -71,27 +70,16 @@
             "components": [
               {
                 "label": {
-                  "ru": "Срок проверки",
-                  "en": "Check term"
+                  "en": "Sender",
+                  "ru": "Отправитель"
                 },
-                "key": "check_term",
-                "validate": {
-                  "required": true
-                },
-                "format": "dd.MM.yyyy HH:mm",
-                "datePicker": {
-                  "minDate": "",
-                  "maxDate": ""
-                },
-                "timePicker": {
-                  "showMeridian": false
-                },
+                "key": "_ECM_initiator",
+                "disabled": true,
                 "defaultValue": "",
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
-                "type": "datetime",
+                "type": "selectOrgstruct",
                 "input": true,
-                "suffix": true,
                 "addAnother": "ecos.forms.btn.add-another"
               }
             ]
@@ -100,6 +88,36 @@
         "oneColumnInViewMode": false,
         "type": "columns",
         "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "Комментарий исполнителя",
+          "en": "Executor comment"
+        },
+        "key": "perform_comment",
+        "disabled": true,
+        "defaultValue": "",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "textarea",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "Комментарий",
+          "en": "Comment"
+        },
+        "key": "perform_check_comment",
+        "validate": {
+          "required": true
+        },
+        "defaultValue": "",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "textarea",
+        "input": true,
         "addAnother": "ecos.forms.btn.add-another"
       },
       {
@@ -112,69 +130,71 @@
             "components": [
               {
                 "label": {
-                  "ru": "Исполнитель",
-                  "en": "Executor"
+                  "ru": "Проверено",
+                  "en": "Checked"
                 },
-                "key": "_ECM_executor",
-                "validate": {
-                  "required": true
-                },
-                "defaultValue": "",
+                "key": "outcome_checked",
+                "state": "draft",
+                "theme": "primary",
+                "block": true,
+                "disableOnInvalid": true,
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
-                "type": "selectOrgstruct",
-                "input": true,
-                "addAnother": "ecos.forms.btn.add-another"
+                "type": "button",
+                "input": true
               }
             ],
+            "md": 3,
             "type": "column",
             "input": false,
             "key": "column",
             "index": 0
           },
           {
-            "index": 1,
+            "md": 3,
             "type": "column",
             "input": false,
             "key": "column",
+            "index": 1,
             "components": [
               {
                 "label": {
-                  "ru": "Проверяющий",
-                  "en": "Inspector"
+                  "ru": "Отклонено",
+                  "en": "Rejected"
                 },
-                "key": "_ECM_inspector",
-                "validate": {
-                  "required": true
-                },
-                "defaultValue": "",
+                "key": "outcome_rejected",
+                "state": "",
+                "theme": "primary",
+                "block": true,
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
-                "type": "selectOrgstruct",
+                "type": "button",
                 "input": true,
                 "addAnother": "ecos.forms.btn.add-another"
               }
             ]
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 2,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 3,
+            "components": []
           }
         ],
         "oneColumnInViewMode": false,
         "type": "columns",
         "input": false,
         "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
-          "ru": "Создать поручение",
-          "en": "Assign"
-        },
-        "key": "outcome_assign",
-        "state": "",
-        "theme": "primary",
-        "disableOnInvalid": true,
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "button",
-        "input": true
       }
     ]
   },

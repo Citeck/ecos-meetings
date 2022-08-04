@@ -51,12 +51,12 @@
             "attribute": null
           }
         },
-        "isSelectableRows": true,
         "refreshOn": [
           "answeredQuestionRefs"
         ],
-        "calculateValue": "var answeredQuestionRefs = _.get(data, 'answeredQuestionRefs', []);\n\nif(_.isArray(answeredQuestionRefs)) {\n  value = answeredQuestionRefs.map(el => el.id);\n}\n",
+        "calculateValue": "value = _.get(data, 'answeredQuestionRefs.answers', []);\n",
         "optionalWhenDisabled": false,
+        "customConditional": "console.log(data);",
         "type": "tableForm",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"
@@ -78,20 +78,6 @@
       },
       {
         "label": {
-          "ru": "Начать исполнение",
-          "en": "Start performing"
-        },
-        "key": "outcome_start_performing",
-        "state": "",
-        "theme": "primary",
-        "disableOnInvalid": true,
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "button",
-        "input": true
-      },
-      {
-        "label": {
           "ru": "Протокол",
           "en": "Protocol"
         },
@@ -105,11 +91,11 @@
       {
         "label": "answeredQuestionRefs",
         "source": {
-          "type": "recordsArray",
-          "recordsArray": {
+          "type": "record",
+          "record": {
             "id": "{{data._ECM_childProtocol}}",
             "attributes": {
-              "id": "answeredQuestions?assoc"
+              "answers": "answeredQuestions[]?assoc"
             }
           },
           "forceLoad": false
@@ -127,6 +113,83 @@
         "type": "asyncData",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": "statuses",
+        "source": {
+          "type": "recordsScript",
+          "recordsScript": {
+            "script": "value = _.get(data, 'answeredQuestionRefs.answers');",
+            "attributes": {
+              "status": "_status?str"
+            }
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "once"
+        },
+        "refreshOn": [
+          {
+            "label": "answeredQuestionRefs",
+            "value": "answeredQuestionRefs"
+          }
+        ],
+        "key": "statuses",
+        "type": "asyncData",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "key": "appropriateStatus",
+        "refreshOn": [
+          "statuses"
+        ],
+        "calculateValue": "const statuses = _.get(data, 'statuses', []);\nconst appropriateStatuses = ['undone', 'checked'];\n\nvar result = true;\nif (_.isArray(statuses)) {\n  statuses.forEach(obj => {\n    if (!appropriateStatuses.includes(obj.status)) {\n      result = false;\n    }\n  });\n} else {\n  result = false;\n}\n\nvalue = result;\n\n\n\n",
+        "optionalWhenDisabled": false,
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "Начать исполнение",
+          "en": "Start performing"
+        },
+        "key": "outcome_start_performing",
+        "disabled": true,
+        "state": "",
+        "theme": "primary",
+        "disableOnInvalid": true,
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "logic": [
+          {
+            "name": "unlockIfAppropriateStatuses",
+            "trigger": {
+              "type": "simple",
+              "simple": {
+                "show": true,
+                "when": "appropriateStatus",
+                "eq": "true"
+              }
+            },
+            "actions": [
+              {
+                "name": "unlock",
+                "type": "property",
+                "property": {
+                  "label": "Disabled",
+                  "value": "disabled",
+                  "type": "boolean"
+                },
+                "state": "false"
+              }
+            ]
+          }
+        ],
+        "type": "button",
+        "input": true
       }
     ]
   },
