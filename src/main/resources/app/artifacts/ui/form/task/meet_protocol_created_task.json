@@ -64,7 +64,7 @@
             "attribute": null
           }
         },
-        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-ahwe77pg@\",\r\n   \"typeRef\": \"emodel/type@meet-protocol\",\r\n   \"formRef\": \"uiserv/form@meet_protocol\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-meet-protocol@\",\r\n   \"typeRef\": \"emodel/type@meet-protocol\",\r\n   \"formRef\": \"uiserv/form@meet_protocol\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
         "refreshOn": [],
         "optionalWhenDisabled": false,
         "type": "tableForm",

@@ -72,7 +72,7 @@
             "attribute": null
           }
         },
-        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-aeicaf7c@\",\r\n   \"typeRef\": \"emodel/type@meet-question\",\r\n   \"formRef\": \"uiserv/form@meet_question\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-meet-question@\",\r\n   \"typeRef\": \"emodel/type@meet-question\",\r\n   \"formRef\": \"uiserv/form@meet_question\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
         "refreshOn": [],
         "optionalWhenDisabled": false,
         "type": "tableForm",
