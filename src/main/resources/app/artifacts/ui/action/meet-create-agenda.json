@@ -10,7 +10,8 @@
     "formId": "uiserv/form@meet_agenda",
     "redirectToPage": false,
     "attributes": {
-      "childAgenda":"${recordRef}"
+      "_parent": "${recordRef}",
+      "_parentAtt": "childAgenda"
     }
   },
   "evaluator": {
