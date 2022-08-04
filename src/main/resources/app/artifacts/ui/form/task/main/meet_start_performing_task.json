@@ -32,7 +32,7 @@
             "columns": [
               {
                 "name": "answer",
-                "formatter": "",
+                "formatter": "value = {\n    type: 'script',\n    config: {\n        fn: function({cell, row}) {\n          if (!cell) {\n            return '';\n          }\n          \n          return {\n              cell: {disp: row['answer'], value: row['_localId']},\n              type: 'assoc',\n              config: { openNewBrowserTab: false }\n          };\n        }\n    }\n};",
                 "setAttributesManually": true,
                 "title": "answer",
                 "type": "text",
@@ -56,7 +56,6 @@
         ],
         "calculateValue": "value = _.get(data, 'answeredQuestionRefs.answers', []);\n",
         "optionalWhenDisabled": false,
-        "customConditional": "console.log(data);",
         "type": "tableForm",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"

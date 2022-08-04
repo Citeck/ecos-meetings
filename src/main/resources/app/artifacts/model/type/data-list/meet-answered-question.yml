@@ -20,7 +20,7 @@ model:
       computed:
         type: ATTRIBUTE
         config:
-          attribute: _creator
+          attribute: _creator?str
     - id: executor
       name:
         ru: Исполнитель
@@ -49,6 +49,14 @@ model:
       name:
         ru: Решение проверено
         en: Perform checked
+    - id: undone
+      name:
+        ru: Не решено
+        en: Undone
+    - id: canceled
+      name:
+        ru: Решение отменено
+        en: Perform canceled
   attributes:
     - id: answer
       name:

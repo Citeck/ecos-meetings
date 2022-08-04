@@ -1,0 +1,92 @@
+{
+  "id": "38c696fa-32ab-4eaf-8eef-fc436f9a46ce",
+  "typeRef": "emodel/type@meet-answered-question",
+  "permissions": {
+    "matrix": {
+      "initiator": {
+        "performPreparing": "WRITE",
+        "onPerform": "READ",
+        "performedToCheck": "READ",
+        "checked": "READ",
+        "undone": "READ",
+        "canceled": "READ"
+      },
+      "executor": {
+        "performPreparing": "READ",
+        "onPerform": "READ",
+        "performedToCheck": "READ",
+        "checked": "READ",
+        "undone": "READ",
+        "canceled": "READ"
+      },
+      "inspector": {
+        "performPreparing": "READ",
+        "onPerform": "READ",
+        "performedToCheck": "READ",
+        "checked": "READ",
+        "undone": "READ",
+        "canceled": "READ"
+      }
+    }
+  },
+  "attributes": {
+    "executor": {
+      "matrix": {
+        "initiator": {
+          "performPreparing": "WRITE",
+          "onPerform": "READ",
+          "performedToCheck": "READ",
+          "checked": "READ",
+          "undone": "READ",
+          "canceled": "READ"
+        },
+        "executor": {
+          "performPreparing": "READ",
+          "onPerform": "READ",
+          "performedToCheck": "READ",
+          "checked": "READ",
+          "undone": "READ",
+          "canceled": "READ"
+        },
+        "inspector": {
+          "performPreparing": "READ",
+          "onPerform": "READ",
+          "performedToCheck": "READ",
+          "checked": "READ",
+          "undone": "READ",
+          "canceled": "READ"
+        }
+      },
+      "rules": []
+    },
+    "inspector": {
+      "matrix": {
+        "initiator": {
+          "performPreparing": "WRITE",
+          "onPerform": "READ",
+          "performedToCheck": "READ",
+          "checked": "READ",
+          "undone": "READ",
+          "canceled": "READ"
+        },
+        "executor": {
+          "performPreparing": "READ",
+          "onPerform": "READ",
+          "performedToCheck": "READ",
+          "checked": "READ",
+          "undone": "READ",
+          "canceled": "READ"
+        },
+        "inspector": {
+          "performPreparing": "READ",
+          "onPerform": "READ",
+          "performedToCheck": "READ",
+          "checked": "READ",
+          "undone": "READ",
+          "canceled": "READ"
+        }
+      },
+      "rules": []
+    }
+  }
+}
