@@ -1,5 +1,6 @@
 id: meetings-add-menu-sections
 
+name: meetings-add-menu-sections
 target: ui/menu$default-menu-v1
 
 type: json
