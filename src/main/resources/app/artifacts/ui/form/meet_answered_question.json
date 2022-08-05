@@ -23,9 +23,6 @@
           "ru": "askedQuestion"
         },
         "key": "askedQuestion",
-        "validate": {
-          "required": true
-        },
         "clearOnHide": false,
         "dataSrc": "custom",
         "data": {
@@ -157,7 +154,7 @@
         "source": {
           "type": "custom",
           "custom": {
-            "syncData": "const childAgenda = _.get(instance, \n'options.parentForm.options.parentForm.data.childAgenda', []);\n\nvalue = _.isArray(childAgenda) ? childAgenda[0] : childAgenda;",
+            "syncData": "const agenda = _.get(instance, \n'options.parentForm.data.agenda', []);\n\nvalue = _.isArray(agenda) ? agenda[0] : agenda;",
             "asyncData": "value = Citeck.Records.get(data).load('childQuestions[]?assoc');"
           },
           "forceLoad": false

@@ -58,7 +58,7 @@
                 "validate": {
                   "required": true
                 },
-                "format": "dd-MM-yyyy HH:mm",
+                "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {
                   "minDate": "",
                   "maxDate": ""
@@ -328,6 +328,17 @@
           "show": null,
           "when": null
         }
+      },
+      {
+        "key": "agenda",
+        "refreshOn": [
+          "childAgenda"
+        ],
+        "calculateValue": "value = _.get(data, 'childAgenda', []);",
+        "optionalWhenDisabled": false,
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       }
     ]
   },

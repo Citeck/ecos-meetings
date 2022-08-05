@@ -70,6 +70,16 @@ model:
       config:
         typeRef: emodel/type@meet-question
       multiple: true
+    - id: initiator
+      name:
+        ru: Инициатор
+        en: Initiator
+      type: PERSON
+      computed:
+        type: ATTRIBUTE
+        config:
+          attribute: _creator?str
+        storingType: NONE
     - id: executor
       name:
         ru: Исполнитель

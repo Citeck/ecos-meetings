@@ -1,8 +1,8 @@
 {
-  "id": "meet_start_performing_task",
+  "id": "meet_control_perform_task",
   "formKey": "",
   "title": {
-    "en": "Meeting Start Performing Task"
+    "en": "Meeting Control Performing Task"
   },
   "description": {},
   "customModule": null,
@@ -11,15 +11,75 @@
   "i18n": {
     "ru": {
       "answer": "Решение",
-      "status": "Статус"
+      "status": "Статус",
+      "instruction": "Для управления исполнением вопроса, выполните клик по его названию"
     },
     "en": {
       "answer": "Answer",
-      "status": "Status"
+      "status": "Status",
+      "instruction": "Click on the answer name to control its execution flow"
     }
   },
   "definition": {
     "components": [
+      {
+        "label": {
+          "ru": "HTML"
+        },
+        "key": "objectObject",
+        "className": "",
+        "refreshOnChange": false,
+        "placeholder": {
+          "ru": "ddeg",
+          "en": "sdfsd"
+        },
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "htmlelement",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "HTML"
+        },
+        "key": "html",
+        "className": "",
+        "refreshOnChange": false,
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "htmlelement",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "HTML"
+        },
+        "key": "objectObject2",
+        "className": "",
+        "refreshOnChange": false,
+        "refreshOn": [],
+        "calculateValue": "value = instruction;",
+        "optionalWhenDisabled": false,
+        "type": "htmlelement",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "HTML"
+        },
+        "key": "html2",
+        "className": "",
+        "content": "__t(instruction)",
+        "refreshOnChange": false,
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "htmlelement",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
       {
         "label": {
           "ru": "Решения",
@@ -56,24 +116,10 @@
         ],
         "calculateValue": "value = _.get(data, 'answeredQuestionRefs.answers', []);\n",
         "optionalWhenDisabled": false,
+        "displayElementsJS": "value = {view: true, edit: false, delete: false, clone: false, preview: false};",
         "type": "tableForm",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
-          "ru": "Submit"
-        },
-        "key": "submit2",
-        "action": "custom",
-        "state": "",
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "button",
-        "input": true,
-        "addAnother": "ecos.forms.btn.add-another",
-        "showValidations": false,
-        "custom": "const tableFormComponent = utils.getComponent(form.components, 'tableFormComponentKey');\r\nif (!tableFormComponent) {\r\n    return;\r\n}\r\n\r\nconst selectedRows = tableFormComponent.getSelectedRows();\r\n\r\n// some actions with selectedRows"
       },
       {
         "label": {
@@ -144,7 +190,7 @@
         "refreshOn": [
           "statuses"
         ],
-        "calculateValue": "const statuses = _.get(data, 'statuses', []);\nconst appropriateStatuses = ['undone', 'checked'];\n\nvar result = true;\nif (_.isArray(statuses)) {\n  statuses.forEach(obj => {\n    if (!appropriateStatuses.includes(obj.status)) {\n      result = false;\n    }\n  });\n} else {\n  result = false;\n}\n\nvalue = result;\n\n\n\n",
+        "calculateValue": "const statuses = _.get(data, 'statuses', []);\nconst appropriateStatuses = ['canceled', 'checked'];\n\nvar result = true;\nif (_.isArray(statuses)) {\n  statuses.forEach(obj => {\n    if (!appropriateStatuses.includes(obj.status)) {\n      result = false;\n    }\n  });\n} else {\n  result = false;\n}\n\nvalue = result;\n\n\n\n",
         "optionalWhenDisabled": false,
         "type": "hidden",
         "input": true,
@@ -152,10 +198,10 @@
       },
       {
         "label": {
-          "ru": "Начать исполнение",
-          "en": "Start performing"
+          "ru": "Завершить исполнение",
+          "en": "Finish performing"
         },
-        "key": "outcome_start_performing",
+        "key": "outcome_finish_performing",
         "disabled": true,
         "state": "",
         "theme": "primary",

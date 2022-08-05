@@ -69,25 +69,13 @@
                 document.save()</bpmn:script>
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_0rg70tp" targetRef="Activity_0x4wp5p" name="" id="Flow_0zze65g" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:userTask name="Начало исполнения" id="Activity_0x4wp5p" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;start_performing&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Начало исполнения&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Начало исполнения&quot;}" ecos:formRef="uiserv/form@meet_start_performing_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
+        <bpmn:userTask name="Исполнение " id="Activity_0x4wp5p" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;finish_performing&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Завершение исполнения&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Исполнение &quot;}" ecos:formRef="uiserv/form@meet_control_perform_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
             <bpmn:incoming >Flow_0zze65g</bpmn:incoming>
             <bpmn:outgoing >Flow_0dwv4u4</bpmn:outgoing>
         </bpmn:userTask>
-        <bpmn:sequenceFlow sourceRef="Activity_0x4wp5p" targetRef="Activity_1p94ax2" name="" id="Flow_0dwv4u4" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:scriptTask scriptFormat="javascript" name="Статус &quot;На исполнении&quot;" id="Activity_1p94ax2" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;На исполнении\&quot;&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'onPerformance')&#10; document.save()">
-            <bpmn:incoming >Flow_0dwv4u4</bpmn:incoming>
-            <bpmn:outgoing >Flow_0gpgyun</bpmn:outgoing>
-            <bpmn:script> document.att('_status', 'onPerformance')
-                document.save()</bpmn:script>
-        </bpmn:scriptTask>
-        <bpmn:sequenceFlow sourceRef="Activity_1p94ax2" targetRef="Activity_0ojes3s" name="" id="Flow_0gpgyun" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:userTask name="Исполнение" id="Activity_0ojes3s" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;performed&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Исполнено&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Исполнение&quot;}" ecos:formRef="uiserv/form@meet_performed_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
-            <bpmn:incoming >Flow_0gpgyun</bpmn:incoming>
-            <bpmn:outgoing >Flow_1xwk8gz</bpmn:outgoing>
-        </bpmn:userTask>
-        <bpmn:sequenceFlow sourceRef="Activity_0ojes3s" targetRef="Activity_1pj1j77" name="" id="Flow_1xwk8gz" ecos:conditionConfig="{&quot;fn&quot;:&quot;// some script;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
+        <bpmn:sequenceFlow sourceRef="Activity_0x4wp5p" targetRef="Activity_1pj1j77" name="" id="Flow_0dwv4u4" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
         <bpmn:scriptTask scriptFormat="javascript" name="Статус &quot;Выполнено&quot;" id="Activity_1pj1j77" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Выполнено\&quot;&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'performed')&#10; document.save()">
-            <bpmn:incoming >Flow_1xwk8gz</bpmn:incoming>
+            <bpmn:incoming >Flow_0dwv4u4</bpmn:incoming>
             <bpmn:outgoing >Flow_1j9bvl2</bpmn:outgoing>
             <bpmn:script> document.att('_status', 'performed')
                 document.save()</bpmn:script>
@@ -200,6 +188,10 @@
     </bpmn:process>
     <bpmndi:BPMNDiagram id="BPMNDiagram_1">
         <bpmndi:BPMNPlane  bpmnElement="meet-process" id="BPMNPlane_1">
+            <bpmndi:BPMNEdge bpmnElement="Flow_1uyghqm" id="Flow_1uyghqm_di">
+                <di:waypoint x="2300.0" y="250.0"/>
+                <di:waypoint x="2360.0" y="250.0"/>
+            </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="Flow_0gax4ie" id="Flow_0gax4ie_di">
                 <di:waypoint x="1820.0" y="250.0"/>
                 <di:waypoint x="1880.0" y="250.0"/>
@@ -251,32 +243,24 @@
                 <di:waypoint x="2200.0" y="250.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="Flow_09xobnm" id="Flow_09xobnm_di">
-                <di:waypoint x="3630.0" y="250.0"/>
-                <di:waypoint x="3702.0" y="250.0"/>
+                <di:waypoint x="3090.0" y="250.0"/>
+                <di:waypoint x="3132.0" y="250.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="Flow_11cvdqd" id="Flow_11cvdqd_di">
-                <di:waypoint x="3460.0" y="250.0"/>
-                <di:waypoint x="3530.0" y="250.0"/>
+                <di:waypoint x="2940.0" y="250.0"/>
+                <di:waypoint x="2990.0" y="250.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="Flow_1j9bvl2" id="Flow_1j9bvl2_di">
-                <di:waypoint x="3290.0" y="250.0"/>
-                <di:waypoint x="3360.0" y="250.0"/>
-            </bpmndi:BPMNEdge>
-            <bpmndi:BPMNEdge bpmnElement="Flow_1xwk8gz" id="Flow_1xwk8gz_di">
-                <di:waypoint x="3120.0" y="250.0"/>
-                <di:waypoint x="3190.0" y="250.0"/>
-            </bpmndi:BPMNEdge>
-            <bpmndi:BPMNEdge bpmnElement="Flow_0gpgyun" id="Flow_0gpgyun_di">
-                <di:waypoint x="2960.0" y="250.0"/>
-                <di:waypoint x="3020.0" y="250.0"/>
+                <di:waypoint x="2780.0" y="250.0"/>
+                <di:waypoint x="2840.0" y="250.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="Flow_0dwv4u4" id="Flow_0dwv4u4_di">
-                <di:waypoint x="2800.0" y="250.0"/>
-                <di:waypoint x="2860.0" y="250.0"/>
+                <di:waypoint x="2620.0" y="250.0"/>
+                <di:waypoint x="2680.0" y="250.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="Flow_0zze65g" id="Flow_0zze65g_di">
-                <di:waypoint x="2640.0" y="250.0"/>
-                <di:waypoint x="2700.0" y="250.0"/>
+                <di:waypoint x="2460.0" y="250.0"/>
+                <di:waypoint x="2520.0" y="250.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="Flow_16vxml5" id="Flow_16vxml5_di">
                 <di:waypoint x="1980.0" y="250.0"/>
@@ -297,10 +281,6 @@
             <bpmndi:BPMNEdge bpmnElement="Flow_1tv80ve" id="Flow_1tv80ve_di">
                 <di:waypoint x="240.0" y="99.0"/>
                 <di:waypoint x="290.0" y="99.0"/>
-            </bpmndi:BPMNEdge>
-            <bpmndi:BPMNEdge bpmnElement="Flow_1uyghqm" id="Flow_1uyghqm_di">
-                <di:waypoint x="2300.0" y="250.0"/>
-                <di:waypoint x="2540.0" y="250.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNShape bpmnElement="Activity_1a46tjt" id="Activity_0a0swjt_di">
                 <dc:Bounds x="140.0" y="59.0" width="100.0" height="80.0"/>
@@ -336,28 +316,22 @@
                 <dc:Bounds x="2040.0" y="210.0" width="100.0" height="80.0"/>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="Activity_0rg70tp" id="Activity_0gx0yip_di">
-                <dc:Bounds x="2540.0" y="210.0" width="100.0" height="80.0"/>
+                <dc:Bounds x="2360.0" y="210.0" width="100.0" height="80.0"/>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="Activity_0x4wp5p" id="Activity_068twhb_di">
-                <dc:Bounds x="2700.0" y="210.0" width="100.0" height="80.0"/>
-            </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="Activity_1p94ax2" id="Activity_1v8j541_di">
-                <dc:Bounds x="2860.0" y="210.0" width="100.0" height="80.0"/>
-            </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="Activity_0ojes3s" id="Activity_1et6pbv_di">
-                <dc:Bounds x="3020.0" y="210.0" width="100.0" height="80.0"/>
+                <dc:Bounds x="2520.0" y="210.0" width="100.0" height="80.0"/>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="Activity_1pj1j77" id="Activity_1doosff_di">
-                <dc:Bounds x="3190.0" y="210.0" width="100.0" height="80.0"/>
+                <dc:Bounds x="2680.0" y="210.0" width="100.0" height="80.0"/>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="Activity_1d8n0hm" id="Activity_1lpfmhg_di">
-                <dc:Bounds x="3360.0" y="210.0" width="100.0" height="80.0"/>
+                <dc:Bounds x="2840.0" y="210.0" width="100.0" height="80.0"/>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="Event_16seogm" id="Event_16seogm_di">
-                <dc:Bounds x="3702.0" y="232.0" width="36.0" height="36.0"/>
+                <dc:Bounds x="3132.0" y="232.0" width="36.0" height="36.0"/>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="Activity_18p5tr8" id="Activity_0zwh9px_di">
-                <dc:Bounds x="3530.0" y="210.0" width="100.0" height="80.0"/>
+                <dc:Bounds x="2990.0" y="210.0" width="100.0" height="80.0"/>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="Activity_00gs8li" id="Activity_0xl6pab_di">
                 <dc:Bounds x="2200.0" y="210.0" width="100.0" height="80.0"/>

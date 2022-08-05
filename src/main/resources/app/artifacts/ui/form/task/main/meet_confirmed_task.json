@@ -175,22 +175,7 @@
             "input": false,
             "key": "column",
             "index": 1,
-            "components": [
-              {
-                "label": {
-                  "ru": "Отклонено",
-                  "en": "Rejected"
-                },
-                "key": "outcome_rejected",
-                "state": "",
-                "theme": "primary",
-                "block": true,
-                "refreshOn": [],
-                "optionalWhenDisabled": false,
-                "type": "button",
-                "input": true
-              }
-            ]
+            "components": []
           },
           {
             "md": 3,

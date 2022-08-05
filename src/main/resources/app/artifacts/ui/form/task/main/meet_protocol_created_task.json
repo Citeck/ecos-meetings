@@ -84,6 +84,25 @@
         "optionalWhenDisabled": false,
         "type": "button",
         "input": true
+      },
+      {
+        "key": "_ECM_childAgenda",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "key": "agenda",
+        "refreshOn": [
+          "_ECM_childAgenda"
+        ],
+        "calculateValue": "value = _.get(data, '_ECM_childAgenda', []);",
+        "optionalWhenDisabled": false,
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       }
     ]
   },

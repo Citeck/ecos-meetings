@@ -13,7 +13,7 @@
                 document.save();</bpmn:script>
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_1nvzqfp" targetRef="Activity_1pbmcaw" name="" id="Flow_099ju6h" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:userTask name="Подготовка к исполнению" id="Activity_1pbmcaw" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;assign&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Назначить&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Подготовка к исполнению&quot;}" ecos:formRef="uiserv/form@meet-perform-preparing-task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
+        <bpmn:userTask name="Подготовка к исполнению" id="Activity_1pbmcaw" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;assign&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Назначить&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Подготовка к исполнению&quot;}" ecos:formRef="uiserv/form@meet_perform_preparing_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
             <bpmn:incoming >Flow_099ju6h</bpmn:incoming>
             <bpmn:outgoing >Flow_1e37067</bpmn:outgoing>
         </bpmn:userTask>
@@ -25,7 +25,7 @@
                 document.save();</bpmn:script>
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_192cnul" targetRef="Activity_1b4ixd3" name="" id="Flow_1inwq02" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:userTask name="Исполнение" id="Activity_1b4ixd3" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;performed&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Исполнено&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Исполнение&quot;}" ecos:formRef="uiserv/form@meet-perform-task" ecos:priority="MEDIUM" ecos:assignees="[&quot;executor&quot;]">
+        <bpmn:userTask name="Исполнение" id="Activity_1b4ixd3" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;performed&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Исполнено&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Исполнение&quot;}" ecos:formRef="uiserv/form@meet_perform_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;executor&quot;]">
             <bpmn:incoming >Flow_1inwq02</bpmn:incoming>
             <bpmn:outgoing >Flow_04l671k</bpmn:outgoing>
         </bpmn:userTask>
@@ -37,7 +37,7 @@
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_1b4ixd3" targetRef="Activity_0zkw1en" name="" id="Flow_04l671k" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
         <bpmn:sequenceFlow sourceRef="Activity_0zkw1en" targetRef="Activity_1jqhmxa" name="" id="Flow_0v81owp" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:userTask name="Проверка" id="Activity_1jqhmxa" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;checked&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Проверено&quot;}},{&quot;id&quot;:&quot;rejected&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Отклонено&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Проверка&quot;}" ecos:formRef="uiserv/form@meet-perform-check-task" ecos:priority="MEDIUM" ecos:assignees="[&quot;inspector&quot;]">
+        <bpmn:userTask name="Проверка" id="Activity_1jqhmxa" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;checked&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Проверено&quot;}},{&quot;id&quot;:&quot;rejected&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Отклонено&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Проверка&quot;}" ecos:formRef="uiserv/form@meet_perform_check_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;inspector&quot;]">
             <bpmn:incoming >Flow_0v81owp</bpmn:incoming>
             <bpmn:outgoing >Flow_0mjwqww</bpmn:outgoing>
         </bpmn:userTask>
@@ -80,31 +80,38 @@
                 document.save();</bpmn:script>
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_0bzjz8f" targetRef="Activity_1hddpw4" name="" id="Flow_1tqyd7k" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:userTask name="Повторное исполнение" id="Activity_1hddpw4" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;confirmed&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Одобрено&quot;}},{&quot;id&quot;:&quot;canceled&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Отменено&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Повторное исполнение&quot;}" ecos:formRef="uiserv/form@meet-perform-rework-task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
+        <bpmn:userTask name="Повторное исполнение" id="Activity_1hddpw4" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;confirmed&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Одобрено&quot;}},{&quot;id&quot;:&quot;canceled&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Отменено&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Повторное исполнение&quot;}" ecos:formRef="uiserv/form@meet_perform_rework_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
             <bpmn:incoming >Flow_1tqyd7k</bpmn:incoming>
             <bpmn:outgoing >Flow_1pq2c4t</bpmn:outgoing>
         </bpmn:userTask>
         <bpmn:exclusiveGateway name="" id="Gateway_086qm4v" ecos:name_ml="{}">
             <bpmn:incoming >Flow_1pq2c4t</bpmn:incoming>
-            <bpmn:outgoing >Flow_1v8rhis</bpmn:outgoing>
             <bpmn:outgoing >Flow_0ibm9jo</bpmn:outgoing>
+            <bpmn:outgoing >Flow_0yavgfr</bpmn:outgoing>
         </bpmn:exclusiveGateway>
         <bpmn:sequenceFlow sourceRef="Activity_1hddpw4" targetRef="Gateway_086qm4v" name="" id="Flow_1pq2c4t" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
         <bpmn:endEvent name="" id="Event_1rblya5" ecos:name_ml="{}">
-            <bpmn:incoming >Flow_1v8rhis</bpmn:incoming>
+            <bpmn:incoming >Flow_13ite9o</bpmn:incoming>
         </bpmn:endEvent>
-        <bpmn:sequenceFlow sourceRef="Gateway_086qm4v" targetRef="Event_1rblya5" name="" id="Flow_1v8rhis" ecos:conditionConfig="{&quot;fn&quot;:&quot;// some script;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;Activity_1hddpw4:canceled&quot;}" ecos:conditionType="OUTCOME"/>
         <bpmn:sequenceFlow sourceRef="Gateway_086qm4v" targetRef="Activity_1nvzqfp" name="" id="Flow_0ibm9jo" ecos:conditionConfig="{&quot;fn&quot;:&quot;// some script;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;Activity_1hddpw4:confirmed&quot;}" ecos:conditionType="OUTCOME"/>
-        <bpmn:boundaryEvent  cancelActivity="true" attachedToRef="Activity_1jqhmxa" name="" id="Event_0l58bga" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:timeConfig="{&quot;type&quot;:&quot;DATE&quot;,&quot;value&quot;:&quot;{check_term}&quot;}">
+        <bpmn:boundaryEvent  cancelActivity="true" attachedToRef="Activity_1jqhmxa" name="" id="Event_0l58bga" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:timeConfig="{&quot;type&quot;:&quot;DATE&quot;,&quot;value&quot;:&quot;${check_term}&quot;}">
             <bpmn:outgoing>Flow_0r3l1nu</bpmn:outgoing>
             <bpmn:timerEventDefinition id="TimerEventDefinition_0l0bz2f">
-                <bpmn:timeDate xsi:type="bpmn:tFormalExpression">{check_term}</bpmn:timeDate>
+                <bpmn:timeDate xsi:type="bpmn:tFormalExpression">${check_term}</bpmn:timeDate>
             </bpmn:timerEventDefinition>
         </bpmn:boundaryEvent>
         <bpmn:sequenceFlow sourceRef="Event_0l58bga" targetRef="Gateway_0i4upfg" name="" id="Flow_0r3l1nu" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
+        <bpmn:scriptTask scriptFormat="javascript" name="Статус &quot;Решение отменено&quot;" id="Activity_0bdwi54" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Решение отменено\&quot;&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'canceled');&#10; document.save();">
+            <bpmn:incoming >Flow_0yavgfr</bpmn:incoming>
+            <bpmn:outgoing >Flow_13ite9o</bpmn:outgoing>
+            <bpmn:script> document.att('_status', 'canceled');
+                document.save();</bpmn:script>
+        </bpmn:scriptTask>
+        <bpmn:sequenceFlow sourceRef="Gateway_086qm4v" targetRef="Activity_0bdwi54" name="" id="Flow_0yavgfr" ecos:conditionConfig="{&quot;fn&quot;:&quot;// some script;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;Activity_1hddpw4:canceled&quot;}" ecos:conditionType="OUTCOME"/>
+        <bpmn:sequenceFlow sourceRef="Activity_0bdwi54" targetRef="Event_1rblya5" name="" id="Flow_13ite9o" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
     </bpmn:process>
     <bpmndi:BPMNDiagram id="BPMNDiagram_1">
-        <bpmndi:BPMNPlane  bpmnElement="meet-subprocess" id="BPMNPlane_1">
+        <bpmndi:BPMNPlane  bpmnElement="meet-perform-process" id="BPMNPlane_1">
             <bpmndi:BPMNEdge bpmnElement="Flow_0r3l1nu" id="Flow_0r3l1nu_di">
                 <di:waypoint x="1168.0" y="139.0"/>
                 <di:waypoint x="1240.0" y="139.0"/>
@@ -114,11 +121,6 @@
                 <di:waypoint x="915.0" y="370.0"/>
                 <di:waypoint x="300.0" y="370.0"/>
                 <di:waypoint x="300.0" y="139.0"/>
-            </bpmndi:BPMNEdge>
-            <bpmndi:BPMNEdge bpmnElement="Flow_1v8rhis" id="Flow_1v8rhis_di">
-                <di:waypoint x="940.0" y="395.0"/>
-                <di:waypoint x="940.0" y="480.0"/>
-                <di:waypoint x="1022.0" y="480.0"/>
             </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="Flow_1pq2c4t" id="Flow_1pq2c4t_di">
                 <di:waypoint x="1030.0" y="370.0"/>
@@ -178,6 +180,15 @@
                 <di:waypoint x="192.0" y="99.0"/>
                 <di:waypoint x="250.0" y="99.0"/>
             </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="Flow_0yavgfr" id="Flow_0yavgfr_di">
+                <di:waypoint x="940.0" y="395.0"/>
+                <di:waypoint x="940.0" y="480.0"/>
+                <di:waypoint x="1030.0" y="480.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="Flow_13ite9o" id="Flow_13ite9o_di">
+                <di:waypoint x="1130.0" y="480.0"/>
+                <di:waypoint x="1222.0" y="480.0"/>
+            </bpmndi:BPMNEdge>
             <bpmndi:BPMNShape bpmnElement="StartEvent_1ew9rff" id="_BPMNShape_StartEvent_2">
                 <dc:Bounds x="156.0" y="81.0" width="36.0" height="36.0"/>
             </bpmndi:BPMNShape>
@@ -220,8 +231,11 @@
             <bpmndi:BPMNShape bpmnElement="Gateway_086qm4v" id="Gateway_086qm4v_di">
                 <dc:Bounds x="915.0" y="345.0" width="50.0" height="50.0"/>
             </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="Activity_0bdwi54" id="Activity_15hp71g_di">
+                <dc:Bounds x="1030.0" y="440.0" width="100.0" height="80.0"/>
+            </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="Event_1rblya5" id="Event_1rblya5_di">
-                <dc:Bounds x="1022.0" y="462.0" width="36.0" height="36.0"/>
+                <dc:Bounds x="1222.0" y="462.0" width="36.0" height="36.0"/>
             </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="Event_0l58bga" id="Event_1c4abpb_di">
                 <dc:Bounds x="1132.0" y="121.0" width="36.0" height="36.0"/>

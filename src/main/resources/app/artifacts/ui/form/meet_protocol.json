@@ -227,6 +227,15 @@
         "key": "columns3",
         "type": "columns",
         "input": false
+      },
+      {
+        "key": "agenda",
+        "refreshOn": [],
+        "calculateValue": "value = _.get(instance, 'options.parentForm.data.agenda', []);",
+        "optionalWhenDisabled": false,
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       }
     ]
   },
