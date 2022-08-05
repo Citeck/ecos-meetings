@@ -23,6 +23,9 @@
           "ru": "askedQuestion"
         },
         "key": "askedQuestion",
+        "validate": {
+          "required": true
+        },
         "clearOnHide": false,
         "dataSrc": "custom",
         "data": {

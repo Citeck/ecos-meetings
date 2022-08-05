@@ -26,51 +26,7 @@
         "label": {
           "ru": "HTML"
         },
-        "key": "objectObject",
-        "className": "",
-        "refreshOnChange": false,
-        "placeholder": {
-          "ru": "ddeg",
-          "en": "sdfsd"
-        },
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "htmlelement",
-        "input": false,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
-          "ru": "HTML"
-        },
         "key": "html",
-        "className": "",
-        "refreshOnChange": false,
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "htmlelement",
-        "input": false,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
-          "ru": "HTML"
-        },
-        "key": "objectObject2",
-        "className": "",
-        "refreshOnChange": false,
-        "refreshOn": [],
-        "calculateValue": "value = instruction;",
-        "optionalWhenDisabled": false,
-        "type": "htmlelement",
-        "input": false,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
-          "ru": "HTML"
-        },
-        "key": "html2",
         "className": "",
         "content": "__t(instruction)",
         "refreshOnChange": false,
@@ -112,7 +68,7 @@
           }
         },
         "refreshOn": [
-          "answeredQuestionRefs"
+          "statuses"
         ],
         "calculateValue": "value = _.get(data, 'answeredQuestionRefs.answers', []);\n",
         "optionalWhenDisabled": false,
