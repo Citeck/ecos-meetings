@@ -12,9 +12,7 @@
         "confirmationPreparing": "WRITE",
         "onConfirm": "WRITE",
         "confirmed": "WRITE",
-        "onPerformance": "WRITE",
-        "performed": "WRITE",
-        "closed": "WRITE"
+        "performed": "WRITE"
       },
       "agendaRecipients": {
         "new": "READ",
@@ -25,9 +23,7 @@
         "confirmationPreparing": "READ",
         "onConfirm": "READ",
         "confirmed": "READ",
-        "onPerformance": "READ",
-        "performed": "READ",
-        "closed": "READ"
+        "performed": "READ"
       },
       "protocolConfirmers": {
         "new": "READ",
@@ -38,48 +34,7 @@
         "confirmationPreparing": "READ",
         "onConfirm": "READ",
         "confirmed": "READ",
-        "onPerformance": "READ",
-        "performed": "READ",
-        "closed": "READ"
-      },
-      "firstExecutor": {
-        "new": "READ",
-        "familiarizationPreparing": "READ",
-        "onFamiliarization": "READ",
-        "familiarized": "READ",
-        "conducted": "READ",
-        "confirmationPreparing": "READ",
-        "onConfirm": "READ",
-        "confirmed": "READ",
-        "onPerformance": "READ",
-        "performed": "READ",
-        "closed": "READ"
-      },
-      "secondExecutor": {
-        "new": "READ",
-        "familiarizationPreparing": "READ",
-        "onFamiliarization": "READ",
-        "familiarized": "READ",
-        "conducted": "READ",
-        "confirmationPreparing": "READ",
-        "onConfirm": "READ",
-        "confirmed": "READ",
-        "onPerformance": "READ",
-        "performed": "READ",
-        "closed": "READ"
-      },
-      "inspector": {
-        "new": "READ",
-        "familiarizationPreparing": "READ",
-        "onFamiliarization": "READ",
-        "familiarized": "READ",
-        "conducted": "READ",
-        "confirmationPreparing": "READ",
-        "onConfirm": "READ",
-        "confirmed": "READ",
-        "onPerformance": "READ",
-        "performed": "READ",
-        "closed": "READ"
+        "performed": "READ"
       }
     }
   },
@@ -95,9 +50,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         },
         "agendaRecipients": {
           "new": "READ",
@@ -108,9 +61,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         },
         "protocolConfirmers": {
           "new": "READ",
@@ -121,48 +72,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "firstExecutor": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "secondExecutor": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "inspector": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         }
       },
       "rules": []
@@ -178,9 +88,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         },
         "agendaRecipients": {
           "new": "READ",
@@ -191,9 +99,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         },
         "protocolConfirmers": {
           "new": "READ",
@@ -204,48 +110,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "firstExecutor": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "secondExecutor": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "inspector": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         }
       },
       "rules": []
@@ -261,9 +126,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         },
         "agendaRecipients": {
           "new": "READ",
@@ -274,9 +137,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         },
         "protocolConfirmers": {
           "new": "READ",
@@ -287,48 +148,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "firstExecutor": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "secondExecutor": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "inspector": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         }
       },
       "rules": []
@@ -344,9 +164,7 @@
           "confirmationPreparing": "WRITE",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         },
         "agendaRecipients": {
           "new": "READ",
@@ -357,9 +175,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         },
         "protocolConfirmers": {
           "new": "READ",
@@ -370,48 +186,7 @@
           "confirmationPreparing": "READ",
           "onConfirm": "READ",
           "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "firstExecutor": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "secondExecutor": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
-        },
-        "inspector": {
-          "new": "READ",
-          "familiarizationPreparing": "READ",
-          "onFamiliarization": "READ",
-          "familiarized": "READ",
-          "conducted": "READ",
-          "confirmationPreparing": "READ",
-          "onConfirm": "READ",
-          "confirmed": "READ",
-          "onPerformance": "READ",
-          "performed": "READ",
-          "closed": "READ"
+          "performed": "READ"
         }
       },
       "rules": []

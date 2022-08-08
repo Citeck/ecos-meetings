@@ -126,19 +126,6 @@
       },
       {
         "label": {
-          "ru": "Комментарий"
-        },
-        "key": "confrmation_comment",
-        "defaultValue": "",
-        "refreshOn": [],
-        "customDefaultValue": "value = \"\";",
-        "optionalWhenDisabled": false,
-        "type": "textarea",
-        "input": true,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
           "ru": "Columns"
         },
         "key": "columns2",

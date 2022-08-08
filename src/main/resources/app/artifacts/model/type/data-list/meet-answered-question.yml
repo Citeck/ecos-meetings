@@ -7,9 +7,6 @@ sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
 formRef: uiserv/form@meet_answered_question
 inheritActions: false
-dispNameTemplate:
-  ru: 'Решение: ${answer}'
-  en: 'Answer: ${answer}'
 defaultCreateVariant: true
 model:
   roles:
@@ -21,11 +18,12 @@ model:
         type: ATTRIBUTE
         config:
           attribute: _creator?str
-    - id: executor
+    - id: performer
       name:
         ru: Исполнитель
+        en: Performer
       attributes:
-        - executor
+        - performer
     - id: inspector
       name:
         en: Inspector
@@ -80,9 +78,10 @@ model:
         config:
           attribute: _creator?str
         storingType: NONE
-    - id: executor
+    - id: performer
       name:
         ru: Исполнитель
+        en: Performer
       type: PERSON
     - id: inspector
       name:

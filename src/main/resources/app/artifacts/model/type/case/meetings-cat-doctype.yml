@@ -11,13 +11,6 @@ inheritActions: false
 dispNameTemplate:
   ru: Совещание №${meetNumber}
   en: Meeting №${meetNumber}
-actions:
-  - uiserv/action@meet-create-agenda
-  - uiserv/action@meet-create-protocol
-  - uiserv/action@meet-familiarization-distr
-  - uiserv/action@meet-confirmation-send
-  - uiserv/action@meet-perform-send
-  - uiserv/action@meet-recipient-set
 defaultCreateVariant: true
 model:
   roles:
@@ -39,24 +32,6 @@ model:
         en: Confirmers
       attributes:
         - protocolConfirmers
-    - id: firstExecutor
-      name:
-        ru: Первый Исполнитель
-        en: First Executor
-      attributes:
-        - firstExecutor
-    - id: secondExecutor
-      name:
-        ru: Второй Исполнитель
-        en: Second Executor
-      attributes:
-        - secondExecutor
-    - id: inspector
-      name:
-        ru: Проверяющий
-        en: Inspector
-      attributes:
-        - inspector
   statuses:
     - id: new
       name:
@@ -90,18 +65,10 @@ model:
       name:
         ru: Согласован
         en: Confirmed
-    - id: onPerformance
-      name:
-        ru: На исполнении
-        en: On performance
     - id: performed
       name:
         ru: Выполнено
         en: Performed
-    - id: closed
-      name:
-        ru: Закрыт
-        en: Closed
   attributes:
     - id: meetNumber
       name:
@@ -189,18 +156,3 @@ model:
         en: Confirmers
       type: PERSON
       multiple: true
-    - id: firstExecutor
-      name:
-        ru: Первый Исполнитель
-        en: First Executor
-      type: PERSON
-    - id: secondExecutor
-      name:
-        ru: Второй Исполнитель
-        en: Second Executor
-      type: PERSON
-    - id: inspector
-      name:
-        ru: Проверяющий
-        en: Inspector
-      type: PERSON

@@ -98,6 +98,7 @@
                 "key": "outcome_confirmed",
                 "state": "",
                 "theme": "primary",
+                "block": true,
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
                 "type": "button",

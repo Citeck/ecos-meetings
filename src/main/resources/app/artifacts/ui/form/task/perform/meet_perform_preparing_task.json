@@ -113,9 +113,9 @@
               {
                 "label": {
                   "ru": "Исполнитель",
-                  "en": "Executor"
+                  "en": "Performer"
                 },
-                "key": "_ECM_executor",
+                "key": "_ECM_performer",
                 "validate": {
                   "required": true
                 },
