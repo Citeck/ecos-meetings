@@ -7,6 +7,9 @@ sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
 formRef: uiserv/form@meet_answered_question
 inheritActions: false
+dispNameTemplate:
+  ru: '${answer}'
+  en: '${answer}'
 defaultCreateVariant: true
 model:
   roles:

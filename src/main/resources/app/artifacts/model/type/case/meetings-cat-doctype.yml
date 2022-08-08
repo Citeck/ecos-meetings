@@ -67,7 +67,7 @@ model:
         en: Confirmed
     - id: performed
       name:
-        ru: Выполнено
+        ru: Исполнено
         en: Performed
   attributes:
     - id: meetNumber

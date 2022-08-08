@@ -5,7 +5,7 @@
             <bpmn:outgoing >Flow_08g94b6</bpmn:outgoing>
         </bpmn:startEvent>
         <bpmn:sequenceFlow sourceRef="StartEvent_1ew9rff" targetRef="Activity_1nvzqfp" name="" id="Flow_08g94b6" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:scriptTask scriptFormat="javascript" name="&quot;Perform preparing&quot; status" id="Activity_1nvzqfp" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Подготовка к исполнению\&quot;&quot;,&quot;en&quot;:&quot;\&quot;Perform preparing\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'performPreparing');&#10; document.save();">
+        <bpmn:scriptTask scriptFormat="javascript" name="Статус &quot;Подготовка к исполнению&quot;" id="Activity_1nvzqfp" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Подготовка к исполнению\&quot;&quot;,&quot;en&quot;:&quot;\&quot;Perform preparing\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'performPreparing');&#10; document.save();">
             <bpmn:incoming >Flow_08g94b6</bpmn:incoming>
             <bpmn:incoming >Flow_1k6paja</bpmn:incoming>
             <bpmn:outgoing >Flow_099ju6h</bpmn:outgoing>
@@ -13,23 +13,23 @@
                 document.save();</bpmn:script>
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_1nvzqfp" targetRef="Activity_1pbmcaw" name="" id="Flow_099ju6h" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:userTask name="Perform preparing" id="Activity_1pbmcaw" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;assign&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Назначить&quot;,&quot;en&quot;:&quot;Assign&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Подготовка к исполнению&quot;,&quot;en&quot;:&quot;Perform preparing&quot;}" ecos:formRef="uiserv/form@meet_perform_preparing_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
+        <bpmn:userTask name="Подготовка к исполнению" id="Activity_1pbmcaw" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;assign&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Назначить&quot;,&quot;en&quot;:&quot;Assign&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Подготовка к исполнению&quot;,&quot;en&quot;:&quot;Perform preparing&quot;}" ecos:formRef="uiserv/form@meet_perform_preparing_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
             <bpmn:incoming >Flow_099ju6h</bpmn:incoming>
             <bpmn:outgoing >Flow_1e37067</bpmn:outgoing>
         </bpmn:userTask>
         <bpmn:sequenceFlow sourceRef="Activity_1pbmcaw" targetRef="Activity_192cnul" name="" id="Flow_1e37067" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:scriptTask scriptFormat="javascript" name="&quot;On perform&quot; status" id="Activity_192cnul" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;На исполнении\&quot;&quot;,&quot;en&quot;:&quot;\&quot;On perform\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'onPerform');&#10; document.save();">
+        <bpmn:scriptTask scriptFormat="javascript" name="Статус &quot;На исполнении&quot;" id="Activity_192cnul" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;На исполнении\&quot;&quot;,&quot;en&quot;:&quot;\&quot;On perform\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'onPerform');&#10; document.save();">
             <bpmn:incoming >Flow_1e37067</bpmn:incoming>
             <bpmn:outgoing >Flow_1inwq02</bpmn:outgoing>
             <bpmn:script> document.att('_status', 'onPerform');
                 document.save();</bpmn:script>
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_192cnul" targetRef="Activity_1b4ixd3" name="" id="Flow_1inwq02" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:userTask name="Performing" id="Activity_1b4ixd3" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;performed&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Исполнено&quot;,&quot;en&quot;:&quot;Performed&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Исполнение&quot;,&quot;en&quot;:&quot;Performing&quot;}" ecos:formRef="uiserv/form@meet_perform_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;performer&quot;]">
+        <bpmn:userTask name="Исполнение" id="Activity_1b4ixd3" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;performed&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Исполнено&quot;,&quot;en&quot;:&quot;Performed&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Исполнение&quot;,&quot;en&quot;:&quot;Performing&quot;}" ecos:formRef="uiserv/form@meet_perform_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;performer&quot;]">
             <bpmn:incoming >Flow_1inwq02</bpmn:incoming>
             <bpmn:outgoing >Flow_04l671k</bpmn:outgoing>
         </bpmn:userTask>
-        <bpmn:scriptTask scriptFormat="javascript" name="&quot;Performed. On check&quot; status" id="Activity_0zkw1en" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Исполнено. На проверке\&quot;&quot;,&quot;en&quot;:&quot;\&quot;Performed. On check\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'performedToCheck');&#10; document.save();">
+        <bpmn:scriptTask scriptFormat="javascript" name="Статус &quot;Исполнено. На проверке&quot;" id="Activity_0zkw1en" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Исполнено. На проверке\&quot;&quot;,&quot;en&quot;:&quot;\&quot;Performed. On check\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'performedToCheck');&#10; document.save();">
             <bpmn:incoming >Flow_04l671k</bpmn:incoming>
             <bpmn:outgoing >Flow_0v81owp</bpmn:outgoing>
             <bpmn:script> document.att('_status', 'performedToCheck');
@@ -37,11 +37,11 @@
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_1b4ixd3" targetRef="Activity_0zkw1en" name="" id="Flow_04l671k" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
         <bpmn:sequenceFlow sourceRef="Activity_0zkw1en" targetRef="Activity_1jqhmxa" name="" id="Flow_0v81owp" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:userTask name="Checking" id="Activity_1jqhmxa" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;checked&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Проверено&quot;,&quot;en&quot;:&quot;Checked&quot;}},{&quot;id&quot;:&quot;rejected&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Отклонено&quot;,&quot;en&quot;:&quot;Rejected&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Проверка&quot;,&quot;en&quot;:&quot;Checking&quot;}" ecos:formRef="uiserv/form@meet_perform_check_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;inspector&quot;]">
+        <bpmn:userTask name="Проверка" id="Activity_1jqhmxa" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;checked&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Проверено&quot;,&quot;en&quot;:&quot;Checked&quot;}},{&quot;id&quot;:&quot;rejected&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Отклонено&quot;,&quot;en&quot;:&quot;Rejected&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Проверка&quot;,&quot;en&quot;:&quot;Checking&quot;}" ecos:formRef="uiserv/form@meet_perform_check_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;inspector&quot;]">
             <bpmn:incoming >Flow_0v81owp</bpmn:incoming>
             <bpmn:outgoing >Flow_0mjwqww</bpmn:outgoing>
         </bpmn:userTask>
-        <bpmn:scriptTask scriptFormat="javascript" name="&quot;Perform checked&quot; status" id="Activity_1vjvygq" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Решение проверено\&quot;&quot;,&quot;en&quot;:&quot;\&quot;Perform checked\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'checked');&#10; document.save();">
+        <bpmn:scriptTask scriptFormat="javascript" name="Статус &quot;Решение проверено&quot;" id="Activity_1vjvygq" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Решение проверено\&quot;&quot;,&quot;en&quot;:&quot;\&quot;Perform checked\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'checked');&#10; document.save();">
             <bpmn:incoming >Flow_07ike3m</bpmn:incoming>
             <bpmn:outgoing >Flow_0zkddxr</bpmn:outgoing>
             <bpmn:script> document.att('_status', 'checked');
@@ -73,14 +73,14 @@
         <bpmn:sequenceFlow sourceRef="Event_0r9k4qb" targetRef="Gateway_0i4upfg" name="" id="Flow_1qvs47b" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
         <bpmn:sequenceFlow sourceRef="Gateway_07bzdjq" targetRef="Gateway_0i4upfg" name="" id="Flow_0u21knr" ecos:conditionConfig="{&quot;fn&quot;:&quot;// some script;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;Activity_1jqhmxa:rejected&quot;}" ecos:conditionType="OUTCOME"/>
         <bpmn:sequenceFlow sourceRef="Gateway_0i4upfg" targetRef="Activity_0bzjz8f" name="" id="Flow_1hhwwcy" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:scriptTask scriptFormat="javascript" name="&quot;Undone&quot; status" id="Activity_0bzjz8f" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Не решено\&quot;&quot;,&quot;en&quot;:&quot;\&quot;Undone\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'undone');&#10; document.save();">
+        <bpmn:scriptTask scriptFormat="javascript" name="Статус &quot;Не решено&quot;" id="Activity_0bzjz8f" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Не решено\&quot;&quot;,&quot;en&quot;:&quot;\&quot;Undone\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'undone');&#10; document.save();">
             <bpmn:incoming >Flow_1hhwwcy</bpmn:incoming>
             <bpmn:outgoing >Flow_1tqyd7k</bpmn:outgoing>
             <bpmn:script> document.att('_status', 'undone');
                 document.save();</bpmn:script>
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_0bzjz8f" targetRef="Activity_1hddpw4" name="" id="Flow_1tqyd7k" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:userTask name="Rework" id="Activity_1hddpw4" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;confirmed&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Одобрено&quot;,&quot;en&quot;:&quot;Confirmed&quot;}},{&quot;id&quot;:&quot;canceled&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Отменено&quot;,&quot;en&quot;:&quot;Canceled&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Повторное исполнение&quot;,&quot;en&quot;:&quot;Rework&quot;}" ecos:formRef="uiserv/form@meet_perform_rework_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
+        <bpmn:userTask name="Повторное исполнение" id="Activity_1hddpw4" ecos:documentation="{}" ecos:outcomes="[{&quot;id&quot;:&quot;confirmed&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Одобрено&quot;,&quot;en&quot;:&quot;Confirmed&quot;}},{&quot;id&quot;:&quot;canceled&quot;,&quot;name&quot;:{&quot;ru&quot;:&quot;Отменено&quot;,&quot;en&quot;:&quot;Canceled&quot;}}]" ecos:name_ml="{&quot;ru&quot;:&quot;Повторное исполнение&quot;,&quot;en&quot;:&quot;Rework&quot;}" ecos:formRef="uiserv/form@meet_perform_rework_task" ecos:priority="MEDIUM" ecos:assignees="[&quot;initiator&quot;]">
             <bpmn:incoming >Flow_1tqyd7k</bpmn:incoming>
             <bpmn:outgoing >Flow_1pq2c4t</bpmn:outgoing>
         </bpmn:userTask>
@@ -101,7 +101,7 @@
             </bpmn:timerEventDefinition>
         </bpmn:boundaryEvent>
         <bpmn:sequenceFlow sourceRef="Event_0l58bga" targetRef="Gateway_0i4upfg" name="" id="Flow_0r3l1nu" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:scriptTask scriptFormat="javascript" name="&quot;Perform canceled&quot; status" id="Activity_0bdwi54" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Решение отменено\&quot;&quot;,&quot;en&quot;:&quot;\&quot;Perform canceled\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'canceled');&#10; document.save();">
+        <bpmn:scriptTask scriptFormat="javascript" name="Статус &quot;Решение отменено&quot;" id="Activity_0bdwi54" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;ru&quot;:&quot;Статус \&quot;Решение отменено\&quot;&quot;,&quot;en&quot;:&quot;\&quot;Perform canceled\&quot; status&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" document.att('_status', 'canceled');&#10; document.save();">
             <bpmn:incoming >Flow_0yavgfr</bpmn:incoming>
             <bpmn:outgoing >Flow_13ite9o</bpmn:outgoing>
             <bpmn:script> document.att('_status', 'canceled');
@@ -109,31 +109,31 @@
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Gateway_086qm4v" targetRef="Activity_0bdwi54" name="" id="Flow_0yavgfr" ecos:conditionConfig="{&quot;fn&quot;:&quot;// some script;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;Activity_1hddpw4:canceled&quot;}" ecos:conditionType="OUTCOME"/>
         <bpmn:sequenceFlow sourceRef="Activity_0bdwi54" targetRef="Event_1rblya5" name="" id="Flow_13ite9o" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:scriptTask scriptFormat="javascript" name="Data clearing" id="Activity_1auivar" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;en&quot;:&quot;Data clearing&quot;,&quot;ru&quot;:&quot;Очищение значений&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" const keys = execution.keys();&#10; for (const key of keys) {&#10;   if (key != 'documentRef') {&#10;     execution.removeVariable(key);&#10;   }&#10; }">
+        <bpmn:scriptTask scriptFormat="javascript" name="Очищение значений" id="Activity_1auivar" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;en&quot;:&quot;Data clearing&quot;,&quot;ru&quot;:&quot;Очищение значений&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" execution.removeVariable('perform_check_comment');&#10; execution.removeVariable('perform_term');&#10; execution.removeVariable('perform_message');&#10; execution.removeVariable('perform_comment');&#10; execution.removeVariable('check_term');&#10; ">
             <bpmn:incoming >Flow_0ibm9jo</bpmn:incoming>
             <bpmn:outgoing >Flow_1k6paja</bpmn:outgoing>
-            <bpmn:script> const keys = execution.keys();
-                for (const key of keys) {
-                if (key != 'documentRef') {
-                execution.removeVariable(key);
-                }
-                }</bpmn:script>
+            <bpmn:script> execution.removeVariable('perform_check_comment');
+                execution.removeVariable('perform_term');
+                execution.removeVariable('perform_message');
+                execution.removeVariable('perform_comment');
+                execution.removeVariable('check_term');
+            </bpmn:script>
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_1auivar" targetRef="Activity_1nvzqfp" name="" id="Flow_1k6paja" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
         <bpmn:textAnnotation id="TextAnnotation_1p3fcpo" ecos:name_ml="{&quot;ru&quot;:&quot;Инициатор создает задачу исполнения, указывая исполнителя, проверяющего и сроки&quot;,&quot;en&quot;:&quot;Initiator creates a task populated with performer, inspector and terms&quot;}">
-            <bpmn:text>Initiator creates a task populated with performer, inspector and terms</bpmn:text>
+            <bpmn:text>Инициатор создает задачу исполнения, указывая исполнителя, проверяющего и сроки</bpmn:text>
         </bpmn:textAnnotation>
         <bpmn:association  sourceRef="Activity_1pbmcaw" targetRef="TextAnnotation_1p3fcpo" id="Association_19b9g07"/>
         <bpmn:textAnnotation id="TextAnnotation_03o8hlu" ecos:name_ml="{&quot;ru&quot;:&quot;Назначенное лицо до установленного времени закрывает задачу исполнения&quot;,&quot;en&quot;:&quot;Responsible person closes the task before term is expired&quot;}">
-            <bpmn:text>Responsible person closes the task before term is expired</bpmn:text>
+            <bpmn:text>Назначенное лицо до установленного времени закрывает задачу исполнения</bpmn:text>
         </bpmn:textAnnotation>
         <bpmn:association  sourceRef="Activity_1b4ixd3" targetRef="TextAnnotation_03o8hlu" id="Association_0q8m394"/>
         <bpmn:textAnnotation id="TextAnnotation_16xr34u" ecos:name_ml="{&quot;ru&quot;:&quot;Назначенное лицо проверяет исполнение задачи до установленного времени&quot;,&quot;en&quot;:&quot;Inspector checks the performance before term is expired&quot;}">
-            <bpmn:text>Inspector checks the performance before term is expired</bpmn:text>
+            <bpmn:text>Назначенное лицо проверяет исполнение задачи до установленного времени</bpmn:text>
         </bpmn:textAnnotation>
         <bpmn:association  sourceRef="Activity_1jqhmxa" targetRef="TextAnnotation_16xr34u" id="Association_1noewut"/>
         <bpmn:textAnnotation id="TextAnnotation_1qbwx0q" ecos:name_ml="{&quot;ru&quot;:&quot;Для неисполненной задачи инициатор определяет необходимость повторного исполнения или отменяет задачу&quot;,&quot;en&quot;:&quot;Initiator considers if undone task should be re-performed otherwise cancel it&quot;}">
-            <bpmn:text>Initiator considers if undone task should be re-performed otherwise cancel it</bpmn:text>
+            <bpmn:text>Для неисполненной задачи инициатор определяет необходимость повторного исполнения или отменяет задачу</bpmn:text>
         </bpmn:textAnnotation>
         <bpmn:association  sourceRef="Activity_1hddpw4" targetRef="TextAnnotation_1qbwx0q" id="Association_193d5vy"/>
     </bpmn:process>

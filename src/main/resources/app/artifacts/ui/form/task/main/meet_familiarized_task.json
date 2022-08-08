@@ -112,19 +112,19 @@
             "columns": [
               {
                 "name": "childQuestions",
-                "formatter": "",
+                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.question;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
                 "setAttributesManually": true,
                 "title": "questions",
                 "type": "assoc",
-                "multiple": false
+                "multiple": true
               },
               {
                 "name": "plannedParticipants",
-                "formatter": "",
+                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes[\"\"];\n\n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
                 "setAttributesManually": true,
                 "title": "participants",
                 "type": "assoc",
-                "multiple": false
+                "multiple": true
               }
             ],
             "record": null,
@@ -135,19 +135,6 @@
         "optionalWhenDisabled": false,
         "displayElementsJS": "value = {view: true, edit: false, delete: false, clone: false, preview: false};",
         "type": "tableForm",
-        "input": true,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
-          "ru": "Комментарий",
-          "en": "comment"
-        },
-        "key": "recipientComment",
-        "defaultValue": "",
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "textarea",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"
       },
