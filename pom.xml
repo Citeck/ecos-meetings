@@ -7,12 +7,12 @@
 
     <groupId>ru.citeck.ecos.eapps.meetings</groupId>
     <artifactId>ecos-meetings</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <parent>
         <groupId>ru.citeck.ecos.eapps.project</groupId>
         <artifactId>ecos-apps-simple-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <repositories>
