@@ -109,7 +109,7 @@
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Gateway_086qm4v" targetRef="Activity_0bdwi54" name="" id="Flow_0yavgfr" ecos:conditionConfig="{&quot;fn&quot;:&quot;// some script;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;Activity_1hddpw4:canceled&quot;}" ecos:conditionType="OUTCOME"/>
         <bpmn:sequenceFlow sourceRef="Activity_0bdwi54" targetRef="Event_1rblya5" name="" id="Flow_13ite9o" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
-        <bpmn:scriptTask scriptFormat="javascript" name="Очищение значений" id="Activity_1auivar" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;en&quot;:&quot;Data clearing&quot;,&quot;ru&quot;:&quot;Очищение значений&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" execution.removeVariable('perform_check_comment');&#10; execution.removeVariable('perform_term');&#10; execution.removeVariable('perform_message');&#10; execution.removeVariable('perform_comment');&#10; execution.removeVariable('check_term');&#10; ">
+        <bpmn:scriptTask scriptFormat="javascript" name="Очищение значений" id="Activity_1auivar" ecos:asyncConfig="{&quot;asyncBefore&quot;:false,&quot;asyncAfter&quot;:false,&quot;exclusive&quot;:true}" ecos:name_ml="{&quot;en&quot;:&quot;Data clearing&quot;,&quot;ru&quot;:&quot;Очищение значений&quot;}" ecos:jobConfig="{&quot;jobPriority&quot;:null,&quot;jobRetryTimeCycle&quot;:null}" ecos:script=" execution.removeVariable('perform_check_comment');&#10; execution.removeVariable('perform_term');&#10; execution.removeVariable('perform_message');&#10; execution.removeVariable('perform_comment');&#10; execution.removeVariable('check_term');&#10; &#10; document.att('performer', '');&#10; document.att('inspector', '');&#10; document.save();">
             <bpmn:incoming >Flow_0ibm9jo</bpmn:incoming>
             <bpmn:outgoing >Flow_1k6paja</bpmn:outgoing>
             <bpmn:script> execution.removeVariable('perform_check_comment');
@@ -117,7 +117,10 @@
                 execution.removeVariable('perform_message');
                 execution.removeVariable('perform_comment');
                 execution.removeVariable('check_term');
-            </bpmn:script>
+
+                document.att('performer', '');
+                document.att('inspector', '');
+                document.save();</bpmn:script>
         </bpmn:scriptTask>
         <bpmn:sequenceFlow sourceRef="Activity_1auivar" targetRef="Activity_1nvzqfp" name="" id="Flow_1k6paja" ecos:conditionConfig="{&quot;fn&quot;:&quot;&quot;,&quot;expression&quot;:&quot;&quot;,&quot;outcome&quot;:&quot;&quot;}" ecos:conditionType="NONE"/>
         <bpmn:textAnnotation id="TextAnnotation_1p3fcpo" ecos:name_ml="{&quot;ru&quot;:&quot;Инициатор создает задачу исполнения, указывая исполнителя, проверяющего и сроки&quot;,&quot;en&quot;:&quot;Initiator creates a task populated with performer, inspector and terms&quot;}">
