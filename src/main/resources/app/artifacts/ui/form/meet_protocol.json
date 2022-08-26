@@ -7,7 +7,7 @@
   "description": {},
   "customModule": null,
   "typeRef": "",
-  "width": "full",
+  "width": "lg",
   "i18n": {
     "ru": {
       "askedQuestion": "Вопрос",
