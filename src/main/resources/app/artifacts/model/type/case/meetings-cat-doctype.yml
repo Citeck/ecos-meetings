@@ -32,6 +32,14 @@ model:
         en: Confirmers
       attributes:
         - protocolConfirmers
+    - id: performer
+      name:
+        ru: Исполнитель
+        en: Performer
+    - id: inspector
+      name:
+        ru: Проверяющий
+        en: Inspector
   statuses:
     - id: new
       name:
@@ -51,8 +59,8 @@ model:
         en: Familiarized
     - id: conducted
       name:
-        ru: Проведено
-        en: Conducted
+        ru: Совещание проведено
+        en: Meeting conducted
     - id: confirmationPreparing
       name:
         ru: Подготовка к согласованию
@@ -63,12 +71,20 @@ model:
         en: On confirm
     - id: confirmed
       name:
-        ru: Согласован
-        en: Confirmed
+        ru: Протокол согласован
+        en: Protocol confirmed
+    - id: onPerform
+      name:
+        ru: Исполнение решений
+        en: Decisions performing
     - id: performed
       name:
-        ru: Исполнено
+        ru: Исполнение завершено
         en: Performed
+    - id: closed
+      name:
+        ru: Закрыто
+        en: Closed
   attributes:
     - id: meetNumber
       name:
@@ -83,14 +99,14 @@ model:
       name:
         ru: Предмет совещания
         en: Subject
-    - id: where
+    - id: meetPlace
       name:
-        ru: Где
-        en: Where
-    - id: when
+        ru: Место совещания
+        en: Meeting place
+    - id: meetDateTime
       name:
-        ru: Когда
-        en: When
+        ru: Дата/время совещания
+        en: Meeting date/time
       type: DATETIME
     - id: confirmDueDate
       name:
@@ -112,14 +128,6 @@ model:
         child: true
         typeRef: emodel/type@meet-answered-question
       multiple: true
-    - id: childAgenda
-      name:
-        ru: Повестка
-        en: Agenda
-      type: ASSOC
-      config:
-        child: true
-        typeRef: emodel/type@meet-agenda
     - id: childProtocol
       name:
         ru: Протокол
@@ -128,22 +136,6 @@ model:
       config:
         child: true
         typeRef: emodel/type@meet-protocol
-    - id: participants
-      name:
-        ru: Присутствовали
-        en: Participants
-      type: ASSOC
-      config:
-        typeRef: emodel/type@person
-      multiple: true
-    - id: plannedReporters
-      name:
-        ru: Докладчики
-        en: Planned Reporters
-      type: ASSOC
-      config:
-        typeRef: emodel/type@person
-      multiple: true
     - id: agendaRecipients
       name:
         ru: Получатели
@@ -156,3 +148,41 @@ model:
         en: Confirmers
       type: PERSON
       multiple: true
+    - id: issues
+      name:
+        ru: Вопросы
+        en: Issues
+      type: ASSOC
+      config:
+        typeRef: emodel/type@meet-question
+      multiple: true
+    - id: participants
+      name:
+        ru: Участники
+        en: Participants
+      type: PERSON
+      multiple: true
+    - id: present
+      name:
+        en: Present
+        ru: Присутствующие
+      type: PERSON
+      multiple: true
+    - id: absent
+      name:
+        en: Absent
+        ru: Отсутствующие
+      type: PERSON
+      multiple: true
+    - id: decisions
+      name:
+        en: Decisions
+        ru: Решения
+      type: ASSOC
+      config:
+        typeRef: emodel/type@meet-answered-question
+      multiple: true
+    - id: commentDecision
+      name:
+        ru: Комментарий
+        en: Comment

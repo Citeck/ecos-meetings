@@ -1,0 +1,93 @@
+{
+  "id": "meet_perform_decision_task",
+  "formKey": "",
+  "title": {
+    "en": "Meeting Performing Decision Task"
+  },
+  "description": {},
+  "customModule": null,
+  "typeRef": "",
+  "width": "lg",
+  "i18n": {},
+  "definition": {
+    "components": [
+      {
+        "label": {
+          "ru": "Columns"
+        },
+        "key": "columns2",
+        "columns": [
+          {
+            "components": [],
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 1,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 2,
+            "components": [
+              {
+                "label": {
+                  "ru": "Пропустить исполнение",
+                  "en": "Skip performing"
+                },
+                "key": "outcome_skip",
+                "state": "",
+                "block": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ]
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 3,
+            "components": [
+              {
+                "label": {
+                  "ru": "На исполнение",
+                  "en": "Perform"
+                },
+                "key": "outcome_perform",
+                "state": "",
+                "theme": "primary",
+                "block": true,
+                "disableOnInvalid": true,
+                "clearOnHide": false,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      }
+    ]
+  },
+  "attributes": {}
+}

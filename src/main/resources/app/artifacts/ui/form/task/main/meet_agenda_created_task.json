@@ -10,43 +10,45 @@
   "width": "lg",
   "i18n": {
     "ru": {
-      "questions": "Вопросы",
-      "participants": "Участники"
+      "issue": "Вопрос",
+      "plannedReporters": "Докладчики"
     },
     "en": {
-      "questions": "Questions",
-      "participants": "Planned Participants"
+      "issue": "Issue",
+      "plannedReporters": "Planned reporters"
     }
   },
   "definition": {
     "components": [
       {
         "label": {
-          "ru": "Повестка совещания",
-          "en": "Meeting agenda"
+          "ru": "Вопросы",
+          "en": "Issues"
         },
-        "key": "_ECM_childAgenda",
+        "key": "_ECM_issues",
+        "multiple": true,
         "validate": {
           "required": true
         },
+        "reorder": false,
         "source": {
           "type": "custom",
           "custom": {
             "columns": [
               {
-                "name": "childQuestions",
-                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.question;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
+                "name": "question",
+                "formatter": "",
                 "setAttributesManually": true,
-                "title": "questions",
+                "title": "issue",
                 "type": "assoc",
                 "multiple": true
               },
               {
-                "name": "plannedParticipants",
-                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes[\"\"];\n\n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
+                "name": "plannedReporters",
+                "formatter": "value = {\r\n  type: 'script', \r\n  config: {\r\n    fn: ({ Records, cell, _ }) => {\r\n      const result = Records.get(cell).toJson().attributes[\"\"];\r\n\r\n      return _.isUndefined(result) ? cell : result;\r\n    }\r\n  }\r\n}",
                 "setAttributesManually": true,
-                "title": "participants",
-                "type": "assoc",
+                "title": "plannedReporters",
+                "type": "person",
                 "multiple": true
               }
             ],
@@ -54,7 +56,7 @@
             "attribute": null
           }
         },
-        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-meet-agenda@\",\r\n   \"typeRef\": \"emodel/type@meet-agenda\",\r\n   \"formRef\": \"uiserv/form@meet_agenda\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-meet-question@\",\r\n   \"typeRef\": \"emodel/type@meet-question\",\r\n   \"formRef\": \"uiserv/form@meet_question\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
         "refreshOn": [],
         "optionalWhenDisabled": false,
         "type": "tableForm",
@@ -63,17 +65,134 @@
       },
       {
         "label": {
-          "ru": "Повестка создана",
-          "en": "Agenda created"
+          "ru": "Columns"
         },
-        "key": "outcome_agenda_created",
-        "state": "",
-        "theme": "primary",
-        "disableOnInvalid": true,
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "button",
-        "input": true
+        "key": "columns2",
+        "columns": [
+          {
+            "components": [
+              {
+                "label": {
+                  "ru": "Участники",
+                  "en": "Participants"
+                },
+                "key": "_ECM_participants",
+                "multiple": true,
+                "reorder": false,
+                "clearOnHide": false,
+                "currentUserByDefault": true,
+                "defaultValue": [],
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "selectOrgstruct",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ],
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "index": 1,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "components": [
+              {
+                "label": {
+                  "ru": "Дата/время встречи",
+                  "en": "Meeting date/time"
+                },
+                "key": "_ECM_meetDateTime",
+                "validate": {
+                  "required": true
+                },
+                "format": "dd.MM.yyyy HH:mm",
+                "clearOnHide": false,
+                "datePicker": {
+                  "minDate": "",
+                  "maxDate": ""
+                },
+                "timePicker": {
+                  "showMeridian": false
+                },
+                "defaultValue": "",
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "datetime",
+                "input": true,
+                "suffix": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "Columns"
+        },
+        "key": "columns3",
+        "columns": [
+          {
+            "components": [],
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 1,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 2,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 3,
+            "components": [
+              {
+                "label": {
+                  "ru": "Создать повестку",
+                  "en": "Create agenda"
+                },
+                "key": "outcome_agenda_created",
+                "state": "",
+                "theme": "primary",
+                "block": true,
+                "disableOnInvalid": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
       }
     ]
   },

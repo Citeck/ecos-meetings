@@ -24,31 +24,19 @@
     "components": [
       {
         "label": {
-          "ru": "HTML"
-        },
-        "key": "html",
-        "className": "",
-        "content": "__t(instruction)",
-        "refreshOnChange": false,
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "htmlelement",
-        "input": false,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
           "ru": "Решения",
           "en": "Answered questions"
         },
-        "key": "answers",
+        "key": "_ECM_decisions",
+        "multiple": true,
+        "reorder": false,
         "source": {
           "type": "custom",
           "custom": {
             "columns": [
               {
                 "name": "answer",
-                "formatter": "value = {\n    type: 'script',\n    config: {\n        fn: function({cell, row}) {\n          if (!cell) {\n            return '';\n          }\n          \n          return {\n              cell: {disp: row['answer'], value: row['_localId']},\n              type: 'assoc',\n              config: { openNewBrowserTab: false }\n          };\n        }\n    }\n};",
+                "formatter": "",
                 "setAttributesManually": true,
                 "title": "answer",
                 "type": "text",
@@ -67,10 +55,8 @@
             "attribute": null
           }
         },
-        "refreshOn": [
-          "statuses"
-        ],
-        "calculateValue": "value = _.get(data, 'answeredQuestionRefs.answers', []);\n",
+        "refreshOn": [],
+        "calculateValue": "//value = _.get(data, 'answeredQuestionRefs.answers', []);\n",
         "optionalWhenDisabled": false,
         "displayElementsJS": "value = {view: true, edit: false, delete: false, clone: false, preview: false};",
         "type": "tableForm",
@@ -79,116 +65,28 @@
       },
       {
         "label": {
-          "ru": "Протокол",
-          "en": "Protocol"
+          "ru": "Комментарий",
+          "en": "Comment"
         },
-        "key": "_ECM_childProtocol",
+        "key": "_ECM_commentDecision",
+        "defaultValue": "",
         "refreshOn": [],
         "optionalWhenDisabled": false,
-        "type": "hidden",
-        "input": true,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": "answeredQuestionRefs",
-        "source": {
-          "type": "record",
-          "record": {
-            "id": "{{data._ECM_childProtocol}}",
-            "attributes": {
-              "answers": "answeredQuestions[]?assoc"
-            }
-          },
-          "forceLoad": false
-        },
-        "update": {
-          "type": "once"
-        },
-        "refreshOn": [
-          {
-            "label": "_ECM_childProtocol",
-            "value": "_ECM_childProtocol"
-          }
-        ],
-        "key": "answeredQuestionRefs",
-        "type": "asyncData",
-        "input": true,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": "statuses",
-        "source": {
-          "type": "recordsScript",
-          "recordsScript": {
-            "script": "value = _.get(data, 'answeredQuestionRefs.answers');",
-            "attributes": {
-              "status": "_status?str"
-            }
-          },
-          "forceLoad": false
-        },
-        "update": {
-          "type": "once"
-        },
-        "refreshOn": [
-          {
-            "label": "answeredQuestionRefs",
-            "value": "answeredQuestionRefs"
-          }
-        ],
-        "key": "statuses",
-        "type": "asyncData",
-        "input": true,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "key": "appropriateStatus",
-        "refreshOn": [
-          "statuses"
-        ],
-        "calculateValue": "const statuses = _.get(data, 'statuses', []);\nconst appropriateStatuses = ['canceled', 'checked'];\n\nvar result = true;\nif (_.isArray(statuses)) {\n  statuses.forEach(obj => {\n    if (!appropriateStatuses.includes(obj.status)) {\n      result = false;\n    }\n  });\n} else {\n  result = false;\n}\n\nvalue = result;\n\n\n\n",
-        "optionalWhenDisabled": false,
-        "type": "hidden",
+        "type": "textarea",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"
       },
       {
         "label": {
-          "ru": "Завершить исполнение",
-          "en": "Finish performing"
+          "en": "Close",
+          "ru": "Закрыть "
         },
-        "key": "outcome_finish_performing",
-        "disabled": true,
+        "key": "outcome_close",
         "state": "",
         "theme": "primary",
         "disableOnInvalid": true,
         "refreshOn": [],
         "optionalWhenDisabled": false,
-        "logic": [
-          {
-            "name": "unlockIfAppropriateStatuses",
-            "trigger": {
-              "type": "simple",
-              "simple": {
-                "show": true,
-                "when": "appropriateStatus",
-                "eq": "true"
-              }
-            },
-            "actions": [
-              {
-                "name": "unlock",
-                "type": "property",
-                "property": {
-                  "label": "Disabled",
-                  "value": "disabled",
-                  "type": "boolean"
-                },
-                "state": "false"
-              }
-            ]
-          }
-        ],
         "type": "button",
         "input": true
       }

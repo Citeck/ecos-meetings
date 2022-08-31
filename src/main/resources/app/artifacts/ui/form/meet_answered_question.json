@@ -153,29 +153,11 @@
         "input": false
       },
       {
-        "label": "questionRefs",
-        "source": {
-          "type": "custom",
-          "custom": {
-            "syncData": "const agenda = _.get(instance, \n'options.parentForm.data.agenda', []);\n\nvalue = _.isArray(agenda) ? agenda[0] : agenda;",
-            "asyncData": "value = Citeck.Records.get(data).load('childQuestions[]?assoc');"
-          },
-          "forceLoad": false
-        },
-        "update": {
-          "type": "once"
-        },
-        "key": "questionRefs",
-        "type": "asyncData",
-        "input": true,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
         "label": "questions",
         "source": {
           "type": "recordsScript",
           "recordsScript": {
-            "script": "var questionRefs = _.get(data, 'questionRefs', []);\nconst selectedRef = _.get(data, 'askedQuestion', '');\n\nquestionRefs = _.isArray(questionRefs) ? questionRefs : [];\n\nif (!!selectedRef && !questionRefs.includes(selectedRef)) {\n  questionRefs.push(selectedRef);\n}\nvalue = questionRefs;\n",
+            "script": "var questionRefs = _.get(instance, \n'options.parentForm.data.issues', []);\nconst selectedRef = _.get(data, 'askedQuestion', '');\n\nquestionRefs = _.isArray(questionRefs) ? questionRefs : [questionRefs];\n\nif (!!selectedRef && !questionRefs.includes(selectedRef)) {\n  questionRefs.push(selectedRef);\n}\nvalue = questionRefs;\n",
             "attributes": {
               "label": "question",
               "value": "?id"
@@ -186,12 +168,6 @@
         "update": {
           "type": "once"
         },
-        "refreshOn": [
-          {
-            "label": "questionRefs",
-            "value": "questionRefs"
-          }
-        ],
         "key": "questions",
         "type": "asyncData",
         "input": true,

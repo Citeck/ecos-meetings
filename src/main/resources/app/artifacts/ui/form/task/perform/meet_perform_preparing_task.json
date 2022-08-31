@@ -38,9 +38,6 @@
                   "en": "Perform term"
                 },
                 "key": "perform_term",
-                "validate": {
-                  "required": true
-                },
                 "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {
                   "minDate": "",
@@ -75,9 +72,6 @@
                   "en": "Check term"
                 },
                 "key": "check_term",
-                "validate": {
-                  "required": true
-                },
                 "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {
                   "minDate": "",
@@ -116,11 +110,15 @@
                   "en": "Performer"
                 },
                 "key": "_ECM_performer",
+                "multiple": true,
                 "validate": {
                   "required": true
                 },
-                "defaultValue": "",
+                "reorder": false,
+                "defaultValue": [],
                 "refreshOn": [],
+                "calculateValue": "value = _.get(data, 'performers.performers', []);",
+                "allowCalculateOverride": true,
                 "optionalWhenDisabled": false,
                 "type": "selectOrgstruct",
                 "input": true,
@@ -148,7 +146,11 @@
                   "required": true
                 },
                 "defaultValue": "",
-                "refreshOn": [],
+                "refreshOn": [
+                  "_ECM_initiator"
+                ],
+                "calculateValue": "value = _.get(data, '_ECM_initiator', []);",
+                "allowCalculateOverride": true,
                 "optionalWhenDisabled": false,
                 "type": "selectOrgstruct",
                 "input": true,
@@ -160,6 +162,74 @@
         "oneColumnInViewMode": false,
         "type": "columns",
         "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "key": "elem",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "key": "_ECM_initiator",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": "issueId",
+        "source": {
+          "type": "recordsScript",
+          "recordsScript": {
+            "script": "value = _.get(data, 'elem', '').replace(/[\\\"]/gi, '');",
+            "attributes": {
+              "id": "askedQuestion?id"
+            }
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "once"
+        },
+        "refreshOn": [
+          {
+            "label": "elem",
+            "value": "elem"
+          }
+        ],
+        "key": "issueId",
+        "type": "asyncData",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": "performers",
+        "source": {
+          "type": "record",
+          "record": {
+            "id": "{{data.issueId.id}}",
+            "attributes": {
+              "performers": "plannedReporters[]?id"
+            }
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "once"
+        },
+        "refreshOn": [
+          {
+            "label": "issueId",
+            "value": "issueId"
+          }
+        ],
+        "key": "performers",
+        "type": "asyncData",
+        "input": true,
         "addAnother": "ecos.forms.btn.add-another"
       },
       {
