@@ -8,9 +8,57 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
-  "i18n": {},
+  "i18n": {
+    "ru": {
+      "issue": "Вопрос",
+      "decision": "Решение"
+    },
+    "en": {
+      "issue": "Issue",
+      "decision": "Decision"
+    }
+  },
   "definition": {
     "components": [
+      {
+        "label": {
+          "ru": "Решения",
+          "en": "Decisions"
+        },
+        "key": "_ECM_decisions",
+        "multiple": true,
+        "source": {
+          "type": "custom",
+          "custom": {
+            "columns": [
+              {
+                "name": "answer",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "decision",
+                "type": "text",
+                "multiple": false
+              },
+              {
+                "name": "askedQuestion",
+                "formatter": "",
+                "setAttributesManually": true,
+                "title": "issue",
+                "type": "assoc",
+                "multiple": false
+              }
+            ],
+            "record": null,
+            "attribute": null
+          }
+        },
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "tableForm",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another",
+        "reorder": false
+      },
       {
         "label": {
           "ru": "Columns"

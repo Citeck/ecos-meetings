@@ -2,58 +2,22 @@
 id: meet-answered-question
 name:
   ru: Решениe
-  en: Answered question
+  en: Decision
 sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
 formRef: uiserv/form@meet_answered_question
 inheritActions: false
-dispNameTemplate:
-  ru: '${answer}'
-  en: '${answer}'
 defaultCreateVariant: true
 model:
-  roles:
-    - id: initiator
-      name:
-        ru: Инициатор
-        en: Initiator
-      computed:
-        type: ATTRIBUTE
-        config:
-          attribute: _creator?str
-    - id: performer
-      name:
-        ru: Исполнитель
-        en: Performer
-      attributes:
-        - performer
-    - id: inspector
-      name:
-        en: Inspector
-        ru: Проверяющий
-      attributes:
-        - inspector
   statuses:
-    - id: performPreparing
-      name:
-        ru: Подготовка к исполнению
-        en: Perform preparing
-    - id: onPerform
-      name:
-        ru: На исполнении
-        en: On perform
-    - id: performedToCheck
-      name:
-        ru: Исполнено. На проверке
-        en: Performed. On check
-    - id: checked
-      name:
-        ru: Решение проверено
-        en: Perform checked
     - id: undone
       name:
         ru: Не решено
         en: Undone
+    - id: checked
+      name:
+        ru: Решение проверено
+        en: Perform checked
     - id: canceled
       name:
         ru: Решение отменено
@@ -71,23 +35,3 @@ model:
       config:
         typeRef: emodel/type@meet-question
       multiple: true
-    - id: initiator
-      name:
-        ru: Инициатор
-        en: Initiator
-      type: PERSON
-      computed:
-        type: ATTRIBUTE
-        config:
-          attribute: _creator?str
-        storingType: NONE
-    - id: performer
-      name:
-        ru: Исполнитель
-        en: Performer
-      type: PERSON
-    - id: inspector
-      name:
-        ru: Проверяющий
-        en: Inspector
-      type: PERSON

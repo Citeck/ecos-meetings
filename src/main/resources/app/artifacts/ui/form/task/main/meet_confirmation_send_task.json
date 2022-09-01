@@ -134,17 +134,78 @@
       },
       {
         "label": {
-          "en": "Start confirmation",
-          "ru": "Начать согласование"
+          "ru": "Columns"
         },
-        "key": "outcome_start_confirming",
-        "state": "",
-        "theme": "primary",
-        "disableOnInvalid": true,
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "button",
-        "input": true
+        "key": "objectObject",
+        "columns": [
+          {
+            "components": [],
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 1,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 2,
+            "components": [
+              {
+                "label": {
+                  "ru": "Пропустить согласование",
+                  "en": "Skip confirming"
+                },
+                "key": "outcome_skip_confirming",
+                "state": "draft",
+                "block": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ]
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 3,
+            "components": [
+              {
+                "label": {
+                  "en": "Start confirmation",
+                  "ru": "Начать согласование"
+                },
+                "key": "outcome_start_confirming",
+                "state": "",
+                "theme": "primary",
+                "block": true,
+                "disableOnInvalid": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
       },
       {
         "label": {

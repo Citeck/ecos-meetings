@@ -10,14 +10,12 @@
   "width": "lg",
   "i18n": {
     "ru": {
-      "answer": "Решение",
-      "status": "Статус",
-      "instruction": "Для управления исполнением вопроса, выполните клик по его названию"
+      "decision": "Решение",
+      "status": "Статус"
     },
     "en": {
-      "answer": "Answer",
-      "status": "Status",
-      "instruction": "Click on the answer name to control its execution flow"
+      "decision": "Decision",
+      "status": "Status"
     }
   },
   "definition": {
@@ -25,7 +23,7 @@
       {
         "label": {
           "ru": "Решения",
-          "en": "Answered questions"
+          "en": "Decisions"
         },
         "key": "_ECM_decisions",
         "multiple": true,
@@ -38,7 +36,7 @@
                 "name": "answer",
                 "formatter": "",
                 "setAttributesManually": true,
-                "title": "answer",
+                "title": "decision",
                 "type": "text",
                 "multiple": false
               },
