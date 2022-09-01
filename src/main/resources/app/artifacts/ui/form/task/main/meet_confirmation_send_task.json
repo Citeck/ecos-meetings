@@ -8,18 +8,7 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
-  "i18n": {
-    "ru": {
-      "low": "Низкий",
-      "middle": "Средний",
-      "high": "Высокий"
-    },
-    "en": {
-      "low": "Low",
-      "middle": "Middle",
-      "high": "High"
-    }
-  },
+  "i18n": {},
   "definition": {
     "components": [
       {

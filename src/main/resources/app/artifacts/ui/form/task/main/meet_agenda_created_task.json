@@ -11,11 +11,11 @@
   "i18n": {
     "ru": {
       "issue": "Вопрос",
-      "plannedReporters": "Докладчики"
+      "reporters": "Докладчики"
     },
     "en": {
       "issue": "Issue",
-      "plannedReporters": "Planned reporters"
+      "reporters": "Reporters"
     }
   },
   "definition": {
@@ -36,7 +36,7 @@
           "custom": {
             "columns": [
               {
-                "name": "question",
+                "name": "issue",
                 "formatter": "",
                 "setAttributesManually": true,
                 "title": "issue",
@@ -44,10 +44,10 @@
                 "multiple": true
               },
               {
-                "name": "plannedReporters",
+                "name": "reporters",
                 "formatter": "value = {\r\n  type: 'script', \r\n  config: {\r\n    fn: ({ Records, cell, _ }) => {\r\n      const result = Records.get(cell).toJson().attributes[\"\"];\r\n\r\n      return _.isUndefined(result) ? cell : result;\r\n    }\r\n  }\r\n}",
                 "setAttributesManually": true,
-                "title": "plannedReporters",
+                "title": "reporters",
                 "type": "person",
                 "multiple": true
               }
@@ -56,7 +56,7 @@
             "attribute": null
           }
         },
-        "customCreateVariantsJs": "value = [\r\n{\r\n  \"recordRef\": \"emodel/t-meet-question@\",\r\n  \"typeRef\": \"emodel/type@meet-question\",\r\n  \"formRef\": \"uiserv/form@meet_question\",\r\n  \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "customCreateVariantsJs": "value = [\r\n{\r\n  \"recordRef\": \"emodel/t-meet-issue@\",\r\n  \"typeRef\": \"emodel/type@meet-issue\",\r\n  \"formRef\": \"uiserv/form@meet_issue\",\r\n  \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
         "refreshOn": [],
         "optionalWhenDisabled": false,
         "type": "tableForm",

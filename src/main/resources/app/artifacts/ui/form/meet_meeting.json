@@ -12,20 +12,18 @@
     "ru": {
       "create": "Создать",
       "issue": "Вопрос",
-      "speakers": "Докладчики",
+      "reporters": "Докладчики",
       "agenda": "Повестка",
       "protocol": "Протокол",
-      "askedQuestion": "Вопрос",
-      "answer": "Решение"
+      "decision": "Решение"
     },
     "en": {
       "create": "Create",
       "issue": "Issue",
-      "speakers": "Speakers",
+      "reporters": "Reporters",
       "agenda": "Agenda",
       "protocol": "Protocol",
-      "askedQuestion": "Issue",
-      "answer": "Decision"
+      "decision": "Decision"
     }
   },
   "definition": {
@@ -177,23 +175,24 @@
             },
             "key": "issues",
             "multiple": true,
+            "reorder": false,
             "source": {
               "type": "custom",
               "custom": {
                 "columns": [
                   {
-                    "name": "question",
+                    "name": "issue",
                     "formatter": "",
                     "setAttributesManually": true,
                     "title": "issue",
                     "type": "assoc",
-                    "multiple": true
+                    "multiple": false
                   },
                   {
-                    "name": "plannedReporters",
+                    "name": "reporters",
                     "formatter": "value = {\r\n  type: 'script', \r\n  config: {\r\n    fn: ({ Records, cell, _ }) => {\r\n      const result = Records.get(cell).toJson().attributes[\"\"];\r\n\r\n      return _.isUndefined(result) ? cell : result;\r\n    }\r\n  }\r\n}",
                     "setAttributesManually": true,
-                    "title": "speakers",
+                    "title": "reporters",
                     "type": "person",
                     "multiple": true
                   }
@@ -206,8 +205,7 @@
             "optionalWhenDisabled": false,
             "type": "tableForm",
             "input": true,
-            "addAnother": "ecos.forms.btn.add-another",
-            "reorder": false
+            "addAnother": "ecos.forms.btn.add-another"
           }
         ]
       },
@@ -282,15 +280,16 @@
             },
             "key": "decisions",
             "multiple": true,
+            "reorder": false,
             "source": {
               "type": "custom",
               "custom": {
                 "columns": [
                   {
-                    "name": "askedQuestion",
+                    "name": "issue",
                     "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.question;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
                     "setAttributesManually": true,
-                    "title": "askedQuestion",
+                    "title": "issue",
                     "type": "assoc",
                     "multiple": false
                   },
@@ -298,7 +297,7 @@
                     "name": "answer",
                     "formatter": "",
                     "setAttributesManually": true,
-                    "title": "answer",
+                    "title": "decision",
                     "type": "text",
                     "multiple": false
                   }
@@ -311,8 +310,7 @@
             "optionalWhenDisabled": false,
             "type": "tableForm",
             "input": true,
-            "addAnother": "ecos.forms.btn.add-another",
-            "reorder": false
+            "addAnother": "ecos.forms.btn.add-another"
           },
           {
             "label": {

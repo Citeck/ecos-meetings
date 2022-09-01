@@ -127,6 +127,50 @@
         "key": "columns3",
         "columns": [
           {
+            "components": [],
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 1,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 2,
+            "components": [
+              {
+                "label": {
+                  "ru": "Отклонено",
+                  "en": "Rejected"
+                },
+                "key": "outcome_rejected",
+                "state": "",
+                "block": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ]
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 3,
             "components": [
               {
                 "label": {
@@ -143,52 +187,7 @@
                 "type": "button",
                 "input": true
               }
-            ],
-            "md": 3,
-            "type": "column",
-            "input": false,
-            "key": "column",
-            "index": 0
-          },
-          {
-            "md": 3,
-            "type": "column",
-            "input": false,
-            "key": "column",
-            "index": 1,
-            "components": [
-              {
-                "label": {
-                  "ru": "Отклонено",
-                  "en": "Rejected"
-                },
-                "key": "outcome_rejected",
-                "state": "",
-                "theme": "primary",
-                "block": true,
-                "refreshOn": [],
-                "optionalWhenDisabled": false,
-                "type": "button",
-                "input": true,
-                "addAnother": "ecos.forms.btn.add-another"
-              }
             ]
-          },
-          {
-            "md": 3,
-            "type": "column",
-            "input": false,
-            "key": "column",
-            "index": 2,
-            "components": []
-          },
-          {
-            "md": 3,
-            "type": "column",
-            "input": false,
-            "key": "column",
-            "index": 3,
-            "components": []
           }
         ],
         "oneColumnInViewMode": false,

@@ -20,26 +20,30 @@ model:
         en: Initiator
       attributes:
         - initiator
-    - id: agendaRecipients
+    - id: recipients
       name:
         ru: Получатели
         en: Recipients
       attributes:
-        - agendaRecipients
-    - id: protocolConfirmers
+        - recipients
+    - id: confirmers
       name:
         ru: Согласующие
         en: Confirmers
       attributes:
-        - protocolConfirmers
+        - confirmers
     - id: performer
       name:
         ru: Исполнитель
         en: Performer
+      attributes:
+        - performer
     - id: inspector
       name:
         ru: Проверяющий
         en: Inspector
+      attributes:
+        - inspector
   statuses:
     - id: new
       name:
@@ -119,47 +123,38 @@ model:
       type: PERSON
       config:
         typeRef: emodel/type@person
-    - id: childAnsweredQuestions
-      name:
-        ru: Решения
-        en: Answers
-      type: ASSOC
-      config:
-        child: true
-        typeRef: emodel/type@meet-answered-question
-      multiple: true
-    - id: childProtocol
-      name:
-        ru: Протокол
-        en: Protocol
-      type: ASSOC
-      config:
-        child: true
-        typeRef: emodel/type@meet-protocol
-    - id: agendaRecipients
-      name:
-        ru: Получатели
-        en: Recipients
-      type: PERSON
-      multiple: true
-    - id: protocolConfirmers
-      name:
-        ru: Согласующие
-        en: Confirmers
-      type: PERSON
-      multiple: true
     - id: issues
       name:
         ru: Вопросы
         en: Issues
       type: ASSOC
       config:
-        typeRef: emodel/type@meet-question
+        typeRef: emodel/type@meet-issue
+      multiple: true
+    - id: decisions
+      name:
+        ru: Решения
+        en: Decisions
+      type: ASSOC
+      config:
+        typeRef: emodel/type@meet-decision
       multiple: true
     - id: participants
       name:
         ru: Участники
         en: Participants
+      type: PERSON
+      multiple: true
+    - id: recipients
+      name:
+        ru: Получатели
+        en: Recipients
+      type: PERSON
+      multiple: true
+    - id: confirmers
+      name:
+        ru: Согласующие
+        en: Confirmers
       type: PERSON
       multiple: true
     - id: present
@@ -186,3 +181,13 @@ model:
       name:
         ru: Комментарий
         en: Comment
+    - id: performer
+      name:
+        ru: Исполнитель
+        en: Performer
+      type: PERSON
+    - id: inspector
+      name:
+        ru: Проверяющий
+        en: Inspector
+      type: PERSON

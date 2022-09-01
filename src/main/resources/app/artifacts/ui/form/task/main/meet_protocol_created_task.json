@@ -10,12 +10,12 @@
   "width": "lg",
   "i18n": {
     "ru": {
-      "askedQuestion": "Вопрос",
-      "answer": "Решение"
+      "issue": "Вопрос",
+      "decision": "Решение"
     },
     "en": {
-      "askedQuestion": "Issue",
-      "answer": "Decision"
+      "issue": "Issue",
+      "decision": "Decision"
     }
   },
   "definition": {
@@ -121,18 +121,18 @@
           "custom": {
             "columns": [
               {
-                "name": "askedQuestion",
-                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.question;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
+                "name": "issue",
+                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.issue;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
                 "setAttributesManually": true,
-                "title": "askedQuestion",
+                "title": "issue",
                 "type": "assoc",
                 "multiple": false
               },
               {
-                "name": "answer",
+                "name": "decision",
                 "formatter": "",
                 "setAttributesManually": true,
-                "title": "answer",
+                "title": "decision",
                 "type": "text",
                 "multiple": false
               }
@@ -141,7 +141,7 @@
             "attribute": null
           }
         },
-        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-meet-answered-question@\",\r\n   \"typeRef\": \"emodel/type@meet-answered-question\",\r\n   \"formRef\": \"uiserv/form@meet_answered_question\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-meet-decision@\",\r\n   \"typeRef\": \"emodel/type@meet-decision\",\r\n   \"formRef\": \"uiserv/form@meet_decision\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
         "refreshOn": [],
         "optionalWhenDisabled": false,
         "type": "tableForm",

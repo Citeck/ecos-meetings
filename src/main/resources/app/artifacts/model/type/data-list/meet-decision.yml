@@ -1,11 +1,11 @@
 ---
-id: meet-answered-question
+id: meet-decision
 name:
   ru: Решениe
   en: Decision
 sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
-formRef: uiserv/form@meet_answered_question
+formRef: uiserv/form@meet_decision
 inheritActions: false
 defaultCreateVariant: true
 model:
@@ -16,22 +16,21 @@ model:
         en: Undone
     - id: checked
       name:
-        ru: Решение проверено
-        en: Perform checked
+        ru: Проверено
+        en: Checked
     - id: canceled
       name:
-        ru: Решение отменено
-        en: Perform canceled
+        ru: Отменено
+        en: Canceled
   attributes:
-    - id: answer
+    - id: decision
       name:
-        ru: Решения
-        en: Answers
-    - id: askedQuestion
+        ru: Решение
+        en: Decision
+    - id: issue
       name:
         ru: Вопрос
-        en: Question
+        en: Issue
       type: ASSOC
       config:
-        typeRef: emodel/type@meet-question
-      multiple: true
+        typeRef: emodel/type@meet-issue

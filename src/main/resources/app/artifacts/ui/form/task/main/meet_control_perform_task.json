@@ -33,7 +33,7 @@
           "custom": {
             "columns": [
               {
-                "name": "answer",
+                "name": "decision",
                 "formatter": "",
                 "setAttributesManually": true,
                 "title": "decision",
@@ -67,6 +67,7 @@
           "en": "Comment"
         },
         "key": "_ECM_commentDecision",
+        "disabled": true,
         "defaultValue": "",
         "refreshOn": [],
         "optionalWhenDisabled": false,
@@ -76,17 +77,63 @@
       },
       {
         "label": {
-          "en": "Close",
-          "ru": "Закрыть "
+          "ru": "Columns"
         },
-        "key": "outcome_close",
-        "state": "",
-        "theme": "primary",
-        "disableOnInvalid": true,
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "button",
-        "input": true
+        "key": "objectObject",
+        "columns": [
+          {
+            "components": [],
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 1,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 2,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 3,
+            "components": [
+              {
+                "label": {
+                  "en": "Close",
+                  "ru": "Закрыть "
+                },
+                "key": "outcome_close",
+                "state": "",
+                "theme": "primary",
+                "block": true,
+                "disableOnInvalid": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
       }
     ]
   },

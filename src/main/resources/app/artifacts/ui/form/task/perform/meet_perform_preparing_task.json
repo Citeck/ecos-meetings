@@ -38,6 +38,9 @@
                   "en": "Perform term"
                 },
                 "key": "perform_term",
+                "validate": {
+                  "required": true
+                },
                 "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {
                   "minDate": "",
@@ -72,6 +75,9 @@
                   "en": "Check term"
                 },
                 "key": "check_term",
+                "validate": {
+                  "required": true
+                },
                 "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {
                   "minDate": "",
@@ -165,6 +171,66 @@
         "addAnother": "ecos.forms.btn.add-another"
       },
       {
+        "label": {
+          "ru": "Columns"
+        },
+        "key": "columns4",
+        "columns": [
+          {
+            "components": [],
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 1,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 2,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 3,
+            "components": [
+              {
+                "label": {
+                  "ru": "Создать поручение",
+                  "en": "Assign"
+                },
+                "key": "outcome_assign",
+                "state": "",
+                "theme": "primary",
+                "block": true,
+                "disableOnInvalid": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
         "key": "elem",
         "refreshOn": [],
         "optionalWhenDisabled": false,
@@ -187,7 +253,7 @@
           "recordsScript": {
             "script": "value = _.get(data, 'elem', '').replace(/[\\\"]/gi, '');",
             "attributes": {
-              "id": "askedQuestion?id"
+              "id": "issue?id"
             }
           },
           "forceLoad": false
@@ -213,7 +279,7 @@
           "record": {
             "id": "{{data.issueId.id}}",
             "attributes": {
-              "performers": "plannedReporters[]?id"
+              "performers": "reporters[]?id"
             }
           },
           "forceLoad": false
@@ -231,20 +297,6 @@
         "type": "asyncData",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
-          "ru": "Создать поручение",
-          "en": "Assign"
-        },
-        "key": "outcome_assign",
-        "state": "",
-        "theme": "primary",
-        "disableOnInvalid": true,
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "button",
-        "input": true
       }
     ]
   },
