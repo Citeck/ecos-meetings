@@ -85,6 +85,10 @@ model:
       name:
         ru: Исполнение завершено
         en: Performed
+    - id: onCheck
+      name:
+        ru: Проверка исполнения
+        en: On perform check
     - id: closed
       name:
         ru: Закрыто
