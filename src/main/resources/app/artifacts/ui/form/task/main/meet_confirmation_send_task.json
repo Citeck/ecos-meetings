@@ -201,7 +201,7 @@
           "ru": "Согласующие",
           "en": "Confirmers"
         },
-        "key": "_ECM_protocolConfirmers",
+        "key": "_ECM_confirmers",
         "refreshOn": [
           "first",
           "second",
