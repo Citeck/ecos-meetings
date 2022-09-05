@@ -8,7 +8,14 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
-  "i18n": {},
+  "i18n": {
+    "ru": {
+      "errorValid": "Срок проверки не может быть раньше срока исполнения"
+    },
+    "en": {
+      "errorValid": "Check term can't be before perform term"
+    }
+  },
   "definition": {
     "components": [
       {
@@ -76,7 +83,8 @@
                 },
                 "key": "check_term",
                 "validate": {
-                  "required": true
+                  "required": true,
+                  "custom": "const performTerm = _.get(data, 'perform_term', '');\nconst checkTerm = _.get(data, 'check_term', '');\n\nvalid = !moment(checkTerm).isBefore(performTerm) ? true : 'errorValid'; "
                 },
                 "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {

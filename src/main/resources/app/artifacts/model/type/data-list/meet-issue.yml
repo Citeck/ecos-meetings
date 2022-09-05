@@ -7,6 +7,9 @@ sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
 formRef: uiserv/form@meet_issue
 inheritActions: false
+dispNameTemplate:
+  ru: '${issue}'
+  en: '${issue}'
 defaultCreateVariant: true
 model:
   attributes:

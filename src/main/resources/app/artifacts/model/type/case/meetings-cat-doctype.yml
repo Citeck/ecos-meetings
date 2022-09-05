@@ -116,10 +116,6 @@ model:
         ru: Дата/время совещания
         en: Meeting date/time
       type: DATETIME
-    - id: confirmDueDate
-      name:
-        ru: Срок завершения согласования
-        en: Confirm Due Date
     - id: initiator
       name:
         ru: Организатор встречи

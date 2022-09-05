@@ -758,33 +758,6 @@
             <bpmndi:BPMNShape bpmnElement="Gateway_1rnm027" isExpanded="true" id="Gateway_1rnm027_di">
                 <dc:Bounds x="2635.0" y="74.0" width="50.0" height="50.0"/>
             </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="TextAnnotation_1esvb6i" isExpanded="true" id="TextAnnotation_1esvb6i_di">
-                <dc:Bounds x="-280.0" y="-80.0" width="100.0" height="70.0"/>
-            </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="TextAnnotation_12x8lns" isExpanded="true" id="TextAnnotation_12x8lns_di">
-                <dc:Bounds x="30.0" y="-77.0" width="100.0" height="93.0"/>
-            </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="TextAnnotation_100nbyo" isExpanded="true" id="TextAnnotation_100nbyo_di">
-                <dc:Bounds x="820.0" y="-170.0" width="100.0" height="99.0"/>
-            </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="TextAnnotation_0soj7f6" isExpanded="true" id="TextAnnotation_0soj7f6_di">
-                <dc:Bounds x="1620.0" y="199.0" width="100.0" height="70.0"/>
-            </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="TextAnnotation_1fvw3aj" isExpanded="true" id="TextAnnotation_1fvw3aj_di">
-                <dc:Bounds x="1940.0" y="189.0" width="100.0" height="142.0"/>
-            </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="TextAnnotation_0grkh3d" isExpanded="true" id="TextAnnotation_0grkh3d_di">
-                <dc:Bounds x="2490.0" y="182.0" width="100.0" height="156.0"/>
-            </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="TextAnnotation_02z8xk0" isExpanded="true" id="TextAnnotation_02z8xk0_di">
-                <dc:Bounds x="1020.0" y="280.0" width="100.0" height="75.0"/>
-            </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="TextAnnotation_1ssi4rd" isExpanded="true" id="TextAnnotation_1ssi4rd_di">
-                <dc:Bounds x="1310.0" y="-90.0" width="100.0" height="120.0"/>
-            </bpmndi:BPMNShape>
-            <bpmndi:BPMNShape bpmnElement="TextAnnotation_1xasrhr" isExpanded="true" id="TextAnnotation_1xasrhr_di">
-                <dc:Bounds x="3940.0" y="-170.0" width="170.0" height="130.0"/>
-            </bpmndi:BPMNShape>
             <bpmndi:BPMNShape bpmnElement="Activity_0rsi0wr" isExpanded="true" id="Activity_106acbt_di">
                 <dc:Bounds x="360.0" y="10.0" width="690.0" height="200.0"/>
             </bpmndi:BPMNShape>
@@ -823,6 +796,40 @@
                 <di:waypoint x="870.0" y="60.0"/>
                 <di:waypoint x="870.0" y="-71.0"/>
             </bpmndi:BPMNEdge>
+            <bpmndi:BPMNShape bpmnElement="TextAnnotation_1esvb6i" isExpanded="true" id="TextAnnotation_1esvb6i_di">
+                <dc:Bounds x="-280.0" y="-80.0" width="100.0" height="70.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="TextAnnotation_12x8lns" isExpanded="true" id="TextAnnotation_12x8lns_di">
+                <dc:Bounds x="30.0" y="-77.0" width="100.0" height="93.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="TextAnnotation_100nbyo" isExpanded="true" id="TextAnnotation_100nbyo_di">
+                <dc:Bounds x="820.0" y="-170.0" width="100.0" height="99.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="TextAnnotation_0soj7f6" isExpanded="true" id="TextAnnotation_0soj7f6_di">
+                <dc:Bounds x="1620.0" y="199.0" width="100.0" height="70.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="TextAnnotation_1fvw3aj" isExpanded="true" id="TextAnnotation_1fvw3aj_di">
+                <dc:Bounds x="1940.0" y="189.0" width="100.0" height="142.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="TextAnnotation_0grkh3d" isExpanded="true" id="TextAnnotation_0grkh3d_di">
+                <dc:Bounds x="2490.0" y="182.0" width="100.0" height="156.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="TextAnnotation_02z8xk0" isExpanded="true" id="TextAnnotation_02z8xk0_di">
+                <dc:Bounds x="1020.0" y="280.0" width="100.0" height="75.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="TextAnnotation_1ssi4rd" isExpanded="true" id="TextAnnotation_1ssi4rd_di">
+                <dc:Bounds x="1310.0" y="-90.0" width="100.0" height="120.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="TextAnnotation_1xasrhr" isExpanded="true" id="TextAnnotation_1xasrhr_di">
+                <dc:Bounds x="3940.0" y="-170.0" width="170.0" height="130.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="Event_01pqa1n" isExpanded="true" id="Event_0j95hv7_di">
+                <dc:Bounds x="1032.0" y="192.0" width="36.0" height="36.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge bpmnElement="Association_0y0drrg" id="Association_0y0drrg_di">
+                <di:waypoint x="1050.0" y="228.0"/>
+                <di:waypoint x="1050.0" y="280.0"/>
+            </bpmndi:BPMNEdge>
             <bpmndi:BPMNEdge bpmnElement="Association_0tme5me" id="Association_0tme5me_di">
                 <di:waypoint x="3990.0" y="59.0"/>
                 <di:waypoint x="3990.0" y="-40.0"/>
@@ -851,13 +858,6 @@
                 <di:waypoint x="-230.0" y="59.0"/>
                 <di:waypoint x="-230.0" y="-10.0"/>
             </bpmndi:BPMNEdge>
-            <bpmndi:BPMNEdge bpmnElement="Association_0y0drrg" id="Association_0y0drrg_di">
-                <di:waypoint x="1050.0" y="228.0"/>
-                <di:waypoint x="1050.0" y="280.0"/>
-            </bpmndi:BPMNEdge>
-            <bpmndi:BPMNShape bpmnElement="Event_01pqa1n" isExpanded="true" id="Event_0j95hv7_di">
-                <dc:Bounds x="1032.0" y="192.0" width="36.0" height="36.0"/>
-            </bpmndi:BPMNShape>
         </bpmndi:BPMNPlane>
     </bpmndi:BPMNDiagram>
 </bpmn:definitions>

@@ -55,6 +55,7 @@
         },
         "refreshOn": [],
         "optionalWhenDisabled": false,
+        "displayElementsJS": " value = {view: true, edit: false, delete: false, clone: false, preview: false};",
         "type": "tableForm",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"
