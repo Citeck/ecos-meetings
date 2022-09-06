@@ -81,10 +81,6 @@ model:
       name:
         ru: Исполнение решений
         en: Decisions performing
-    - id: performed
-      name:
-        ru: Исполнение завершено
-        en: Performed
     - id: onCheck
       name:
         ru: Проверка исполнения

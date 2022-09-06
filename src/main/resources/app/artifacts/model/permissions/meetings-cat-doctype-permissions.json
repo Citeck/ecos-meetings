@@ -13,7 +13,6 @@
         "onConfirm": "WRITE",
         "confirmed": "WRITE",
         "onPerform": "WRITE",
-        "performed": "WRITE",
         "onCheck": "WRITE",
         "closed": "WRITE"
       },
@@ -27,7 +26,6 @@
         "onConfirm": "READ",
         "confirmed": "READ",
         "onPerform": "READ",
-        "performed": "READ",
         "onCheck": "READ",
         "closed": "READ"
       },
@@ -41,7 +39,6 @@
         "onConfirm": "READ",
         "confirmed": "READ",
         "onPerform": "READ",
-        "performed": "READ",
         "onCheck": "READ",
         "closed": "READ"
       },
@@ -55,7 +52,6 @@
         "onConfirm": "READ",
         "confirmed": "READ",
         "onPerform": "READ",
-        "performed": "READ",
         "onCheck": "READ",
         "closed": "READ"
       },
@@ -69,7 +65,6 @@
         "onConfirm": "READ",
         "confirmed": "READ",
         "onPerform": "READ",
-        "performed": "READ",
         "onCheck": "READ",
         "closed": "READ"
       }
@@ -88,7 +83,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -102,7 +96,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -116,7 +109,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -130,7 +122,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -144,7 +135,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -163,7 +153,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -177,7 +166,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -191,7 +179,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -205,7 +192,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -219,7 +205,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -238,7 +223,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -252,7 +236,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -266,7 +249,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -280,7 +262,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -294,7 +275,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -313,7 +293,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -327,7 +306,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -341,7 +319,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -355,7 +332,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -369,7 +345,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -388,7 +363,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -402,7 +376,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -416,7 +389,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -430,7 +402,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -444,7 +415,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -463,7 +433,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -477,7 +446,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -491,7 +459,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -505,7 +472,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -519,7 +485,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -538,7 +503,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -552,7 +516,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -566,7 +529,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -580,7 +542,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -594,7 +555,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -613,7 +573,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -627,7 +586,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -641,7 +599,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -655,7 +612,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -669,7 +625,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -688,7 +643,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -702,7 +656,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -716,7 +669,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -730,7 +682,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -744,7 +695,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -763,7 +713,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -777,7 +726,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -791,7 +739,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -805,7 +752,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -819,7 +765,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -838,7 +783,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -852,7 +796,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -866,7 +809,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -880,7 +822,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -894,7 +835,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -913,7 +853,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "WRITE",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -927,7 +866,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -941,7 +879,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -955,7 +892,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -969,7 +905,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }
@@ -988,7 +923,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "WRITE",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -1002,7 +936,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -1016,7 +949,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -1030,7 +962,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         },
@@ -1044,7 +975,6 @@
           "onConfirm": "READ",
           "confirmed": "READ",
           "onPerform": "READ",
-          "performed": "READ",
           "onCheck": "READ",
           "closed": "READ"
         }

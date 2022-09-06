@@ -259,7 +259,7 @@
         "source": {
           "type": "recordsScript",
           "recordsScript": {
-            "script": "value = _.get(data, 'elem', '').replace(/[\\\"]/gi, '');",
+            "script": "value = _.get(data, 'elem', '')",
             "attributes": {
               "id": "issue?id"
             }
