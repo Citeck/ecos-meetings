@@ -20,18 +20,30 @@ model:
         en: Initiator
       attributes:
         - initiator
-    - id: agendaRecipients
+    - id: recipients
       name:
         ru: Получатели
         en: Recipients
       attributes:
-        - agendaRecipients
-    - id: protocolConfirmers
+        - recipients
+    - id: confirmers
       name:
         ru: Согласующие
         en: Confirmers
       attributes:
-        - protocolConfirmers
+        - confirmers
+    - id: performer
+      name:
+        ru: Исполнитель
+        en: Performer
+      attributes:
+        - performer
+    - id: inspector
+      name:
+        ru: Проверяющий
+        en: Inspector
+      attributes:
+        - inspector
   statuses:
     - id: new
       name:
@@ -51,8 +63,8 @@ model:
         en: Familiarized
     - id: conducted
       name:
-        ru: Проведено
-        en: Conducted
+        ru: Совещание проведено
+        en: Meeting conducted
     - id: confirmationPreparing
       name:
         ru: Подготовка к согласованию
@@ -63,12 +75,20 @@ model:
         en: On confirm
     - id: confirmed
       name:
-        ru: Согласован
-        en: Confirmed
-    - id: performed
+        ru: Протокол согласован
+        en: Protocol confirmed
+    - id: onPerform
       name:
-        ru: Исполнено
-        en: Performed
+        ru: Исполнение решений
+        en: Decisions performing
+    - id: onCheck
+      name:
+        ru: Проверка исполнения
+        en: On perform check
+    - id: closed
+      name:
+        ru: Закрыто
+        en: Closed
   attributes:
     - id: meetNumber
       name:
@@ -83,19 +103,15 @@ model:
       name:
         ru: Предмет совещания
         en: Subject
-    - id: where
+    - id: meetPlace
       name:
-        ru: Где
-        en: Where
-    - id: when
+        ru: Место совещания
+        en: Meeting place
+    - id: meetDateTime
       name:
-        ru: Когда
-        en: When
+        ru: Дата/время совещания
+        en: Meeting date/time
       type: DATETIME
-    - id: confirmDueDate
-      name:
-        ru: Срок завершения согласования
-        en: Confirm Due Date
     - id: initiator
       name:
         ru: Организатор встречи
@@ -103,56 +119,71 @@ model:
       type: PERSON
       config:
         typeRef: emodel/type@person
-    - id: childAnsweredQuestions
+    - id: issues
+      name:
+        ru: Вопросы
+        en: Issues
+      type: ASSOC
+      config:
+        typeRef: emodel/type@meet-issue
+      multiple: true
+    - id: decisions
       name:
         ru: Решения
-        en: Answers
+        en: Decisions
       type: ASSOC
       config:
-        child: true
-        typeRef: emodel/type@meet-answered-question
+        typeRef: emodel/type@meet-decision
       multiple: true
-    - id: childAgenda
-      name:
-        ru: Повестка
-        en: Agenda
-      type: ASSOC
-      config:
-        child: true
-        typeRef: emodel/type@meet-agenda
-    - id: childProtocol
-      name:
-        ru: Протокол
-        en: Protocol
-      type: ASSOC
-      config:
-        child: true
-        typeRef: emodel/type@meet-protocol
     - id: participants
       name:
-        ru: Присутствовали
+        ru: Участники
         en: Participants
-      type: ASSOC
-      config:
-        typeRef: emodel/type@person
+      type: PERSON
       multiple: true
-    - id: plannedReporters
-      name:
-        ru: Докладчики
-        en: Planned Reporters
-      type: ASSOC
-      config:
-        typeRef: emodel/type@person
-      multiple: true
-    - id: agendaRecipients
+    - id: recipients
       name:
         ru: Получатели
         en: Recipients
       type: PERSON
       multiple: true
-    - id: protocolConfirmers
+    - id: confirmers
       name:
         ru: Согласующие
         en: Confirmers
       type: PERSON
       multiple: true
+    - id: present
+      name:
+        en: Present
+        ru: Присутствующие
+      type: PERSON
+      multiple: true
+    - id: absent
+      name:
+        en: Absent
+        ru: Отсутствующие
+      type: PERSON
+      multiple: true
+    - id: decisions
+      name:
+        en: Decisions
+        ru: Решения
+      type: ASSOC
+      config:
+        typeRef: emodel/type@meet-answered-question
+      multiple: true
+    - id: commentDecision
+      name:
+        ru: Комментарий
+        en: Comment
+    - id: performer
+      name:
+        ru: Исполнитель
+        en: Performer
+      type: PERSON
+    - id: inspector
+      name:
+        ru: Проверяющий
+        en: Inspector
+      type: PERSON

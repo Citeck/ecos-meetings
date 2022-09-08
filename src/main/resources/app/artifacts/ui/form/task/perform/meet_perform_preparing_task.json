@@ -8,7 +8,14 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
-  "i18n": {},
+  "i18n": {
+    "ru": {
+      "errorValid": "Срок проверки не может быть раньше срока исполнения"
+    },
+    "en": {
+      "errorValid": "Check term can't be before perform term"
+    }
+  },
   "definition": {
     "components": [
       {
@@ -76,7 +83,8 @@
                 },
                 "key": "check_term",
                 "validate": {
-                  "required": true
+                  "required": true,
+                  "custom": "const performTerm = _.get(data, 'perform_term', '');\nconst checkTerm = _.get(data, 'check_term', '');\n\nvalid = !moment(checkTerm).isBefore(performTerm) ? true : 'errorValid'; "
                 },
                 "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {
@@ -116,11 +124,15 @@
                   "en": "Performer"
                 },
                 "key": "_ECM_performer",
+                "multiple": true,
                 "validate": {
                   "required": true
                 },
-                "defaultValue": "",
+                "reorder": false,
+                "defaultValue": [],
                 "refreshOn": [],
+                "calculateValue": "value = _.get(data, 'performers.performers', []);",
+                "allowCalculateOverride": true,
                 "optionalWhenDisabled": false,
                 "type": "selectOrgstruct",
                 "input": true,
@@ -148,7 +160,11 @@
                   "required": true
                 },
                 "defaultValue": "",
-                "refreshOn": [],
+                "refreshOn": [
+                  "_ECM_initiator"
+                ],
+                "calculateValue": "value = _.get(data, '_ECM_initiator', []);",
+                "allowCalculateOverride": true,
                 "optionalWhenDisabled": false,
                 "type": "selectOrgstruct",
                 "input": true,
@@ -164,17 +180,131 @@
       },
       {
         "label": {
-          "ru": "Создать поручение",
-          "en": "Assign"
+          "ru": "Columns"
         },
-        "key": "outcome_assign",
-        "state": "",
-        "theme": "primary",
-        "disableOnInvalid": true,
+        "key": "columns4",
+        "columns": [
+          {
+            "components": [],
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 1,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 2,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 3,
+            "components": [
+              {
+                "label": {
+                  "ru": "Создать поручение",
+                  "en": "Assign"
+                },
+                "key": "outcome_assign",
+                "state": "",
+                "theme": "primary",
+                "block": true,
+                "disableOnInvalid": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "key": "elem",
         "refreshOn": [],
         "optionalWhenDisabled": false,
-        "type": "button",
-        "input": true
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "key": "_ECM_initiator",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": "issueId",
+        "source": {
+          "type": "recordsScript",
+          "recordsScript": {
+            "script": "value = _.get(data, 'elem', '')",
+            "attributes": {
+              "id": "issue?id"
+            }
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "once"
+        },
+        "refreshOn": [
+          {
+            "label": "elem",
+            "value": "elem"
+          }
+        ],
+        "key": "issueId",
+        "type": "asyncData",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": "performers",
+        "source": {
+          "type": "record",
+          "record": {
+            "id": "{{data.issueId.id}}",
+            "attributes": {
+              "performers": "reporters[]?id"
+            }
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "once"
+        },
+        "refreshOn": [
+          {
+            "label": "issueId",
+            "value": "issueId"
+          }
+        ],
+        "key": "performers",
+        "type": "asyncData",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       }
     ]
   },

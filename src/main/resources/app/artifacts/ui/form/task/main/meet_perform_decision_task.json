@@ -1,8 +1,8 @@
 {
-  "id": "meet_control_perform_task",
+  "id": "meet_perform_decision_task",
   "formKey": "",
   "title": {
-    "en": "Meeting Control Performing Task"
+    "en": "Meeting Performing Decision Task"
   },
   "description": {},
   "customModule": null,
@@ -10,12 +10,12 @@
   "width": "lg",
   "i18n": {
     "ru": {
-      "decision": "Решение",
-      "status": "Статус"
+      "issue": "Вопрос",
+      "decision": "Решение"
     },
     "en": {
-      "decision": "Decision",
-      "status": "Status"
+      "issue": "Issue",
+      "decision": "Decision"
     }
   },
   "definition": {
@@ -41,11 +41,11 @@
                 "multiple": false
               },
               {
-                "name": "_status",
+                "name": "issue",
                 "formatter": "",
                 "setAttributesManually": true,
-                "title": "status",
-                "type": "text",
+                "title": "issue",
+                "type": "assoc",
                 "multiple": false
               }
             ],
@@ -54,24 +54,9 @@
           }
         },
         "refreshOn": [],
-        "calculateValue": "//value = _.get(data, 'answeredQuestionRefs.answers', []);\n",
         "optionalWhenDisabled": false,
-        "displayElementsJS": "value = {view: true, edit: false, delete: false, clone: false, preview: false};",
+        "displayElementsJS": " value = {view: true, edit: false, delete: false, clone: false, preview: false};",
         "type": "tableForm",
-        "input": true,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
-          "ru": "Комментарий",
-          "en": "Comment"
-        },
-        "key": "_ECM_commentDecision",
-        "disabled": true,
-        "defaultValue": "",
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "textarea",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"
       },
@@ -79,7 +64,7 @@
         "label": {
           "ru": "Columns"
         },
-        "key": "objectObject",
+        "key": "columns2",
         "columns": [
           {
             "components": [],
@@ -103,7 +88,22 @@
             "input": false,
             "key": "column",
             "index": 2,
-            "components": []
+            "components": [
+              {
+                "label": {
+                  "ru": "Пропустить исполнение",
+                  "en": "Skip performing"
+                },
+                "key": "outcome_skip",
+                "state": "",
+                "block": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ]
           },
           {
             "md": 3,
@@ -114,14 +114,15 @@
             "components": [
               {
                 "label": {
-                  "en": "Close",
-                  "ru": "Закрыть "
+                  "ru": "На исполнение",
+                  "en": "Perform"
                 },
-                "key": "outcome_close",
+                "key": "outcome_perform",
                 "state": "",
                 "theme": "primary",
                 "block": true,
                 "disableOnInvalid": true,
+                "clearOnHide": false,
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
                 "type": "button",

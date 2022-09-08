@@ -1,8 +1,8 @@
 {
-  "id": "meet_question",
+  "id": "meet_issue",
   "formKey": "",
   "title": {
-    "en": "Meeting question"
+    "en": "Meeting issue"
   },
   "description": {},
   "customModule": null,
@@ -13,9 +13,9 @@
     "components": [
       {
         "label": {
-          "ru": "question"
+          "ru": "issue"
         },
-        "key": "question",
+        "key": "issue",
         "validate": {
           "required": true
         },
@@ -28,9 +28,9 @@
       },
       {
         "label": {
-          "ru": "plannedReporters"
+          "ru": "reporters"
         },
-        "key": "plannedReporters",
+        "key": "reporters",
         "multiple": true,
         "reorder": false,
         "clearOnHide": false,

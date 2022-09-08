@@ -8,18 +8,7 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
-  "i18n": {
-    "ru": {
-      "low": "Низкий",
-      "middle": "Средний",
-      "high": "Высокий"
-    },
-    "en": {
-      "low": "Low",
-      "middle": "Middle",
-      "high": "High"
-    }
-  },
+  "i18n": {},
   "definition": {
     "components": [
       {
@@ -47,7 +36,7 @@
                   "ru": "Получатели",
                   "en": "Receivers"
                 },
-                "key": "_ECM_agendaRecipients",
+                "key": "_ECM_recipients",
                 "multiple": true,
                 "validate": {
                   "required": true
@@ -55,6 +44,8 @@
                 "reorder": false,
                 "defaultValue": [],
                 "refreshOn": [],
+                "calculateValue": "const participants = _.get(data, '_ECM_participants', []);\nvalue = _.isArray(participants) ? participants : [participants];",
+                "allowCalculateOverride": true,
                 "optionalWhenDisabled": false,
                 "type": "selectOrgstruct",
                 "input": true
@@ -76,7 +67,7 @@
                   "ru": "Срок",
                   "en": "Term"
                 },
-                "key": "meet_time",
+                "key": "_ECM_meetDateTime",
                 "disabled": true,
                 "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {
@@ -102,17 +93,73 @@
       },
       {
         "label": {
-          "ru": "Отправить на ознакомление",
-          "en": "Send for familiarization"
+          "ru": "Columns"
         },
-        "key": "outcome_start_familiarizing",
-        "state": "",
-        "theme": "primary",
-        "disableOnInvalid": true,
+        "key": "columns3",
+        "columns": [
+          {
+            "components": [],
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 1,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 2,
+            "components": []
+          },
+          {
+            "md": 3,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 3,
+            "components": [
+              {
+                "label": {
+                  "ru": "Отправить на ознакомление",
+                  "en": "Send for familiarization"
+                },
+                "key": "outcome_start_familiarizing",
+                "state": "",
+                "theme": "primary",
+                "block": true,
+                "disableOnInvalid": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "key": "_ECM_participants",
+        "multiple": true,
         "refreshOn": [],
         "optionalWhenDisabled": false,
-        "type": "button",
-        "input": true
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another",
+        "reorder": false
       }
     ]
   },

@@ -1,26 +1,27 @@
 ---
-id: meet-question
+id: meet-issue
 name:
   ru: Вопрос встречи
-  en: Meet question
+  en: Issue
 sourceType: ECOS_MODEL
 parentRef: emodel/type@data-list
-formRef: uiserv/form@meet_question
+formRef: uiserv/form@meet_issue
 inheritActions: false
 dispNameTemplate:
-  ru: '${question}'
+  ru: '${issue}'
+  en: '${issue}'
 defaultCreateVariant: true
 model:
   attributes:
-    - id: question
+    - id: issue
       name:
         ru: Вопрос
-        en: Question
-    - id: plannedReporters
+        en: Issue
+    - id: reporters
       name:
         ru: Докладчики
-        en: Planned Reporters
-      type: ASSOC
+        en: Reporters
+      type: PERSON
       config:
         typeRef: emodel/type@person
       multiple: true

@@ -1,8 +1,8 @@
 {
-  "id": "meet_agenda",
+  "id": "meet_decision",
   "formKey": "",
   "title": {
-    "en": "Meet agenda"
+    "en": "Meeting Decision"
   },
   "description": {},
   "customModule": null,
@@ -10,72 +10,46 @@
   "width": "lg",
   "i18n": {
     "ru": {
-      "question": "Вопрос",
-      "plannedReporters": "Докладчики"
+      "question": "Вопрос"
     },
     "en": {
-      "question": "Докладчики",
-      "plannedReporters": "Planned reporters"
+      "question": "Question"
     }
   },
   "definition": {
     "components": [
       {
         "label": {
-          "ru": "plannedParticipants"
+          "ru": "issue"
         },
-        "key": "plannedParticipants",
-        "multiple": true,
-        "reorder": false,
-        "allowedAuthorityType": "USER",
-        "isIncludedAdminGroup": true,
-        "currentUserByDefault": true,
-        "defaultValue": [],
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "type": "selectOrgstruct",
-        "input": true
-      },
-      {
-        "label": {
-          "ru": "childQuestions"
-        },
-        "key": "childQuestions",
-        "multiple": true,
+        "key": "issue",
         "validate": {
           "required": true
         },
-        "reorder": false,
         "clearOnHide": false,
-        "source": {
-          "type": "custom",
-          "custom": {
-            "columns": [
-              {
-                "name": "question",
-                "formatter": "",
-                "setAttributesManually": true,
-                "title": "question",
-                "type": "assoc",
-                "multiple": false
-              },
-              {
-                "name": "plannedReporters",
-                "formatter": "value = {\r\n  type: 'script', \r\n  config: {\r\n    fn: ({ Records, cell, _ }) => {\r\n      const result = Records.get(cell).toJson().attributes[\"\"];\r\n\r\n      return _.isUndefined(result) ? cell : result;\r\n    }\r\n  }\r\n}",
-                "setAttributesManually": true,
-                "title": "plannedReporters",
-                "type": "assoc",
-                "multiple": true
-              }
-            ],
-            "record": null,
-            "attribute": null
-          }
+        "dataSrc": "custom",
+        "data": {
+          "custom": "const issues = _.get(data, 'issues');\r\n\r\nif (_.isArray(issues)  && issues.length) {\r\n    values = issues;\r\n}\r\n"
         },
-        "customCreateVariantsJs": "value = [\r\n{\r\n   \"recordRef\": \"emodel/t-meet-question@\",\r\n   \"typeRef\": \"emodel/type@meet-question\",\r\n   \"formRef\": \"uiserv/form@meet_question\",\r\n   \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "defaultValue": "",
+        "optionalWhenDisabled": false,
+        "type": "ecosSelect",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "decision"
+        },
+        "key": "decision",
+        "validate": {
+          "required": true
+        },
+        "defaultValue": "",
         "refreshOn": [],
         "optionalWhenDisabled": false,
-        "type": "tableForm",
+        "rows": 2,
+        "type": "textarea",
         "input": true
       },
       {
@@ -149,8 +123,8 @@
             "components": [
               {
                 "label": {
-                  "ru": "Принять",
-                  "en": "Submit"
+                  "en": "Submit",
+                  "ru": "Принять"
                 },
                 "key": "submit",
                 "state": "",
@@ -173,6 +147,27 @@
         "key": "columns2",
         "type": "columns",
         "input": false
+      },
+      {
+        "label": "issues",
+        "source": {
+          "type": "recordsScript",
+          "recordsScript": {
+            "script": "var issueRefs = _.get(instance, \n'options.parentForm.data.issues', []);\nconst selectedRef = _.get(data, 'issue', '');\n\nissueRefs = _.isArray(issueRefs) ? issueRefs : [issueRefs];\n\nif (!!selectedRef && !issueRefs.includes(selectedRef)) {\n  issueRefs.push(selectedRef);\n}\nvalue = issueRefs;\n",
+            "attributes": {
+              "label": "issue",
+              "value": "?id"
+            }
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "once"
+        },
+        "key": "issues",
+        "type": "asyncData",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       }
     ]
   },

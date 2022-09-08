@@ -11,19 +11,19 @@
   "i18n": {
     "ru": {
       "create": "Создать",
-      "plannedParticipants": "Участники",
-      "childQuestions": "Вопросы",
-      "participants": "Присутствовали",
-      "absent": "Отсутствовали",
-      "answeredQuestions": "Решения"
+      "issue": "Вопрос",
+      "reporters": "Докладчики",
+      "agenda": "Повестка",
+      "protocol": "Протокол",
+      "decision": "Решение"
     },
     "en": {
       "create": "Create",
-      "plannedParticipants": "Planned Participants",
-      "childQuestions": "Questions",
-      "participants": "Participants",
-      "absent": "Absent",
-      "answeredQuestions": "Answers"
+      "issue": "Issue",
+      "reporters": "Reporters",
+      "agenda": "Agenda",
+      "protocol": "Protocol",
+      "decision": "Decision"
     }
   },
   "definition": {
@@ -69,12 +69,9 @@
             "components": [
               {
                 "label": {
-                  "ru": "when"
+                  "ru": "meetDateTime"
                 },
-                "key": "when",
-                "validate": {
-                  "required": true
-                },
+                "key": "meetDateTime",
                 "format": "dd.MM.yyyy HH:mm",
                 "datePicker": {
                   "minDate": "",
@@ -86,6 +83,27 @@
                 "defaultValue": "",
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
+                "logic": [
+                  {
+                    "name": "requirement",
+                    "trigger": {
+                      "type": "javascript",
+                      "javascript": "const formMode = _.get(instance, 'options.formMode', '');\n\nresult = formMode != \"CREATE\";"
+                    },
+                    "actions": [
+                      {
+                        "name": "setRequired",
+                        "type": "property",
+                        "property": {
+                          "label": "Required",
+                          "value": "validate.required",
+                          "type": "boolean"
+                        },
+                        "state": "true"
+                      }
+                    ]
+                  }
+                ],
                 "type": "datetime",
                 "input": true,
                 "suffix": true
@@ -104,12 +122,9 @@
       },
       {
         "label": {
-          "ru": "where"
+          "ru": "meetPlace"
         },
-        "key": "where",
-        "validate": {
-          "required": true
-        },
+        "key": "meetPlace",
         "defaultValue": "",
         "refreshOn": [],
         "optionalWhenDisabled": false,
@@ -129,88 +144,187 @@
       },
       {
         "label": {
-          "ru": "childAgenda"
+          "ru": "participants"
         },
-        "key": "childAgenda",
-        "conditional": {
-          "show": "true"
-        },
-        "clearOnHide": false,
-        "source": {
-          "type": "custom",
-          "custom": {
-            "columns": [
-              {
-                "name": "childQuestions",
-                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.question;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
-                "setAttributesManually": true,
-                "title": "childQuestions",
-                "type": "assoc",
-                "multiple": true
-              },
-              {
-                "name": "plannedParticipants",
-                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes[\"\"];\n\n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
-                "setAttributesManually": true,
-                "title": "plannedParticipants",
-                "type": "assoc",
-                "multiple": true
-              }
-            ],
-            "record": null,
-            "attribute": null
-          }
-        },
+        "key": "participants",
+        "multiple": true,
+        "reorder": false,
+        "defaultValue": [],
         "refreshOn": [],
         "optionalWhenDisabled": false,
-        "customConditional": "const formMode = _.get(instance, 'options.formMode', '');\n\nshow = formMode != 'CREATE';",
-        "type": "tableForm",
-        "input": true
+        "type": "selectOrgstruct",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
       },
       {
         "label": {
-          "ru": "childProtocol"
+          "ru": "Panel"
         },
-        "key": "childProtocol",
-        "clearOnHide": false,
-        "source": {
-          "type": "custom",
-          "custom": {
-            "columns": [
-              {
-                "name": "participants",
-                "formatter": "value = {\r\n  type: 'script', \r\n  config: {\r\n    fn: ({ Records, cell, _ }) => {\r\n      const result = Records.get(cell).toJson().attributes[\"\"];\r\n\r\n      return _.isUndefined(result) ? cell : result;\r\n    }\r\n  }\r\n}",
-                "setAttributesManually": true,
-                "title": "participants",
-                "type": "assoc",
-                "multiple": true
-              },
-              {
-                "name": "absent",
-                "formatter": "value = {\r\n  type: 'script', \r\n  config: {\r\n    fn: ({ Records, cell, _ }) => {\r\n      const result = Records.get(cell).toJson().attributes[\"\"];\r\n\r\n      return _.isUndefined(result) ? cell : result;\r\n    }\r\n  }\r\n}",
-                "setAttributesManually": true,
-                "title": "absent",
-                "type": "assoc",
-                "multiple": true
-              },
-              {
-                "name": "answeredQuestions",
-                "formatter": "value = {\r\n  type: 'script', \r\n  config: {\r\n    fn: ({ Records, cell, _ }) => {\r\n      const result = Records.get(cell).toJson().attributes.answer;\r\n\r\n      return _.isUndefined(result) ? cell : result;\r\n    }\r\n  }\r\n}",
-                "setAttributesManually": true,
-                "title": "answeredQuestions",
-                "type": "assoc",
-                "multiple": true
-              }
-            ],
-            "record": null,
-            "attribute": null
-          }
-        },
+        "key": "agenda",
+        "title": "agenda",
         "refreshOn": [],
         "optionalWhenDisabled": false,
         "customConditional": "const formMode = _.get(instance, 'options.formMode', '');\n\nshow = formMode != 'CREATE';",
-        "type": "tableForm",
-        "input": true
+        "type": "panel",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another",
+        "components": [
+          {
+            "label": {
+              "ru": "issues"
+            },
+            "key": "issues",
+            "multiple": true,
+            "reorder": false,
+            "source": {
+              "type": "custom",
+              "custom": {
+                "columns": [
+                  {
+                    "name": "issue",
+                    "formatter": "",
+                    "setAttributesManually": true,
+                    "title": "issue",
+                    "type": "assoc",
+                    "multiple": false
+                  },
+                  {
+                    "name": "reporters",
+                    "formatter": "value = {\r\n  type: 'script', \r\n  config: {\r\n    fn: ({ Records, cell, _ }) => {\r\n      const result = Records.get(cell).toJson().attributes[\"\"];\r\n\r\n      return _.isUndefined(result) ? cell : result;\r\n    }\r\n  }\r\n}",
+                    "setAttributesManually": true,
+                    "title": "reporters",
+                    "type": "person",
+                    "multiple": true
+                  }
+                ],
+                "record": null,
+                "attribute": null
+              }
+            },
+            "refreshOn": [],
+            "optionalWhenDisabled": false,
+            "type": "tableForm",
+            "input": true,
+            "addAnother": "ecos.forms.btn.add-another"
+          }
+        ]
+      },
+      {
+        "label": {
+          "ru": "Panel"
+        },
+        "key": "protocol",
+        "title": "protocol",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "customConditional": "const formMode = _.get(instance, 'options.formMode', '');\n\nshow = formMode != 'CREATE';",
+        "type": "panel",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another",
+        "components": [
+          {
+            "label": {
+              "ru": "Columns"
+            },
+            "key": "columns",
+            "columns": [
+              {
+                "components": [
+                  {
+                    "label": {
+                      "ru": "present"
+                    },
+                    "key": "present",
+                    "defaultValue": "",
+                    "refreshOn": [],
+                    "optionalWhenDisabled": false,
+                    "type": "selectOrgstruct",
+                    "input": true,
+                    "addAnother": "ecos.forms.btn.add-another"
+                  }
+                ],
+                "type": "column",
+                "input": false,
+                "key": "column",
+                "index": 0
+              },
+              {
+                "index": 1,
+                "type": "column",
+                "input": false,
+                "key": "column",
+                "components": [
+                  {
+                    "label": {
+                      "ru": "absent"
+                    },
+                    "key": "absent",
+                    "defaultValue": "",
+                    "refreshOn": [],
+                    "optionalWhenDisabled": false,
+                    "type": "selectOrgstruct",
+                    "input": true,
+                    "addAnother": "ecos.forms.btn.add-another"
+                  }
+                ]
+              }
+            ],
+            "oneColumnInViewMode": false,
+            "type": "columns",
+            "input": false,
+            "addAnother": "ecos.forms.btn.add-another"
+          },
+          {
+            "label": {
+              "ru": "decisions"
+            },
+            "key": "decisions",
+            "multiple": true,
+            "reorder": false,
+            "source": {
+              "type": "custom",
+              "custom": {
+                "columns": [
+                  {
+                    "name": "issue",
+                    "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.question;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
+                    "setAttributesManually": true,
+                    "title": "issue",
+                    "type": "assoc",
+                    "multiple": false
+                  },
+                  {
+                    "name": "answer",
+                    "formatter": "",
+                    "setAttributesManually": true,
+                    "title": "decision",
+                    "type": "text",
+                    "multiple": false
+                  }
+                ],
+                "record": null,
+                "attribute": null
+              }
+            },
+            "refreshOn": [],
+            "optionalWhenDisabled": false,
+            "type": "tableForm",
+            "input": true,
+            "addAnother": "ecos.forms.btn.add-another"
+          },
+          {
+            "label": {
+              "ru": "commentDecision"
+            },
+            "key": "commentDecision",
+            "defaultValue": "",
+            "refreshOn": [],
+            "optionalWhenDisabled": false,
+            "type": "textarea",
+            "input": true,
+            "addAnother": "ecos.forms.btn.add-another"
+          }
+        ]
       },
       {
         "columns": [
@@ -350,17 +464,6 @@
           "show": null,
           "when": null
         }
-      },
-      {
-        "key": "agenda",
-        "refreshOn": [
-          "childAgenda"
-        ],
-        "calculateValue": "value = _.get(data, 'childAgenda', []);",
-        "optionalWhenDisabled": false,
-        "type": "hidden",
-        "input": true,
-        "addAnother": "ecos.forms.btn.add-another"
       }
     ]
   },

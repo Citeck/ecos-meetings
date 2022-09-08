@@ -8,16 +8,7 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
-  "i18n": {
-    "ru": {
-      "questions": "Вопросы",
-      "participants": "Участники"
-    },
-    "en": {
-      "questions": "Questions",
-      "participants": "Planned Participants"
-    }
-  },
+  "i18n": {},
   "definition": {
     "components": [
       {
@@ -98,44 +89,6 @@
         "oneColumnInViewMode": false,
         "type": "columns",
         "input": false,
-        "addAnother": "ecos.forms.btn.add-another"
-      },
-      {
-        "label": {
-          "ru": "Повестка совещания",
-          "en": "Meeting agenda"
-        },
-        "key": "_ECM_childAgenda",
-        "source": {
-          "type": "custom",
-          "custom": {
-            "columns": [
-              {
-                "name": "childQuestions",
-                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.question;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
-                "setAttributesManually": true,
-                "title": "questions",
-                "type": "assoc",
-                "multiple": true
-              },
-              {
-                "name": "plannedParticipants",
-                "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes[\"\"];\n\n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
-                "setAttributesManually": true,
-                "title": "participants",
-                "type": "assoc",
-                "multiple": true
-              }
-            ],
-            "record": null,
-            "attribute": null
-          }
-        },
-        "refreshOn": [],
-        "optionalWhenDisabled": false,
-        "displayElementsJS": "value = {view: true, edit: false, delete: false, clone: false, preview: false};",
-        "type": "tableForm",
-        "input": true,
         "addAnother": "ecos.forms.btn.add-another"
       },
       {

@@ -1,0 +1,39 @@
+---
+id: meet-decision
+name:
+  ru: Решениe
+  en: Decision
+sourceType: ECOS_MODEL
+parentRef: emodel/type@data-list
+formRef: uiserv/form@meet_decision
+inheritActions: false
+dispNameTemplate:
+  ru: '${decision}'
+  en: '${decision}'
+defaultCreateVariant: true
+model:
+  statuses:
+    - id: undone
+      name:
+        ru: Не решено
+        en: Undone
+    - id: checked
+      name:
+        ru: Проверено
+        en: Checked
+    - id: canceled
+      name:
+        ru: Отменено
+        en: Canceled
+  attributes:
+    - id: decision
+      name:
+        ru: Решение
+        en: Decision
+    - id: issue
+      name:
+        ru: Вопрос
+        en: Issue
+      type: ASSOC
+      config:
+        typeRef: emodel/type@meet-issue
