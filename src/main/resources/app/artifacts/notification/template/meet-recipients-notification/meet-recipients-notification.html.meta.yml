@@ -1,0 +1,19 @@
+{
+  "id" : "meet-recipients-notification",
+  "name" : "Meeting Recipients Notification",
+  "notificationTitle" : {
+    "ru" : "Новая задача: Ознакомление с повесткой, документ - ${title}",
+    "en" : "New task: Agenda familiarization, document - ${title}"
+  },
+  "tags" : [ ],
+  "model" : {
+    "date" : "$now?str",
+    "sender" : "initiator?id",
+    "senderFirstName" : "initiator.firstName?str",
+    "senderLastName" : "initiator.lastName?str",
+    "documentId" : "?id",
+    "web_url" : "?disp",
+    "title" : "?disp"
+  },
+  "multiTemplateConfig" : [ ]
+}

@@ -1,0 +1,19 @@
+{
+  "id" : "meet-performer-notification",
+  "name" : "Meeting Performer Notification",
+  "notificationTitle" : {
+    "ru" : "Новая задача: Исполнение решения, документ - ${title}",
+    "en" : "New task: Decision performance, document - ${title}"
+  },
+  "tags" : [ ],
+  "model" : {
+    "date" : "$now?str",
+    "sender" : "initiator?id",
+    "senderFirstName" : "initiator.firstName?str",
+    "senderLastName" : "initiator.lastName?str",
+    "documentId" : "?id",
+    "web_url" : "?disp",
+    "title" : "?disp"
+  },
+  "multiTemplateConfig" : [ ]
+}

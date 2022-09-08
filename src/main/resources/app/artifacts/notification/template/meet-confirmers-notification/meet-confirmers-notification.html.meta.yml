@@ -1,0 +1,19 @@
+{
+  "id" : "meet-confirmers-notification",
+  "name" : "Meeting Confirmers Notification",
+  "notificationTitle" : {
+    "ru" : "Новая задача: Согласование протокола, документ- ${title}",
+    "en" : "New task: Protocol confirmation, document - ${title}"
+  },
+  "tags" : [ ],
+  "model" : {
+    "date" : "$now?str",
+    "sender" : "initiator?id",
+    "senderFirstName" : "initiator.firstName?str",
+    "senderLastName" : "initiator.lastName?str",
+    "documentId" : "?id",
+    "web_url" : "?disp",
+    "title" : "?disp"
+  },
+  "multiTemplateConfig" : [ ]
+}
