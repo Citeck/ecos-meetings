@@ -8,6 +8,7 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
+  "system": false,
   "i18n": {
     "ru": {
       "create": "Создать",
@@ -175,6 +176,7 @@
             },
             "key": "issues",
             "multiple": true,
+            "disabled": true,
             "reorder": false,
             "source": {
               "type": "custom",
@@ -280,6 +282,7 @@
             },
             "key": "decisions",
             "multiple": true,
+            "disabled": true,
             "reorder": false,
             "source": {
               "type": "custom",
@@ -294,7 +297,7 @@
                     "multiple": false
                   },
                   {
-                    "name": "answer",
+                    "name": "decision",
                     "formatter": "",
                     "setAttributesManually": true,
                     "title": "decision",
@@ -340,6 +343,7 @@
                 "state": "",
                 "showValidations": false,
                 "event": "cancel",
+                "removeIndents": true,
                 "block": true,
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
@@ -402,6 +406,7 @@
                 },
                 "key": "submit",
                 "state": "",
+                "removeIndents": true,
                 "theme": "primary",
                 "block": true,
                 "disableOnInvalid": true,

@@ -8,6 +8,7 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
+  "system": false,
   "i18n": {
     "ru": {
       "errorValid": "Срок проверки не может быть раньше срока исполнения"
@@ -123,7 +124,7 @@
                   "ru": "Исполнитель",
                   "en": "Performer"
                 },
-                "key": "_ECM_performer",
+                "key": "performer",
                 "multiple": true,
                 "validate": {
                   "required": true
@@ -155,7 +156,7 @@
                   "ru": "Проверяющий",
                   "en": "Inspector"
                 },
-                "key": "_ECM_inspector",
+                "key": "inspector",
                 "validate": {
                   "required": true
                 },
