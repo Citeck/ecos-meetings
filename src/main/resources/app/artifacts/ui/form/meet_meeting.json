@@ -176,7 +176,6 @@
             },
             "key": "issues",
             "multiple": true,
-            "disabled": true,
             "reorder": false,
             "source": {
               "type": "custom",
@@ -282,7 +281,6 @@
             },
             "key": "decisions",
             "multiple": true,
-            "disabled": true,
             "reorder": false,
             "source": {
               "type": "custom",
@@ -290,7 +288,7 @@
                 "columns": [
                   {
                     "name": "issue",
-                    "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.question;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
+                    "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.issue;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
                     "setAttributesManually": true,
                     "title": "issue",
                     "type": "assoc",

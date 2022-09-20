@@ -36,6 +36,64 @@
         "label": {
           "ru": "Columns"
         },
+        "key": "columns5",
+        "columns": [
+          {
+            "components": [
+              {
+                "label": {
+                  "ru": "Решение",
+                  "en": "Decision"
+                },
+                "key": "decisionText",
+                "disabled": true,
+                "defaultValue": "",
+                "refreshOn": [],
+                "calculateValue": "value = _.get(data, 'decisionAsync.decision', '');",
+                "optionalWhenDisabled": false,
+                "type": "textfield",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ],
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "index": 1,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "components": [
+              {
+                "label": {
+                  "ru": "Вопрос",
+                  "en": "Issue"
+                },
+                "key": "issueText",
+                "disabled": true,
+                "defaultValue": "",
+                "refreshOn": [],
+                "calculateValue": "value = _.get(data, 'issueAsync.issue', '');",
+                "optionalWhenDisabled": false,
+                "type": "textfield",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "Columns"
+        },
         "key": "columns2",
         "columns": [
           {
@@ -121,10 +179,10 @@
             "components": [
               {
                 "label": {
-                  "ru": "Исполнитель",
-                  "en": "Performer"
+                  "ru": "Исполнители",
+                  "en": "Performers"
                 },
-                "key": "performer",
+                "key": "performers",
                 "multiple": true,
                 "validate": {
                   "required": true
@@ -132,7 +190,7 @@
                 "reorder": false,
                 "defaultValue": [],
                 "refreshOn": [],
-                "calculateValue": "value = _.get(data, 'performers.performers', []);",
+                "calculateValue": "value = _.get(data, 'issueAsync.performers', []);",
                 "allowCalculateOverride": true,
                 "optionalWhenDisabled": false,
                 "type": "selectOrgstruct",
@@ -153,10 +211,10 @@
             "components": [
               {
                 "label": {
-                  "ru": "Проверяющий",
-                  "en": "Inspector"
+                  "ru": "Проверяющие",
+                  "en": "Inspectors"
                 },
-                "key": "inspector",
+                "key": "inspectors",
                 "validate": {
                   "required": true
                 },
@@ -207,7 +265,22 @@
             "input": false,
             "key": "column",
             "index": 2,
-            "components": []
+            "components": [
+              {
+                "label": {
+                  "ru": "Не исполнять",
+                  "en": "Don't perform"
+                },
+                "key": "outcome_skip_perform",
+                "state": "draft",
+                "block": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ]
           },
           {
             "md": 3,
@@ -256,13 +329,14 @@
         "addAnother": "ecos.forms.btn.add-another"
       },
       {
-        "label": "issueId",
+        "label": "decisionAsync",
         "source": {
-          "type": "recordsScript",
-          "recordsScript": {
-            "script": "value = _.get(data, 'elem', '')",
+          "type": "record",
+          "record": {
+            "id": "{{data.elem}}",
             "attributes": {
-              "id": "issue?id"
+              "decision": "decision?str",
+              "issue": "issue?str"
             }
           },
           "forceLoad": false
@@ -270,25 +344,20 @@
         "update": {
           "type": "once"
         },
-        "refreshOn": [
-          {
-            "label": "elem",
-            "value": "elem"
-          }
-        ],
-        "key": "issueId",
+        "key": "decisionAsync",
         "type": "asyncData",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"
       },
       {
-        "label": "performers",
+        "label": "issueAsync",
         "source": {
           "type": "record",
           "record": {
-            "id": "{{data.issueId.id}}",
+            "id": "{{data.decisionAsync.issue}}",
             "attributes": {
-              "performers": "reporters[]?id"
+              "performers": "reporters[]?id",
+              "issue": "issue?str"
             }
           },
           "forceLoad": false
@@ -298,11 +367,11 @@
         },
         "refreshOn": [
           {
-            "label": "issueId",
-            "value": "issueId"
+            "label": "decisionAsync",
+            "value": "decisionAsync"
           }
         ],
-        "key": "performers",
+        "key": "issueAsync",
         "type": "asyncData",
         "input": true,
         "addAnother": "ecos.forms.btn.add-another"

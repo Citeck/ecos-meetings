@@ -3,7 +3,7 @@ id: meetings-cat-doctype
 name:
   ru: Совещание
   en: Meeting
-sourceType: ECOS_MODEL
+storageType: ECOS_MODEL
 parentRef: emodel/type@case
 formRef: uiserv/form@meet_meeting
 journalRef: uiserv/journal@meetings
@@ -32,18 +32,18 @@ model:
         en: Confirmers
       attributes:
         - confirmers
-    - id: performer
+    - id: performers
       name:
-        ru: Исполнитель
-        en: Performer
+        ru: Исполнители
+        en: Performers
       attributes:
-        - performer
-    - id: inspector
+        - performers
+    - id: inspectors
       name:
-        ru: Проверяющий
-        en: Inspector
+        ru: Проверяющие
+        en: Inspectors
       attributes:
-        - inspector
+        - inspectors
   statuses:
     - id: new
       name:
@@ -73,6 +73,10 @@ model:
       name:
         ru: На согласовании
         en: On confirm
+    - id: onRework
+      name:
+        ru: Доработка протокола
+        en: Protocol reworking
     - id: confirmed
       name:
         ru: Протокол согласован
@@ -165,25 +169,19 @@ model:
         ru: Отсутствующие
       type: PERSON
       multiple: true
-    - id: decisions
-      name:
-        en: Decisions
-        ru: Решения
-      type: ASSOC
-      config:
-        typeRef: emodel/type@meet-answered-question
-      multiple: true
     - id: commentDecision
       name:
         ru: Комментарий
         en: Comment
-    - id: performer
+    - id: performers
       name:
-        ru: Исполнитель
-        en: Performer
+        ru: Исполнители
+        en: Performers
       type: PERSON
-    - id: inspector
+      multiple: true
+    - id: inspectors
       name:
-        ru: Проверяющий
-        en: Inspector
+        ru: Проверяющие
+        en: Inspectors
       type: PERSON
+      multiple: true

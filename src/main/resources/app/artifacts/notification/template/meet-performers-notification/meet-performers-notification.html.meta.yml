@@ -1,6 +1,6 @@
 {
-  "id" : "meet-performer-notification",
-  "name" : "Meeting Performer Notification",
+  "id" : "meet-performers-notification",
+  "name" : "Meeting Performers Notification",
   "notificationTitle" : {
     "ru" : "Новая задача: Исполнение решения, документ - ${title}",
     "en" : "New task: Decision performance, document - ${title}"

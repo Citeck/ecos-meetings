@@ -32,21 +32,12 @@
                                           </table>
                                           <div style="font-size: 14px; margin: 12px 0px 24px 0px; padding-top: 10px; border-top: 1px solid #aaaaaa;">
                                               Вам назначена следующая задача:
-                                              <p><b>Согласование протокола</b></p>
+                                              <p><b>Доработка протокола</b></p>
 
                                              <p>
                                                  <#if title??>
                                                      Название файла:&nbsp;&nbsp;<b>${title!''}</b><br>
                                                  </#if>
-
-                                                 Инициатор задачи:&nbsp;&nbsp;
-                                                 <b>
-                                                 <#if sender??>
-                                                    <#if senderLastName??>${senderLastName}</#if><#if senderFirstName??> ${senderFirstName}</#if>.
-                                                 <#else>
-                                                     (Инициатор не указан).
-                                                 </#if>
-                                                 </b>
                                              </p>
 
                                               <p>Для просмотра задачи нажмите на ссылку:</p>

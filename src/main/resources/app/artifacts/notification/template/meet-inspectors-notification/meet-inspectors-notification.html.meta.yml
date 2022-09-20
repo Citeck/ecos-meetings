@@ -1,6 +1,6 @@
 {
-  "id" : "meet-inspector-notification",
-  "name" : "Meeting Inspector Notification",
+  "id" : "meet-inspectors-notification",
+  "name" : "Meeting Inspectors Notification",
   "notificationTitle" : {
     "en" : "New task: Performance inspectation, document - ${title}",
     "ru" : "Новая задача: Проверка исполнения, документ - ${title}"
