@@ -22,6 +22,7 @@ columns:
       ru: Статус
       en: Status
     attribute: _status
+    sortable: false
   - id: initiator
   - id: meetDateTime
   - id: subject
