@@ -8,6 +8,7 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
+  "system": false,
   "i18n": {},
   "definition": {
     "components": [
@@ -23,6 +24,64 @@
         "optionalWhenDisabled": false,
         "type": "textarea",
         "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
+          "ru": "Columns"
+        },
+        "key": "columns4",
+        "columns": [
+          {
+            "components": [
+              {
+                "label": {
+                  "ru": "Решение",
+                  "en": "Decision"
+                },
+                "key": "decisionText",
+                "disabled": true,
+                "defaultValue": "",
+                "refreshOn": [],
+                "calculateValue": "value = _.get(data, 'decisionAsync.decision', '');",
+                "optionalWhenDisabled": false,
+                "type": "textfield",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ],
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "index": 0
+          },
+          {
+            "index": 1,
+            "type": "column",
+            "input": false,
+            "key": "column",
+            "components": [
+              {
+                "label": {
+                  "ru": "Вопрос",
+                  "en": "Issue"
+                },
+                "key": "issueText",
+                "disabled": true,
+                "defaultValue": "",
+                "refreshOn": [],
+                "calculateValue": "value = _.get(data, 'issueAsync.issue', '');",
+                "optionalWhenDisabled": false,
+                "type": "textfield",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ]
+          }
+        ],
+        "oneColumnInViewMode": false,
+        "type": "columns",
+        "input": false,
         "addAnother": "ecos.forms.btn.add-another"
       },
       {
@@ -193,6 +252,61 @@
         "oneColumnInViewMode": false,
         "type": "columns",
         "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "key": "elem",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "hidden",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": "decisionAsync",
+        "source": {
+          "type": "record",
+          "record": {
+            "id": "{{data.elem}}",
+            "attributes": {
+              "decision": "decision?str",
+              "issue": "issue?str"
+            }
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "once"
+        },
+        "key": "decisionAsync",
+        "type": "asyncData",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": "issueAsync",
+        "source": {
+          "type": "record",
+          "record": {
+            "id": "{{data.decisionAsync.issue}}",
+            "attributes": {
+              "issue": "issue?str"
+            }
+          },
+          "forceLoad": false
+        },
+        "update": {
+          "type": "disabled"
+        },
+        "refreshOn": [
+          {
+            "label": "decisionAsync",
+            "value": "decisionAsync"
+          }
+        ],
+        "key": "issueAsync",
+        "type": "asyncData",
+        "input": true,
         "addAnother": "ecos.forms.btn.add-another"
       }
     ]

@@ -1,0 +1,16 @@
+{
+  "id" : "meet-initiator-protocol-rework-notification",
+  "name" : "Meeting Intitiator Protocol Rework Notification",
+  "notificationTitle" : {
+    "ru" : "Новая задача: Доработка протокола, документ- ${title}",
+    "en" : "New task: Protocol rework, document - ${title}"
+  },
+  "tags" : [ ],
+  "model" : {
+    "date" : "$now?str",
+    "documentId" : "?id",
+    "web_url" : "?disp",
+    "title" : "?disp"
+  },
+  "multiTemplateConfig" : [ ]
+}

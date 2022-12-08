@@ -8,6 +8,7 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
+  "system": false,
   "i18n": {
     "ru": {
       "create": "Создать",
@@ -287,14 +288,14 @@
                 "columns": [
                   {
                     "name": "issue",
-                    "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.question;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
+                    "formatter": "value = {\n  type: 'script', \n  config: {\n    fn: ({ Records, cell, _ }) => {\n      const result = Records.get(cell).toJson().attributes.issue;\n      \n      return _.isUndefined(result) ? cell : result;\n    }\n  }\n}",
                     "setAttributesManually": true,
                     "title": "issue",
                     "type": "assoc",
                     "multiple": false
                   },
                   {
-                    "name": "answer",
+                    "name": "decision",
                     "formatter": "",
                     "setAttributesManually": true,
                     "title": "decision",
@@ -340,6 +341,7 @@
                 "state": "",
                 "showValidations": false,
                 "event": "cancel",
+                "removeIndents": true,
                 "block": true,
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
@@ -402,6 +404,7 @@
                 },
                 "key": "submit",
                 "state": "",
+                "removeIndents": true,
                 "theme": "primary",
                 "block": true,
                 "disableOnInvalid": true,

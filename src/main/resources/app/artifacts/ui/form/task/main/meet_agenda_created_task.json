@@ -56,7 +56,7 @@
             "attribute": null
           }
         },
-        "customCreateVariantsJs": "value = [\r\n{\r\n  \"recordRef\": \"emodel/t-meet-issue@\",\r\n  \"typeRef\": \"emodel/type@meet-issue\",\r\n  \"formRef\": \"uiserv/form@meet_issue\",\r\n  \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
+        "customCreateVariantsJs": "value = [\r\n{\r\n  \"recordRef\": \"emodel/meet-issue@\",\r\n  \"typeRef\": \"emodel/type@meet-issue\",\r\n  \"formRef\": \"uiserv/form@meet_issue\",\r\n  \"label\": {\"ru\":\"Создать\"}\r\n}\r\n]",
         "refreshOn": [],
         "optionalWhenDisabled": false,
         "type": "tableForm",

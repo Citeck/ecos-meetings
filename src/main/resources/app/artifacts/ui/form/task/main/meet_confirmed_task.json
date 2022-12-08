@@ -8,6 +8,7 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
+  "system": false,
   "i18n": {},
   "definition": {
     "components": [
@@ -16,7 +17,7 @@
           "ru": "Сообщение отправителя",
           "en": "Sender message"
         },
-        "key": "confirmation_message",
+        "key": "sender_message",
         "disabled": true,
         "defaultValue": "",
         "refreshOn": [],
@@ -68,6 +69,22 @@
       },
       {
         "label": {
+          "ru": "Комментарий на доработку",
+          "en": "Comment for reworking"
+        },
+        "key": "rework_comment",
+        "validate": {
+          "required": true
+        },
+        "defaultValue": "",
+        "refreshOn": [],
+        "optionalWhenDisabled": false,
+        "type": "textarea",
+        "input": true,
+        "addAnother": "ecos.forms.btn.add-another"
+      },
+      {
+        "label": {
           "ru": "Columns"
         },
         "key": "columns2",
@@ -94,7 +111,22 @@
             "input": false,
             "key": "column",
             "index": 2,
-            "components": []
+            "components": [
+              {
+                "label": {
+                  "ru": "На доработку",
+                  "en": "Rework"
+                },
+                "key": "outcome_rework",
+                "state": "",
+                "block": true,
+                "refreshOn": [],
+                "optionalWhenDisabled": false,
+                "type": "button",
+                "input": true,
+                "addAnother": "ecos.forms.btn.add-another"
+              }
+            ]
           },
           {
             "md": 3,
@@ -109,7 +141,7 @@
                   "en": "Confirmed"
                 },
                 "key": "outcome_confirmed",
-                "state": "",
+                "state": "draft",
                 "theme": "primary",
                 "block": true,
                 "refreshOn": [],
@@ -122,7 +154,8 @@
         ],
         "oneColumnInViewMode": false,
         "type": "columns",
-        "input": false
+        "input": false,
+        "addAnother": "ecos.forms.btn.add-another"
       }
     ]
   },

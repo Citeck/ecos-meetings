@@ -1,0 +1,16 @@
+{
+  "id" : "meet-initiator-perform-rework-notification",
+  "name" : "Meeting Intitiator Perform Rework Notification",
+  "notificationTitle" : {
+    "ru" : "Новая задача: Решение о повторном исполнении, документ- ${title}",
+    "en" : "New task: Decision of reworking, document - ${title}"
+  },
+  "tags" : [ ],
+  "model" : {
+    "date" : "$now?str",
+    "documentId" : "?id",
+    "web_url" : "?disp",
+    "title" : "?disp"
+  },
+  "multiTemplateConfig" : [ ]
+}

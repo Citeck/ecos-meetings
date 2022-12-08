@@ -8,6 +8,7 @@
   "customModule": null,
   "typeRef": "",
   "width": "lg",
+  "system": false,
   "i18n": {},
   "definition": {
     "components": [
@@ -16,7 +17,7 @@
           "ru": "Сообщение",
           "en": "Message"
         },
-        "key": "confirmation_message",
+        "key": "sender_message",
         "defaultValue": "",
         "refreshOn": [],
         "optionalWhenDisabled": false,
@@ -40,12 +41,13 @@
                 "validate": {
                   "required": true
                 },
+                "allowedAuthorityType": "USER",
+                "defaultValue": "",
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
                 "type": "selectOrgstruct",
                 "input": true,
-                "addAnother": "ecos.forms.btn.add-another",
-                "defaultValue": ""
+                "addAnother": "ecos.forms.btn.add-another"
               }
             ],
             "type": "column",
@@ -65,6 +67,7 @@
                   "en": "2nd confirming step"
                 },
                 "key": "second",
+                "allowedAuthorityType": "USER",
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
                 "customConditional": "const first = _.get(data, 'first', '');\n\nshow = first !== '';",
@@ -94,7 +97,7 @@
                   "en": "3d confirming step"
                 },
                 "key": "third",
-                "defaultValue": "",
+                "allowedAuthorityType": "USER",
                 "refreshOn": [],
                 "optionalWhenDisabled": false,
                 "customConditional": "const second = _.get(data, 'second', '');\n\nshow = second !== '';",
