@@ -5,7 +5,7 @@
     "en": "Meet Confirmation Rework Task"
   },
   "description": {},
-  "customModule": null,
+  "customModule": "",
   "typeRef": "",
   "width": "lg",
   "system": false,
@@ -14,7 +14,8 @@
     "components": [
       {
         "label": {
-          "ru": "Комментарий согласующего"
+          "ru": "Комментарий согласующего",
+          "en": "Approver comment"
         },
         "key": "rework_comment",
         "disabled": true,
@@ -115,7 +116,9 @@
         "type": "columns",
         "input": false
       }
-    ]
+    ],
+    "formId": "meet_confirmation_rework_task"
   },
-  "attributes": {}
+  "attributes": {},
+  "notExists": false
 }
