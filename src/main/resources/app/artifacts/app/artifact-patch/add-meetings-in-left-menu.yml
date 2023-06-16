@@ -1,0 +1,47 @@
+id: add-meetings-in-left-menu
+name: {ru: Добавить раздел "Совещания", en: Add section "Meetings" }
+
+target: 'ui/menu$default-menu-v1'
+
+type: json
+config:
+  operations:
+    - op: add
+      path: '$..[?(@.id == "sections")].items'
+      value: {
+        "id": "meetings-section",
+        "label": {
+          "ru": "Совещания",
+          "en": "Meetings"
+        },
+        "icon": "ui/icon@i-leftmenu-meetings",
+        "hidden": false,
+        "type": "SECTION",
+        "config": {},
+        "action": {
+          "type": "",
+          "config": {}
+        },
+        "items": [
+          {
+            "id": "bd6c8ee5-4518-4805-9fbf-0ee71382aa1f",
+            "label": {
+              "ru": "Совещания",
+              "en": "Meetings"
+            },
+            "icon": "",
+            "hidden": false,
+            "type": "JOURNAL",
+            "config": {
+              "recordRef": "uiserv/journal@meetings"
+            },
+            "action": {
+              "type": "",
+              "config": {}
+            },
+            "items": [],
+            "allowedFor": []
+          }
+        ],
+        "allowedFor": []
+      }
