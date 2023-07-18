@@ -17,11 +17,10 @@ columns:
     type: DATE
     attribute: _created
   - id: meetNumber
-  - id: documentStatus
+  - id: _status
     name:
       ru: Статус
       en: Status
-    attribute: _status
     sortable: false
   - id: initiator
   - id: meetDateTime
