@@ -98,7 +98,6 @@ model:
       name:
         ru: Регистрационный номер
         en: Register number
-      type: NUMBER
       computed:
         type: COUNTER
         config:

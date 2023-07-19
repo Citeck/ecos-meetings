@@ -17,6 +17,7 @@ columns:
     type: DATE
     attribute: _created
   - id: meetNumber
+    sortable: false
   - id: _status
     name:
       ru: Статус
