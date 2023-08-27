@@ -23,6 +23,7 @@ columns:
       ru: Статус
       en: Status
     sortable: false
+    type: ASSOC
   - id: initiator
   - id: meetDateTime
   - id: subject
