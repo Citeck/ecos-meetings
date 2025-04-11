@@ -11,7 +11,6 @@ dispNameTemplate:
   ru: '${decision}'
   en: '${decision}'
 defaultCreateVariant: true
-workspaceScope: PRIVATE
 model:
   statuses:
     - id: undone
