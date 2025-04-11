@@ -11,6 +11,7 @@ dispNameTemplate:
   ru: '${issue}'
   en: '${issue}'
 defaultCreateVariant: true
+workspaceScope: PRIVATE
 model:
   attributes:
     - id: issue

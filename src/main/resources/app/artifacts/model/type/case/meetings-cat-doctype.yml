@@ -12,6 +12,7 @@ dispNameTemplate:
   ru: Совещание №${meetNumber}
   en: Meeting №${meetNumber}
 defaultCreateVariant: true
+workspaceScope: PRIVATE
 model:
   roles:
     - id: initiator

@@ -1,0 +1,32 @@
+---
+id: meetings-to-clerical-work-menu
+name:
+  ru: Добавить встречи в рабочую область делопроизводства
+  en: Add meetings to clerical work workspace
+
+target: 'ui/menu$clerical-work-menu-additional-items'
+
+order: 20
+
+type: json
+config:
+  operations:
+    - op: add
+      path: '$.subMenu.left.items'
+      value:
+        - id: meetings
+          label:
+            ru: Совещания
+            en: Meetings
+          icon: ui/icon@i-leftmenu-meetings
+          hidden: false
+          type: JOURNAL
+          config:
+            recordRef: uiserv/journal@meetings
+            displayCount: false
+          action:
+            type: ''
+            config: { }
+          items: [ ]
+          allowedFor: [ ]
+
