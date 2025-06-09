@@ -2,9 +2,9 @@
 
 **Read this in other languages: [Русский](README.RU.MD)**
 
-# `ecos-meetings`
+# `Meetings`
 
-The `ecos-meetings` module provides a comprehensive solution for scheduling, organizing, and managing meetings efficiently. It aims to improve collaboration, increase productivity, and enhance the overall meeting experience.
+The `Meetings` module provides a comprehensive solution for scheduling, organizing, and managing meetings efficiently. It aims to improve collaboration, increase productivity, and enhance the overall meeting experience.
 
 ## Get started
 
@@ -34,8 +34,8 @@ We welcome contributions from the community to make Citeck even better. Everyone
 
 ## Support
 
-If you need any assistance or have any questions regarding Citeck `ecos-meetings`, please create an issue in this repository or reach out to our [support team](mailto:support@citeck.ru).
+If you need any assistance or have any questions regarding Citeck `Meetings`, please create an issue in this repository or reach out to our [support team](mailto:support@citeck.ru).
 
 ## License
 
-Citeck `ecos-meetings` is released under the [GNU Lesser General Public License](LICENSE).
+Citeck `Meetings` is released under the [GNU Lesser General Public License](LICENSE).
