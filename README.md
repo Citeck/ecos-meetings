@@ -2,7 +2,7 @@
 
 **Read this in other languages: [Русский](README.RU.MD)**
 
-# `Meetings`
+# Meetings
 
 The `Meetings` module provides a comprehensive solution for scheduling, organizing, and managing meetings efficiently. It aims to improve collaboration, increase productivity, and enhance the overall meeting experience.
 
