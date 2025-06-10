@@ -1,12 +1,14 @@
 ![Citeck ECOS Logo](https://raw.githubusercontent.com/Citeck/ecos-ui/develop/public/img/logo/ecos-logo.svg)
 
-# `ecos-meetings`
+**Read this in other languages: [Русский](README.RU.MD)**
 
-The `ecos-meetings` module provides a comprehensive solution for scheduling, organizing, and managing meetings efficiently. It aims to improve collaboration, increase productivity, and enhance the overall meeting experience.
+# Meetings
+
+The `Meetings` module provides a comprehensive solution for scheduling, organizing, and managing meetings efficiently. It aims to improve collaboration, increase productivity, and enhance the overall meeting experience.
 
 ## Get started
 
-If you are new to Citeck platform and would like to run the software locally, we recommend you download the Dockerized version from [Demo repository](https://github.com/Citeck/ecos-community-demo).
+If you are new to Citeck platform and would like to load the software locally, we recommend you download the Dockerized version from [Demo repository](https://github.com/Citeck/citeck-community).
 
 ### Recommended versions of services to launch with:
 
@@ -32,8 +34,8 @@ We welcome contributions from the community to make Citeck even better. Everyone
 
 ## Support
 
-If you need any assistance or have any questions regarding Citeck `ecos-meetings`, please create an issue in this repository or reach out to our [support team](mailto:support@citeck.ru).
+If you need any assistance or have any questions regarding Citeck `Meetings`, please create an issue in this repository or reach out to our [support team](mailto:support@citeck.ru).
 
 ## License
 
-Citeck `ecos-meetings` is released under the [GNU Lesser General Public License](LICENSE).
+Citeck `Meetings` is released under the [GNU Lesser General Public License](LICENSE).
